@@ -17,3 +17,4 @@ int main(int argc, char* args[])
 	printf("%1.2f", last);
 	return 0;
 }
+
