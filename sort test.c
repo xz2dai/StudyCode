@@ -27,10 +27,11 @@ void sort(int max,int low)
 int main(int argc,char* argv[])
 {
 	int n,m,k;
-	printf("please enterput how many numbers you want to sort(less than 20)");
+	printf("please enterput how many numbers you want to sort(less than 20)\n");
 	scanf("%d",&k);
-	for(n=1;n<=k+1;n++) scanf("%d",&a[n]);
-	sort(1,k+1);
-	for(n=1;n<=k+1;n++) printf("%d",a[n]);
+	printf("please enterput your numbers\n");
+	for(n=1;n<=k;n++) scanf("%d",&a[n]);
+	sort(1,k);
+	for(n=1;n<=k;n++) printf("%d",a[n]);
 	return 0;
 }
