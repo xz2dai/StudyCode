@@ -1,18 +1,36 @@
 #include<stdio.h>
 int a[20];
+void swap(int a,int b)
+{
+	int cup;
+	cup=a;
+	a=b;
+	b=cup;
+	return;
+}
 void sort(int max,int low)
 {
-	int key,n,m,j,i;
-	key=(max+low)/2;
-	j=low;i=max;
-	while(j<i && j<key && i>key)
+	int key,j,i;
+	key=a[low];
+	i=low;j=max;
+	while(i=!j)
 	{
-		j++;
-		if(a[j]>a[key]) i--;
-		if(a[i]<a[key]) swap(a[j],a[i]);
+		while(a[j]>key) j--;
+		while(a[i]<key) i++;
+		swap(a[i],a[j]);
 	}
-	if(j=key) swap(a[i],a[key]);
-	if(i=key) swap(a[j],a[key]);
-	
-	
+	swap(key,a[i]);
+	sort(low,i-1);
+	sort(i+1,max);
+	return;
+}
+int main(int argc,char* argv[])
+{
+	int n,m,k;
+	printf("please enterput how many numbers you want to sort(less than 20)");
+	scanf("%d",&k);
+	for(n=1;n<=k+1;n++) scanf("%d",&a[n]);
+	sort(1,k+1);
+	for(n=1;n<=k+1;n++) printf("%d",a[n]);
+	return 0;
 }
