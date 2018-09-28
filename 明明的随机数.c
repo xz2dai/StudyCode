@@ -1,5 +1,5 @@
 #include<stdio.h>
-int a[20];
+int a[10001];
 void sort(int low,int max)
 {
 	if(max<low) return; 
@@ -23,13 +23,16 @@ void sort(int low,int max)
 	sort(i+1,max);
 	return;
 }
+void check()
+{
+	
+}
 int main(int argc,char* argv[])
 {
 	int n,k;
 	scanf("%d",&k);
 	for(n=1;n<=k;n++) scanf("%d",&a[n]);
 	sort(1,k);
-	printf("\n"); 
 	for(n=1;n<=k;n++) printf("%d ",a[n]);
 	return 0;
 }
