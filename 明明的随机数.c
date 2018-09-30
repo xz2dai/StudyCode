@@ -22,6 +22,7 @@ void sort(int low,int max)
 	sort(low,i-1);
 	sort(i+1,max);
 	return;
+	
 }
 void check()
 {
@@ -31,7 +32,7 @@ void check()
 		if(a[n]==a[n+1])
 		{
 			again++;
-			for(c=n+1;c<=k-again;c++)
+			for(c=n;c<=k-again;c++)
 			{
 				a[c]=a[c+1];
 			}
