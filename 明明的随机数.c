@@ -1,5 +1,5 @@
 #include<stdio.h>
-int a[10001];
+int a[10001],again=0,k;
 void sort(int low,int max)
 {
 	if(max<low) return; 
@@ -25,14 +25,27 @@ void sort(int low,int max)
 }
 void check()
 {
-	
+	int c,n;
+	for(n=1;n<=k;n++)
+	{
+		if(a[n]==a[n+1])
+		{
+			again++;
+			for(c=n+1;c<=k-again;c++)
+			{
+				a[c]=a[c+1];
+			}
+		}
+	}
 }
 int main(int argc,char* argv[])
 {
-	int n,k;
+	int n;
 	scanf("%d",&k);
 	for(n=1;n<=k;n++) scanf("%d",&a[n]);
 	sort(1,k);
-	for(n=1;n<=k;n++) printf("%d ",a[n]);
+	check();
+	printf("%d\n",k-again);
+	for(n=1;n<=k-again;n++) printf("%d ",a[n]);
 	return 0;
 }
