@@ -46,7 +46,7 @@ int main(int argc,char* argv[])
 	for(n=1;n<=k;n++) scanf("%d",&a[n]);
 	sort(1,k);
 	check();
-	printf("%d\n",k-again);
+	printf("%d",k-again);
 	for(n=1;n<=k-again;n++) printf("%d ",a[n]);
 	return 0;
 }
