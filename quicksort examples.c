@@ -4,12 +4,11 @@ void quicksort(int left,int right)
 {
     int i,j,t,temp;
     if (left>right) return;
-    temp=a[left];  //temp存有基准数
+    temp=a[left];  
     i=left;
     j=right;
     while(i!=j)
-    {
-        //先从右往左
+	{
         while(a[j]>=temp && i<j)  j--;
         while(a[i]<=temp && i<j)  i++;
         if(i<j)
@@ -29,6 +28,8 @@ int main()
 {
     int i,j;
     scanf("%d ",&n);
+    for(i=1;i<=n;i++) scanf("%d",&a[i]);
+    quicksort(1,n);
     for(i=1;i<=n;i++)  printf("%d",a[i]);
     getchar();
     getchar();
