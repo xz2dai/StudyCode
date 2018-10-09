@@ -14,7 +14,6 @@ int main(int argc, char* args[])
 	}
 	printf("%f %f\n",all_number,all_totla);
 	last = all_totla / (float)all_number;
-	printf("%1.2f", last);
+	printf("%.2f", last);
 	return 0;
 }
-
