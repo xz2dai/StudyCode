@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\hello world!.c">
+    <ClCompile Include="..\..\明明的随机数.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
