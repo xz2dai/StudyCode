@@ -34,7 +34,15 @@ void sort(int low,int max)     //不清楚在加入结构后缀后sort部分有�
 }
 void Remove()
 {
-
+	int jac;
+	for (jac = 1; jac <= k;jac++)
+	{
+		if(a[jac].number==a[jac+1].number)
+		{
+			again++;
+			a[jac].next=&
+		}
+	}
 }
 int main(int argc,char* argv[])
 {
