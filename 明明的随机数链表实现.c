@@ -1,52 +1,50 @@
+//首先我要写一个链表 然后想想怎么用链表实现
 #include<stdio.h>
-int a[10001],again=0,k;
-void sort(int low,int max)
+int again=0,k;
+
+struct chan							//链表主体
+{
+	int number;
+	int* next;
+}a[100001];
+
+void sort(int low,int max)     //不清楚在加入结构后缀后sort部分有没有问题
 {
 	if(max<low) return; 
 	int key,j,i,t;
-	key=a[low];
+	key=a[low].number;
 	i=low;j=max;
 	while(i!=j)
 	{
-		while(a[j]>=key && i<j) j--;
-		while(a[i]<=key && i<j) i++;
+		while(a[j].number>=key && i<j) j--;
+		while(a[i].number<=key && i<j) i++;
 		if(i<j)
 		{
-			t=a[i];
-			a[i]=a[j];
-			a[j]=t;
+			t=a[i].number;
+			a[i].number=a[j].number;
+			a[j].number=t;
 		}
 	}
-	a[low]=a[i];
-	a[i]=key;
+	a[low].number=a[i].number;
+	a[i].number=key;
 	sort(low,i-1);
 	sort(i+1,max);
 	return;
 	
 }
-void check()
+void Remove()
 {
-	int c,n;
-	for(n=1;n<=k;n++)
-	{
-		if(a[n]==a[n+1])
-		{
-			again++;
-			for(c=n;c<=k-1;c++)
-			{
-				a[c]=a[c+1];
-			}
-		}
-	}
+
 }
 int main(int argc,char* argv[])
 {
 	int n;
 	scanf("%d",&k);
-	for(n=1;n<=k;n++) scanf("%d",&a[n]);
+	for(n=1;n<=k;n++) 
+		{
+			scanf("%d",&a[n].number);
+			a[n - 1].next = &a[n].number;
+		}
 	sort(1,k);
-	check();
-	printf("%d\n",k-again);
-	for(n=1;n<=k-again;n++) printf("%d ",a[n]);
 	return 0;
 }
