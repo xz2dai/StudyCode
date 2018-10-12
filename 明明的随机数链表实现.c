@@ -1,4 +1,5 @@
 //首先我要写一个链表 然后想想怎么用链表实现
+//链表遍历输出不需要考虑数的连续
 #include<stdio.h>
 int again=0,k;
 
@@ -32,17 +33,21 @@ void sort(int low,int max)     //不清楚在加入结构后缀后sort部分有�
 	return;
 	
 }
-void Remove()
+void Remove()                 //去除项，但是去除后怎么链接还要想想
 {
-	int jac;
+	int jac;      //jac是随便写的，表示重复数量
 	for (jac = 1; jac <= k;jac++)
 	{
 		if(a[jac].number==a[jac+1].number)
 		{
 			again++;
-			a[jac].next=&
+			a[jac].next=&a[jac+2].number;
 		}
 	}
+}
+void output()
+{
+	
 }
 int main(int argc,char* argv[])
 {
