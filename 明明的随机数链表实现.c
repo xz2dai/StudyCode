@@ -1,12 +1,13 @@
 //首先我要写一个链表 然后想想怎么用链表实现
 //链表遍历输出不需要考虑数的连续
 #include<stdio.h>
+#include<stdlib.h>
 int again=0,k;
 
 struct chan							//链表主体
 {
 	int number;
-	int* next;
+	struct chan *next;
 }a[100001];
 
 void sort(int low,int max)     //不清楚在加入结构后缀后sort部分有没有问题
@@ -40,7 +41,7 @@ void Remove()                 //去除项，但是去除后怎么链接还要想
 	{
 		if(a[jac].number==a[jac+1].number)
 		{
-			again++;
+			again++;        //在链表实现里好像不需要记录重复数
 			a[jac].next=&a[jac+2].number;
 		}
 	}
@@ -52,6 +53,8 @@ void output()
 int main(int argc,char* argv[])
 {
 	int n;
+	struct chan *p,*head;
+	p=(struct chan *)malloc(sizeof(struct chan));
 	scanf("%d",&k);
 	for(n=1;n<=k;n++) 
 		{
