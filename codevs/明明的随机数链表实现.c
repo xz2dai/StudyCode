@@ -46,9 +46,21 @@ void Remove()                 //去除项，但是去除后怎么链接还要想
 		}
 	}
 }
-void output()
+void output(struct chan *node)
 {
 	
+	node=&a[1];
+	printf("%d",node->number);
+	node=&node->next;
+	while(node->next != NULL)
+	{
+		printf("%d",node->number);
+		if(node->number == node->next.number)
+		{
+			node=&node->next.next;
+			again+=1;
+        }
+	}
 }
 int main(int argc,char* argv[])
 {
