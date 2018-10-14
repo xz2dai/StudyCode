@@ -42,11 +42,11 @@ void Remove()                 //去除项，但是去除后怎么链接还要想
 		if(a[jac].number==a[jac+1].number)
 		{
 			again++;        //在链表实现里好像不需要记录重复数
-			a[jac].next=&a[jac+2];
+			a[jac].next=&a[jac+2].number;
 		}
 	}
 }
-void output()                    //利用链表链接性质输出
+void output()
 {
 	
 }
@@ -59,7 +59,7 @@ int main(int argc,char* argv[])
 	for(n=1;n<=k;n++) 
 		{
 			scanf("%d",&a[n].number);
-			a[n - 1].next = &a[n];
+			a[n - 1].next = &a[n].number;
 		}
 	sort(1,k);
 	return 0;
