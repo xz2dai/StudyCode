@@ -46,9 +46,21 @@ void Remove()                 //去除项，但是去除后怎么链接还要想
 		}
 	}
 }
-void output()                    //利用链表链接性质输出
+void output(struct chan *p)                    //利用链表链接性质输出.好像可以在这一步实现去重
 {
-	
+	int key=1;
+	p=&a[1];
+	while(p->next!=NULL)
+	{
+	     printf("%d",p->number);
+	     if(p->number==a[key+1].number) 
+	     {
+	     	p=&a[key+2];
+	     	continue;
+	     }
+	     p=&p->next;
+	     key++;
+	}
 }
 int main(int argc,char* argv[])
 {
@@ -59,8 +71,10 @@ int main(int argc,char* argv[])
 	for(n=1;n<=k;n++) 
 		{
 			scanf("%d",&a[n].number);
-			a[n - 1].next = &a[n];
+			if(n==k) break;
+			if(n>1) a[n-1].next=&a[n];
 		}
+	head=&a[1];
 	sort(1,k);
 	return 0;
 }
