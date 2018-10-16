@@ -22,7 +22,7 @@ int main(int argc, char *args[]) {
   SDL_Surface *downMessage = NULL;
   SDL_Surface *leftMessage = NULL;
   SDL_Surface *rightMessage = NULL;
-  SDL_Surface *touchMessage = NULL
+  SDL_Surface *touchMessage = NULL;
   SDL_Event event;
   TTF_Font *font = NULL;
   SDL_Color textColor = { 0, 245, 255 };
@@ -30,7 +30,7 @@ int main(int argc, char *args[]) {
   font = TTF_OpenFont("Coffeebreak.ttf", 45);
   upMessage = TTF_RenderText_Solid(font, "Up was pressed.", textColor);
   downMessage = TTF_RenderText_Solid(font, "Down was pressed.", textColor);
-  touchMessage = TTF_RenderText_Solid(font,"Boy Next Door¡á",textColor);
+  touchMessage = TTF_RenderText_Solid(font,"Boy Next Doorï¿½ï¿½",textColor);
   leftMessage = TTF_RenderText_Solid(font, "Left was pressed", textColor);
   rightMessage = TTF_RenderText_Solid(font, "Right was pressed", textColor);
   message = TTF_RenderText_Solid(font, "fuk u n1994", textColor);
@@ -44,7 +44,7 @@ int main(int argc, char *args[]) {
   apply_surface(0, 150, message, screen);
   SDL_Flip(screen);
   if (SDL_pollEvent(&event)) {
-    if (event.key.keysym.sym == SDL.FINGERDOWN) {
+    if (event.key.keysym.sym == SDL_FINGERDOWN) {
     message=touchMessage;break; }
   }
   int quit = 1;
