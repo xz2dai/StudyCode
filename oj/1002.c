@@ -1,7 +1,7 @@
- #include<stdio.h>              //这个题目要排序三个数组,小心超时,冒泡失败了就上快排
- int main()
+ #include<stdio.h>              //这个题目要排序三个数组,冒泡失败了就上快排
+ int main()                            //读入出错了
  {
-     int a[3][5],n,i,k,cup;
+     int a[4][6],n,i,k,cup;
      for(i=1;i<=3;i++)
      {
          for(k=1;k<=5;k++)          //读入
@@ -23,7 +23,7 @@
      }
      for (i = 1; i <= 3;i++)                    //输出
          {
-             printf("%d",a[i][5]); 
+             printf("%d\n",a[i][5]); 
          }
          return 0;
  }
