@@ -3,10 +3,9 @@
 #define PI 3.14159
 int main()
 {
-    int a;
-    double b, c,r;
+    double a,b, c,r;
     scanf("%lf%lf%d", &b, &c, &a);
-    r = (b * b) + (c * c) - (2 * b * c * cos(a));
-    printf("%lf", r);
+    r = sqrt(b * b + c * c - 2 * b * c * cos((a/180)*PI));
+    printf("%.2lf", r);
     return 0;
 }
