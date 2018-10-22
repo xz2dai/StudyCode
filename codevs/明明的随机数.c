@@ -32,30 +32,30 @@ void check()
 		if(a[n]==a[n+1])
 		{
 			again++;
-			continue;
 		}
 	}
 }
 void output()
 {
 	int n;
-	for (n = 1; n <= k; n++)
+	for (n = 1; n <k; n++)
 	{
 		if (a[n] == a[n + 1])
 		{
 			continue;
 		}
-		printf("%d", a[n]);
+		printf("%d ", a[n]);
 	}
+	printf("%d",a[k]);
 }
 int main(int argc,char* argv[])
 {
 	int n;
 	scanf("%d",&k);
-	for(n=1;n<=k;n++) scanf("%d ",&a[n]);
+	for(n=1;n<=k;n++) scanf("%d",&a[n]);
 	sort(1,k);
 	check();
+	printf("%d\n",k-again);
 	output();
-	system("pause");
 	return 0;
 }
