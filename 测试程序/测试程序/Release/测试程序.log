@@ -1,7 +1,6 @@
-﻿  明明的随机数.c
-c:\users\xz2da\documents\github\study\codevs\明明的随机数.c(59): warning C4013: “system”未定义；假设外部返回 int
+﻿  dfs.c
   正在生成代码
-  6 of 10 functions (60.0%) were compiled, the rest were copied from previous compilation.
+  7 of 8 functions (87.5%) were compiled, the rest were copied from previous compilation.
     1 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
