@@ -26,18 +26,27 @@ void sort(int low,int max)
 }
 void check()
 {
-	int c,n;
+	int n;
 	for(n=1;n<=k;n++)
 	{
 		if(a[n]==a[n+1])
 		{
 			again++;
-			for(c=n;c<=k-1;c++)
-			{
-				a[c]=a[c+1];
-			}
 		}
 	}
+}
+void output()
+{
+	int n;
+	for (n = 1; n <k; n++)
+	{
+		if (a[n] == a[n + 1])
+		{
+			continue;
+		}
+		printf("%d ", a[n]);
+	}
+	printf("%d",a[k]);
 }
 int main(int argc,char* argv[])
 {
@@ -47,6 +56,6 @@ int main(int argc,char* argv[])
 	sort(1,k);
 	check();
 	printf("%d\n",k-again);
-	for(n=1;n<=k-again;n++) printf("%d ",a[n]);
+	output();
 	return 0;
 }
