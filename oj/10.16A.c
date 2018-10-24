@@ -1,9 +1,9 @@
 #include<stdio.h>
-#define PI 3.14159
+#include<math.h>
 int main()
 {
-    float r;
-    scanf("%f", &r);
-    printf("%f %f", PI * r * r, 2 * PI * r);
+    double a;
+    scanf("%lf", &a);
+    printf("%.6lf", fabs(a));
     return 0;
 }

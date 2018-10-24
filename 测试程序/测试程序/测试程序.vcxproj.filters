@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\codevs\dfs.c">
+    <ClCompile Include="..\..\SDL\dfs2.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
