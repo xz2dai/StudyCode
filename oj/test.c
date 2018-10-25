@@ -1,7 +1,11 @@
 #include<stdio.h>
 int main()
 {
-	int max=-1, n, i,a,b,c;
-	
-    return 0;
+    int a, b, n;
+    scanf("%d%d",&a,&b);
+    for (n = 0; n < b;n++)
+        {
+            printf("%d ", a + n);
+        }
+        return 0;
 }
