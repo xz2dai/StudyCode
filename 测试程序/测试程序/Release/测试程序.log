@@ -1,11 +1,8 @@
-﻿  test.c
-c:\users\xz2da\documents\github\study\oj\test.c(11): warning C4013: “system”未定义；假设外部返回 int
-c:\users\xz2da\documents\github\study\oj\test.c(4): warning C4101: “a”: 未引用的局部变量
-c:\users\xz2da\documents\github\study\oj\test.c(4): warning C4101: “b”: 未引用的局部变量
-c:\users\xz2da\documents\github\study\oj\test.c(4): warning C4101: “c”: 未引用的局部变量
+﻿  dfs2.c
+c:\users\我的电脑\documents\study\codevs\dfs2.c(8): warning C4013: “system”未定义；假设外部返回 int
   正在生成代码
-  1 of 7 functions (14.3%) were compiled, the rest were copied from previous compilation.
+  2 of 5 functions (40.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成
-  测试程序.vcxproj -> C:\Users\xz2da\Documents\GitHub\study\测试程序\Release\测试程序.exe
+  测试程序.vcxproj -> C:\Users\我的电脑\Documents\study\测试程序\Release\测试程序.exe
