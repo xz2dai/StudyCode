@@ -5,7 +5,7 @@ int main()
 {
 	dfs(1);
 	printf("Total is %d",totol/2);
-	getchar();
+	system("pause");
 	return 0;
 }
 void dfs(int step)
@@ -28,6 +28,5 @@ void dfs(int step)
 			dfs(step + 1);
 			book[i] = 0;
 		}
-		return;
 	}
 }
