@@ -1,3 +1,10 @@
-﻿  hello world!.c
-c:\users\我的电脑\documents\study\hello world!.c(5): warning C4013: “system”未定义；假设外部返回 int
-  测试程序.vcxproj -> C:\Users\我的电脑\Documents\study\测试程序\Debug\测试程序.exe
+﻿  龟兔赛跑.c
+c:\users\xz2da\documents\github\study\oj\龟兔赛跑.c(6): warning C4047: “return”:“char”与“char [15]”的间接级别不同
+c:\users\xz2da\documents\github\study\oj\龟兔赛跑.c(7): warning C4047: “return”:“char”与“char [8]”的间接级别不同
+c:\users\xz2da\documents\github\study\oj\龟兔赛跑.c(8): warning C4047: “return”:“char”与“char [17]”的间接级别不同
+c:\users\xz2da\documents\github\study\oj\龟兔赛跑.c(14): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“int”
+c:\users\xz2da\documents\github\study\oj\龟兔赛跑.c(12): warning C4101: “k”: 未引用的局部变量
+c:\users\xz2da\documents\github\study\oj\龟兔赛跑.c(12): warning C4101: “i”: 未引用的局部变量
+c:\users\xz2da\documents\github\study\oj\龟兔赛跑.c(12): warning C4101: “n”: 未引用的局部变量
+c:\users\xz2da\documents\github\study\oj\龟兔赛跑.c(9): warning C4715: “judge”: 不是所有的控件路径都返回值
+  测试程序.vcxproj -> C:\Users\xz2da\Documents\GitHub\study\测试程序\Debug\测试程序.exe
