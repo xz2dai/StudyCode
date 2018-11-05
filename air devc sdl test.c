@@ -1,5 +1,4 @@
 #include<SDL.h>
-#include<SDL_image.h>//IMG_Load函数所在头文件 
 #include<stdio.h>
 int main(int argc,char* argv[])
 {
