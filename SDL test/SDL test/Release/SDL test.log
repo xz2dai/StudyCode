@@ -1,0 +1,5 @@
+﻿  aaa.cpp
+LINK : warning LNK4044: 无法识别的选项“/SDL”；已忽略
+SDLmain.lib(SDL_win32_main.obj) : error LNK2001: 无法解析的外部符号 __imp__fprintf
+SDLmain.lib(SDL_win32_main.obj) : error LNK2001: 无法解析的外部符号 __imp____iob_func
+C:\Users\我的电脑\Documents\study\SDL test\Release\SDL test.exe : fatal error LNK1120: 2 个无法解析的外部命令

@@ -1,8 +1,16 @@
-﻿  air devc sdl test.c
-c:\users\xz2da\documents\github\study\air devc sdl test.c(8): warning C4013: “IMG_Load”未定义；假设外部返回 int
-c:\users\xz2da\documents\github\study\air devc sdl test.c(8): warning C4047: “=”:“SDL_Surface *”与“int”的间接级别不同
-MSVCRTD.lib(initializers.obj) : warning LNK4098: 默认库“msvcrt.lib”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
-air devc sdl test.obj : error LNK2019: 无法解析的外部符号 _IMG_Load，该符号在函数 _SDL_main 中被引用
-SDLmain.lib(SDL_win32_main.obj) : error LNK2019: 无法解析的外部符号 __imp__fprintf，该符号在函数 _ShowError 中被引用
+﻿  aaa.cpp
+LINK : warning LNK4044: 无法识别的选项“/SDL”；已忽略
+LIBCMTD.lib(initializers.obj) : warning LNK4098: 默认库“msvcrt.lib”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+SDLmain.lib(SDL_win32_main.obj) : warning LNK4217: 本地定义的符号 _exit 在函数 _main 中导入
+SDLmain.lib(SDL_win32_main.obj) : warning LNK4217: 本地定义的符号 _strrchr 在函数 _main 中导入
+SDLmain.lib(SDL_win32_main.obj) : warning LNK4217: 本地定义的符号 _fgetc 在函数 _cleanup_output 中导入
+SDLmain.lib(SDL_win32_main.obj) : warning LNK4217: 本地定义的符号 _fclose 在函数 _cleanup_output 中导入
+SDLmain.lib(SDL_win32_main.obj) : warning LNK4217: 本地定义的符号 _atoi 在函数 _WinMain@16 中导入
+SDLmain.lib(SDL_win32_main.obj) : warning LNK4217: 本地定义的符号 _isspace 在函数 _ParseCommandLine 中导入
 SDLmain.lib(SDL_win32_main.obj) : error LNK2019: 无法解析的外部符号 __imp____iob_func，该符号在函数 _ShowError 中被引用
-C:\Users\xz2da\Documents\GitHub\study\SDL test\Debug\SDL test.exe : fatal error LNK1120: 3 个无法解析的外部命令
+SDLmain.lib(SDL_win32_main.obj) : error LNK2019: 无法解析的外部符号 __imp__remove，该符号在函数 _cleanup_output 中被引用
+SDLmain.lib(SDL_win32_main.obj) : error LNK2019: 无法解析的外部符号 __imp__fopen，该符号在函数 _cleanup_output 中被引用
+SDLmain.lib(SDL_win32_main.obj) : error LNK2019: 无法解析的外部符号 __imp__setbuf，该符号在函数 _redirect_output 中被引用
+SDLmain.lib(SDL_win32_main.obj) : error LNK2019: 无法解析的外部符号 __imp__setvbuf，该符号在函数 _redirect_output 中被引用
+SDLmain.lib(SDL_win32_main.obj) : error LNK2019: 无法解析的外部符号 __imp__freopen，该符号在函数 _redirect_output 中被引用
+C:\Users\我的电脑\Documents\study\SDL test\Debug\SDL test.exe : fatal error LNK1120: 6 个无法解析的外部命令
