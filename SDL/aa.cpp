@@ -61,3 +61,4 @@ bool load_file()
 	background=load_image("background.png");
 	font=TTF_OpenFont("lazy")
 }
+

@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\oj\龟兔赛跑.c">
+    <ClCompile Include="..\..\oj\未命名2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
