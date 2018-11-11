@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\oj\方形盘龙.c">
+    <ClCompile Include="..\..\oj\统计考试成绩.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
