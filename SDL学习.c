@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<SDL.h>
 #include<SDL_ttf.h>
-#include<SDL_events.h>
 #include<SDL_image.h>
 void apply_surface(int x, int y, SDL_Surface * source,SDL_Surface * destination) 
  {
