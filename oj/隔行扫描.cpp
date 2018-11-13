@@ -1,5 +1,5 @@
 #include <stdio.h>
-char a[2003][2003];//定义全局变量因为要最大也就2000 二维数组字符串
+char a[2003][2003];
 int main()
 {
 	int m,n,i;
