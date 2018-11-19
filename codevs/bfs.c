@@ -1,97 +1,54 @@
 #include<stdio.h>
-int map[51][51]={0}, book[51][51]={0};
-struct node
+#include<stdlib.h>
+struct note
 {
 	int x;
 	int y;
-	int step;
+	int s;
 };
-struct move
-{
-	int x;
-	int y;
-};
-int getsum(int x, int y)
-{
-	int sx, sy;
-	int sum = 0;
-	sy = y + 1;
-	sx = x;
-	while (map[sx][sy] != 1)		//���Ҳ���
-	{
-		if (map[sx][sy] == 2) sum++;
-		sy++;
-	}
-	sy = y - 1;
-	sx = x;
-	while (map[sx][sy] != 1)		//�������
-	{
-		if (map[sx][sy] == 2) sum++;
-		sy--;
-	}
-	sy = y;
-	sx = x - 1;
-	while (map[sx][sy] != 1)		//���ϲ���
-	{
-		if (map[sx][sy] == 2) sum++;
-		sx--;
-	}
-	sy = y;
-	sx = x + 1;
-	while (map[sx][sy] != 1)		//���²���
-	{
-		if (map[sx][sy] == 2) sum++;
-		sy++;
-	}
-	return sum;
-}
 int main()
 {
-	struct node nod[2502];
-	int  i, n,j, k,high,wide,sx,sy,head,tail,p,q,tx,ty;
-	struct move up = { -1,0 };
-	struct move down = { 1,0 };
-	struct move left = { 0,-1 };
-	struct move right = { 0,1 };
+	struct note que[2051];
+	int a[50][50]={0},book[50][50]={0};
 	int next[4][2]={{0,1},{1,0},{0,-1},{-1,0}};
-	scanf("%d%d",&high,&wide);
-	for(i=1;i<=high;i++)
-		for(j=1;j<=wide;j++)
-			scanf("%d",&map[i][j]);
-	scanf("%d%d%d%d",&sx,&sy,&p,&q);
-	if (high > 50 || wide > 50) printf("Map too large");
-	head=1;tail=1;
-	nod[tail].x=sx;nod[tail].y=sy;nod[tail].step=0;
+	int head,tail;
+	int i,j,k,n,m,startx,starty,p,q,tx,ty,flag;
+	scanf("%d%d",&n,&m);
+	for(i=1;i<=n;i++)
+		for(j=1;j<=m;j++)
+			scanf("%d",&a[i][j]);
+	scanf("%d%d%d%d",&startx,&starty,&p,&q);
+	head=1;
+	tail=1;
+	que[tail].x=startx;
+	que[tail].y=starty;
+	que[tail].s=0;
 	tail++;
-	book[sx][sy]=1;
-	int flag=0;
+	book[startx][starty]=1;
 	while(head<tail)
 	{
 		for(k=0;k<=3;k++)
 		{
-			tx=nod[head].x+next[k][0];
-			ty=nod[head].y+next[k][1];
-			if(tx<1 || tx>wide || ty<1 || ty>high) continue;
-			if(map[tx][ty]==0 && book[tx][ty]==0)
+			tx=que[head].x+next[k][0];
+			ty=que[head].x+next[k][1];
+			if(tx<1||ty<1||tx>n||ty>m) continue;
+			if(a[tx][ty]==0&&book[tx][ty]==0)
 			{
-				book[tx][ty]==1;
-				nod[tail].x=tx;
-				nod[tail].y=ty;
-				nod[tail].step+=1;
+				book[tx][ty]=1;
+				que[tail].x=tx;
+				que[tail].y=ty;
+				que[tail].s=que[head].x+1;
 				tail++;
 			}
-			if(tx==p && ty==q)
+			if(tx==p&&ty==q)
 			{
 				flag=1;
 				break;
 			}
-		}
-		if(flag==1)
-		{
-			break;
-		}
+		}		
+		if(flag==1)  break;
 		head++;
 	}
-	printf("%d",nod[tail-1].step);
+	printf("%d",que[tail-1].s);
 	return 0;
 }
