@@ -23,6 +23,7 @@ class she                //蛇
 		void move();
 		void grow();		   //吃了fruit则length++
 		void check();       //判断碰撞	12.4计划使用SDL2碰撞检测函数SDL_HasIntersection
+		void show();
 };
 class timer                  //计时器    12.4计划更改为使用std::chrono模板 具体见cppreference
 {
@@ -44,6 +45,7 @@ int init()
 	SDL_CreatWindow("贪吃蛇",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,640,320,0);
 	if(window==NULL) return -1;
 	screen = SDL_GetWindowSurface(window);				//刷新为SDL_UpdateWindowSurface(window)
+	she she1 = new she();
 	return 1;
 };
 void quit()
@@ -82,6 +84,10 @@ she::she()
 	head.y=heady;
 	head.width=Wide;
 	head.height=Length;
+}
+void she::show()
+{
+		
 }
 void she::move()
 {
