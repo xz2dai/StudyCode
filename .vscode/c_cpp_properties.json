@@ -10,7 +10,11 @@
                 "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++",
                 "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++/x86_64-w64-mingw32",
                 "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++/x86_64-w64-mingw32",
-                "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include"
+                "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include",
+                "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/ssp",
+                "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/ssp",
+                "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/ssp",
+                "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/ssp"
             ],
             "defines": [],
             "browse": {

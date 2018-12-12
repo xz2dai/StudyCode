@@ -1,21 +1,28 @@
-#include <stdio.h>
-#include <string.h>
-
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 int main()
 {
-	char s1[1001], s2[1001];
-	gets(s1);
-	gets(s2);
-	if (strcmp(s1, s2) > 0) {
-		printf("s1比s2大");
-		return 0;
+	int i,j,k,cup;
+	char a[1002],b[1002],re[1003];
+	gets(a);
+	gets(b);
+	int lena,lenb;
+	if(strlen(a)>strlen(b)) lena=strlen(a);
+	else lena=strlen(b);
+	for(i=2;i<=lena;i++)
+	{
+		re[i]=(a[i]+b[i])-48;
+		if(re[i]>=58)
+		{
+			re[i]-=58;
+			re[i-1]+=1;
+		}
 	}
-	if (strcmp(s1, s2)==0) {
-		printf("s1与s2相同");
-		return 0;
+	for(i=0;i<=1003;i++)
+	{
+		if(re[i]>=48&&re[i]<=57) 	 printf("%c",re[i]);
 	}
-	if (strcmp(s1, s2)<0) {
-		printf("s1比s2小");
-		return 0;
-	}	
+	return 0;
 }
+
