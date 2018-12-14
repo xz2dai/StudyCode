@@ -14,6 +14,8 @@
                 "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/ssp",
                 "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/ssp",
                 "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/ssp",
+                "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/ssp",
+                "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/ssp",
                 "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/ssp"
             ],
             "defines": [],
