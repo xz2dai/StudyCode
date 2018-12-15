@@ -2,47 +2,46 @@
 #include <string.h>
 int main()
 {
-    char a[100000]={0}, b[100000]={0}, c[100000]={0};
-    int n, j, k=1, i;
+    char a[1000], b[1000];								
+    int a1[1000]={0},b1[1000]={0},c[1001]={0};
+    int n, j, k=0, i;
     scanf("%s%s",&a,&b);
     int lenga=strlen(a), lengb=strlen(b);
     for(i=0;i<lenga;i++)
-        a[i]=a[i]-'0';
+        a1[i]=a[i]-'0';
     for(j=0;j<lengb;j++)
-        b[j]=b[j]-'0';
+        b1[j]=b[j]-'0';
     while(i>=0&&j>=0)
     {
-        c[k] = a[i] + b[j];
-        if(c[k]>=10)
-        {
-            c[k] %= 10;
-            c[k+1]+=1;
-        }
+        c[k] = a1[i] + b1[j];
         i--;
         j--;
         k++;
     }
     if(i>0)
     {
-        k++; 
 		while(i--)
         {
-            c[k] = a[i];
+            c[k] = a1[i];
             k++;
         }
     }
     else if(j>0)
     {
-        k++;
 		while(j--)
         {
-            c[k] = b[j];
+            c[k] = b1[j];
             k++;
         }
     }
+    for(i=1;i<k;i++)
+ 		if(c[i]>=10)
+	 	{
+	 		c[i]%=10;c[i+1]++;
+	 	}
     while(c[k]==0)
         k--;
-    for (n = k; n > 1;n--)
-        printf("%c", c[n] + '0');
+    for (n = k; n > 0;n--)
+        printf("%d", c[n]);
     return 0;
 }
