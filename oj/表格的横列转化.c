@@ -3,7 +3,7 @@
 #include<math.h>
 void rollback(int m,int n)
 {
-    int map1[m+1][n+1],map2[n+1][m+1];
+    int map1[m+1][n+1];
     int i, j, k;
     for (i = 1; i <= m;i++)
     {
