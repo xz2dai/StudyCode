@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
-void rollback(int m,int n)
+void rollback1(int m,int n)
 {
     int map1[m+1][n+1];
     int i, j, k;
@@ -31,7 +31,7 @@ int main(int argc, char const *argv[])
     for (i = 1; i <= n;i++)
     {
         scanf("%d%d", &a, &b);
-        rollback(a, b);
+        rollback1(a, b);
         if(i!=n)
             printf("\n");
     }
