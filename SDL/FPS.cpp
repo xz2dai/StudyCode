@@ -29,6 +29,30 @@ SDL_Surface *load_image( std::string filename )
         }
 	}
 }
+class Timer
+{
+    private:
+        int startticks;
+    public:
+        Timer();
+        void start();
+        int end();
+
+}
+Timer::Timer()
+{
+    startticks=0;
+}
+void Timer::start()
+{
+    startticks=SDL_GetTicks();
+}
+int Timer::end()
+{
+    int passtime;
+    passtime=SDL_GetTicks()-startticks;
+    return passtime;
+}
 int main(int argc,char* args[])
 {
 	SDL_Init(SDl_INIT_EVERYTHING);
@@ -40,11 +64,20 @@ int main(int argc,char* args[])
 	SDL_Event *event;
 	TTF_Font *font=NULL;
 	SDL_Color textColor = { 0, 245, 255 };
-  
+    SDL_Screen screen;
+    SDL_SetVideoMode(640,480,32,SDL_SWSURFACE);
+    if(screen==NULL) return fales;
 	font = TTF_OpenFont("Coffeebreak.ttf", 45);
-	message = TTF_RenderText_Solid( font, "Testing Frame Rate", textColor );
+	SDL_WM_SetCaption("FPS Test",NULL);
+    message = TTF_RenderText_Solid( font, "Testing Frame Rate", textColor );
 	while(quit==false)
 	{
-		fps.start();
+		while(SDL_PollEvent(&event))
+        {
+            if(event.type==SDL_Quit)
+                quit=ture;
+        }
+        fps.start();
+        SDL_WM_SetCaption("")
 	}
 }
