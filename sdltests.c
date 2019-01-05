@@ -1,4 +1,4 @@
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 int main(int argc,char *argv[]){
 	SDL_Init(SDL_INIT_EVERYTHING);
@@ -14,7 +14,7 @@ int main(int argc,char *argv[]){
 	
 	SDL_RenderPresent(renderer);
 	
-	SDL_Delay(10000);
+	SDL_Delay(1000);
 
 	SDL_DestroyRenderer(renderer);	
 	SDL_DestroyWindow(window); 
