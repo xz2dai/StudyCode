@@ -1,0 +1,64 @@
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/我的电脑/Documents/study/ClionProject/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/bin/mingw32-make.exe" "cmTC_15354/fast"
+C:/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_15354.dir\build.make CMakeFiles/cmTC_15354.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/我的电脑/Documents/study/ClionProject/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_15354.dir/testCCompiler.c.obj
+C:\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin\gcc.exe    -o CMakeFiles\cmTC_15354.dir\testCCompiler.c.obj   -c C:\Users\鎴戠殑鐢佃剳\Documents\study\ClionProject\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+gcc.exe: error: C:\Users\鎴戠殑鐢佃剳\Documents\study\ClionProject\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+gcc.exe: fatal error: no input files
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_15354.dir\build.make:65: CMakeFiles/cmTC_15354.dir/testCCompiler.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/我的电脑/Documents/study/ClionProject/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:120: cmTC_15354/fast] Error 2
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/我的电脑/Documents/study/ClionProject/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/bin/mingw32-make.exe" "cmTC_45850/fast"
+C:/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_45850.dir\build.make CMakeFiles/cmTC_45850.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/我的电脑/Documents/study/ClionProject/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_45850.dir/testCCompiler.c.obj
+C:\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin\gcc.exe    -o CMakeFiles\cmTC_45850.dir\testCCompiler.c.obj   -c C:\Users\鎴戠殑鐢佃剳\Documents\study\ClionProject\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+gcc.exe: error: C:\Users\鎴戠殑鐢佃剳\Documents\study\ClionProject\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+gcc.exe: fatal error: no input files
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_45850.dir\build.make:65: CMakeFiles/cmTC_45850.dir/testCCompiler.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/我的电脑/Documents/study/ClionProject/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:120: cmTC_45850/fast] Error 2
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/我的电脑/Documents/study/ClionProject/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/bin/mingw32-make.exe" "cmTC_ffeca/fast"
+C:/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_ffeca.dir\build.make CMakeFiles/cmTC_ffeca.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/我的电脑/Documents/study/ClionProject/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ffeca.dir/testCCompiler.c.obj
+C:\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin\gcc.exe    -o CMakeFiles\cmTC_ffeca.dir\testCCompiler.c.obj   -c C:\Users\鎴戠殑鐢佃剳\Documents\study\ClionProject\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+gcc.exe: error: C:\Users\鎴戠殑鐢佃剳\Documents\study\ClionProject\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+gcc.exe: fatal error: no input files
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_ffeca.dir\build.make:65: CMakeFiles/cmTC_ffeca.dir/testCCompiler.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/我的电脑/Documents/study/ClionProject/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:120: cmTC_ffeca/fast] Error 2
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/我的电脑/Documents/study/ClionProject/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/bin/mingw32-make.exe" "cmTC_eb267/fast"
+C:/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_eb267.dir\build.make CMakeFiles/cmTC_eb267.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/我的电脑/Documents/study/ClionProject/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eb267.dir/testCCompiler.c.obj
+C:\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64\bin\gcc.exe    -o CMakeFiles\cmTC_eb267.dir\testCCompiler.c.obj   -c C:\Users\鎴戠殑鐢佃剳\Documents\study\ClionProject\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+gcc.exe: error: C:\Users\鎴戠殑鐢佃剳\Documents\study\ClionProject\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+gcc.exe: fatal error: no input files
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_eb267.dir\build.make:65: CMakeFiles/cmTC_eb267.dir/testCCompiler.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/我的电脑/Documents/study/ClionProject/cmake-build-debug/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:120: cmTC_eb267/fast] Error 2
+
+
