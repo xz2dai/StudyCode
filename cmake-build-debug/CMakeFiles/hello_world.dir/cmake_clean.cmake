@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/hello_world.dir/hello_world!.c.obj"
+  "CMakeFiles/hello_world.dir/hello_world!.cpp.obj"
   "hello_world.pdb"
   "hello_world.exe"
   "hello_world.exe.manifest"
@@ -7,6 +7,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C)
+foreach(lang CXX)
   include(CMakeFiles/hello_world.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

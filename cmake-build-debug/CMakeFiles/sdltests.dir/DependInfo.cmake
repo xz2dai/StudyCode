@@ -1,15 +1,15 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "C"
+  "CXX"
   )
 # The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Administrator/Documents/study/sdltests.c" "C:/Users/Administrator/Documents/study/cmake-build-debug/CMakeFiles/sdltests.dir/sdltests.c.obj"
+set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/Administrator/Documents/study/sdltests.cpp" "C:/Users/Administrator/Documents/study/cmake-build-debug/CMakeFiles/sdltests.dir/sdltests.cpp.obj"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
-set(CMAKE_C_TARGET_INCLUDE_PATH
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../."
   "C:/SDL2-2.0.9/x86_64-w64-mingw32/include"
   "C:/SDL-1.2.15/include"

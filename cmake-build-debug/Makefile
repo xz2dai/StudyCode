@@ -135,59 +135,59 @@ sdltests/fast:
 	$(MAKE) -f CMakeFiles\sdltests.dir\build.make CMakeFiles/sdltests.dir/build
 .PHONY : sdltests/fast
 
-hello_world!.obj: hello_world!.c.obj
+hello_world!.obj: hello_world!.cpp.obj
 
 .PHONY : hello_world!.obj
 
 # target to build an object file
-hello_world!.c.obj:
-	$(MAKE) -f CMakeFiles\hello_world.dir\build.make CMakeFiles/hello_world.dir/hello_world!.c.obj
-.PHONY : hello_world!.c.obj
+hello_world!.cpp.obj:
+	$(MAKE) -f CMakeFiles\hello_world.dir\build.make CMakeFiles/hello_world.dir/hello_world!.cpp.obj
+.PHONY : hello_world!.cpp.obj
 
-hello_world!.i: hello_world!.c.i
+hello_world!.i: hello_world!.cpp.i
 
 .PHONY : hello_world!.i
 
 # target to preprocess a source file
-hello_world!.c.i:
-	$(MAKE) -f CMakeFiles\hello_world.dir\build.make CMakeFiles/hello_world.dir/hello_world!.c.i
-.PHONY : hello_world!.c.i
+hello_world!.cpp.i:
+	$(MAKE) -f CMakeFiles\hello_world.dir\build.make CMakeFiles/hello_world.dir/hello_world!.cpp.i
+.PHONY : hello_world!.cpp.i
 
-hello_world!.s: hello_world!.c.s
+hello_world!.s: hello_world!.cpp.s
 
 .PHONY : hello_world!.s
 
 # target to generate assembly for a file
-hello_world!.c.s:
-	$(MAKE) -f CMakeFiles\hello_world.dir\build.make CMakeFiles/hello_world.dir/hello_world!.c.s
-.PHONY : hello_world!.c.s
+hello_world!.cpp.s:
+	$(MAKE) -f CMakeFiles\hello_world.dir\build.make CMakeFiles/hello_world.dir/hello_world!.cpp.s
+.PHONY : hello_world!.cpp.s
 
-sdltests.obj: sdltests.c.obj
+sdltests.obj: sdltests.cpp.obj
 
 .PHONY : sdltests.obj
 
 # target to build an object file
-sdltests.c.obj:
-	$(MAKE) -f CMakeFiles\sdltests.dir\build.make CMakeFiles/sdltests.dir/sdltests.c.obj
-.PHONY : sdltests.c.obj
+sdltests.cpp.obj:
+	$(MAKE) -f CMakeFiles\sdltests.dir\build.make CMakeFiles/sdltests.dir/sdltests.cpp.obj
+.PHONY : sdltests.cpp.obj
 
-sdltests.i: sdltests.c.i
+sdltests.i: sdltests.cpp.i
 
 .PHONY : sdltests.i
 
 # target to preprocess a source file
-sdltests.c.i:
-	$(MAKE) -f CMakeFiles\sdltests.dir\build.make CMakeFiles/sdltests.dir/sdltests.c.i
-.PHONY : sdltests.c.i
+sdltests.cpp.i:
+	$(MAKE) -f CMakeFiles\sdltests.dir\build.make CMakeFiles/sdltests.dir/sdltests.cpp.i
+.PHONY : sdltests.cpp.i
 
-sdltests.s: sdltests.c.s
+sdltests.s: sdltests.cpp.s
 
 .PHONY : sdltests.s
 
 # target to generate assembly for a file
-sdltests.c.s:
-	$(MAKE) -f CMakeFiles\sdltests.dir\build.make CMakeFiles/sdltests.dir/sdltests.c.s
-.PHONY : sdltests.c.s
+sdltests.cpp.s:
+	$(MAKE) -f CMakeFiles\sdltests.dir\build.make CMakeFiles/sdltests.dir/sdltests.cpp.s
+.PHONY : sdltests.cpp.s
 
 # Help Target
 help:
