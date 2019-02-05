@@ -1,11 +1,12 @@
 #include <SDL2/SDL.h>
 #include <iostream>
+#include<string>
 
 bool g_pRunning = true;
 SDL_Window* g_pWindow = 0;
 SDL_Renderer* g_pRenderer = 0;
 
-int init(char* title,int xpos,int ypos,int high,int wide,Uint32 flag)
+int init(std::string title,int xpos,int ypos,int high,int wide,Uint32 flag)
 {
 	if(SDL_Init(SDL_INIT_EVERYTHING) >=0 )
     
@@ -16,22 +17,22 @@ int init(char* title,int xpos,int ypos,int high,int wide,Uint32 flag)
 			if(g_pWindow != 0)
         
 			{
-            
-					g_pRenderer = SDL_CreateRenderer(g_pWindow, -1, 0);
-        
-				}
+			    g_pRenderer = SDL_CreateRenderer(g_pWindow, -1, 0);
+			}
     
 		}
-    
-		else
-   
-		{
-        
+	else
+	    {
 			return 1;
-    
 		}
 		 SDL_SetRenderDrawColor(g_pRenderer,0,0,0,255);
 		 return 0;
+}
+
+int quit()
+{
+    SDL_Quit();
+    return 0;
 }
 
 int main(int argc,char* args[])

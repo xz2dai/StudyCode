@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Administrator/Documents/study/hello_world!.cpp" "C:/Users/Administrator/Documents/study/cmake-build-debug/CMakeFiles/hello_world.dir/hello_world!.cpp.obj"
+  "C:/Users/xz2dai/Documents/study/hello_world!.cpp" "C:/Users/xz2dai/Documents/study/cmake-build-debug/CMakeFiles/hello_world.dir/hello_world!.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

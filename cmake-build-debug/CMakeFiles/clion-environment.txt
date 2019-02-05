@@ -1,4 +1,4 @@
-ToolSet: w64 5.0@C:\x86_64-7.2.0-posix-seh-rt_v5-rev1\mingw64
+ToolSet: 15.0 (local)@C:\Program Files (x86)\Microsoft Visual Studio\2017\Community
 Options: 
 
 Options:
