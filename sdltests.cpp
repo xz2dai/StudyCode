@@ -31,8 +31,31 @@ int init(std::string title,int xpos,int ypos,int high,int wide,Uint32 flag)
 
 int quit()
 {
-    SDL_Quit();
+    SDL_DestoryWindow(g_pWindow);
+	SDL_DestoryRenderer(g_pRenderer);
+	SDL_Quit();
     return 0;
+}
+
+int getevent()
+{
+	SDL_Event event;
+	if(SDL_PullEvent(&event))
+	{
+		switch(event.type)
+		{
+			case SDL_QUIT :
+			{
+				quit();
+				break;
+			}
+			default:
+			{
+				break;
+			}
+		}
+	}
+	return 0;
 }
 
 int main(int argc,char* args[])

@@ -21,13 +21,13 @@ int init()
 	screen = SDL_GetWindowSurface(window);				//刷新为SDL_UpdateWindowSurface(window)
 	she she = new She();
 	return 1;
-};
+}
 void quit()
 {
 	SDL_DestoryWindow(window);
 	TTF_Quit();
 	SDL_Quit();
-};
+}
 SDL_Surface *loadimage(char* filename)			//12.4计划将surface转到render
 {
 	SDL_Surface *loadimage=NULL;
@@ -36,7 +36,7 @@ SDL_Surface *loadimage(char* filename)			//12.4计划将surface转到render
 	opimage=SDL_DispalyFormat(loadimage);
 	SDL_FreeSurface(loadimage);
 	return opimage;
-};
+}
 int main(int argc,char* argc[])
 {
 	if(init()==-1)
