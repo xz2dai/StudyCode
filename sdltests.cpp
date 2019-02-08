@@ -1,12 +1,17 @@
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <iostream>
 #include<string>
 
 bool g_pRunning = true;
 SDL_Window* g_pWindow = 0;
 SDL_Renderer* g_pRenderer = 0;
+SDL_Texture* texture;
+SDL_Rect SourceRect;
+SDL_Rect DestinationRect;
 
-int init(std::string title,int xpos,int ypos,int high,int wide,Uint32 flag)
+
+int init(const char* title,int xpos,int ypos,int high,int wide,Uint32 flag)
 {
 	if(SDL_Init(SDL_INIT_EVERYTHING) >=0 )
     
@@ -31,8 +36,8 @@ int init(std::string title,int xpos,int ypos,int high,int wide,Uint32 flag)
 
 int quit()
 {
-    SDL_DestoryWindow(g_pWindow);
-	SDL_DestoryRenderer(g_pRenderer);
+    SDL_DestroyWindow(g_pWindow);
+    SDL_DestroyRenderer(g_pRenderer);
 	SDL_Quit();
     return 0;
 }
@@ -40,11 +45,11 @@ int quit()
 int getevent()
 {
 	SDL_Event event;
-	if(SDL_PullEvent(&event))
+	if(SDL_PollEvent(&event))
 	{
 		switch(event.type)
 		{
-			case SDL_QUIT :
+			case SDL_QUIT:
 			{
 				quit();
 				break;
@@ -58,13 +63,27 @@ int getevent()
 	return 0;
 }
 
+int LoadBMP(const char* filename)
+{
+	SDL_Surface* surface = SDL_LoadBMP(filename);
+	texture = SDL_CreateTextureFromSurface(g_pRenderer,surface);
+	SDL_FreeSurface(surface);
+    SDL_QueryTexture(texture,NULL,NULL,&SourceRect.w,&SourceRect.h);
+    DestinationRect.x = SourceRect.x = 0;
+    DestinationRect.y = SourceRect.y = 0;
+    DestinationRect.w = SourceRect.w;
+    DestinationRect.h = SourceRect.h;
+    SDL_RenderCopy(g_pRenderer,texture,&SourceRect,&DestinationRect);
+    SDL_RenderPresent(g_pRenderer);
+	return 0;
+}
+
 int main(int argc,char* args[])
 {
-    init("sdltest",SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,640,480,0);
-   
-    SDL_RenderClear(g_pRenderer);
-    SDL_RenderPresent(g_pRenderer);
-    SDL_Delay(5000);
-    SDL_Quit();
+    //std::string title("SDL Test");
+    init("SDL_Test",SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,640,480,0);
+    //SDL_RenderClear(g_pRenderer);
+    LoadBMP("a.bmp");
+    SDL_Delay(2000);
     return 0;
 }

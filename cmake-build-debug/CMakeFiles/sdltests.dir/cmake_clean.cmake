@@ -3,7 +3,7 @@ file(REMOVE_RECURSE
   "sdltests.pdb"
   "sdltests.exe"
   "sdltests.exe.manifest"
-  "sdltests.lib"
+  "libsdltests.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
