@@ -28,7 +28,7 @@ int init(const char* title,int xpos,int ypos,int high,int wide,Uint32 flag)
 		}
 	else
 	    {
-			return 1;
+	        return 1;
 		}
 		 SDL_SetRenderDrawColor(g_pRenderer,0,0,0,255);
 		 return 0;
@@ -73,7 +73,9 @@ int LoadBMP(const char* filename)
     DestinationRect.y = SourceRect.y = 0;
     DestinationRect.w = SourceRect.w;
     DestinationRect.h = SourceRect.h;
-    SDL_RenderCopy(g_pRenderer,texture,&SourceRect,&DestinationRect);
+    SDL_RenderClear(g_pRenderer);
+    //SDL_RenderCopy(g_pRenderer,tex ture,&SourceRect,&DestinationRect);
+    SDL_RenderCopy(g_pRenderer,texture,0,0);
     SDL_RenderPresent(g_pRenderer);
 	return 0;
 }
@@ -83,7 +85,7 @@ int main(int argc,char* args[])
     //std::string title("SDL Test");
     init("SDL_Test",SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,640,480,0);
     //SDL_RenderClear(g_pRenderer);
-    LoadBMP("a.bmp");
+    LoadBMP("../BMPTEST.bmp");
     SDL_Delay(2000);
     return 0;
 }
