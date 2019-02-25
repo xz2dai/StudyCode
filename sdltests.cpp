@@ -1,14 +1,15 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
-#include<string>
+#include <string>
 
-bool g_pRunning = true;
+bool Running;
 SDL_Window* g_pWindow = 0;
 SDL_Renderer* g_pRenderer = 0;
 SDL_Texture* texture;
 SDL_Rect SourceRect;
 SDL_Rect DestinationRect;
+SDL_Event event;
 
 
 int init(const char* title,int xpos,int ypos,int high,int wide,Uint32 flag)
@@ -31,6 +32,7 @@ int init(const char* title,int xpos,int ypos,int high,int wide,Uint32 flag)
 	        return 1;
 		}
 		 SDL_SetRenderDrawColor(g_pRenderer,0,0,0,255);
+	std::cout<<"Start success"<<std::endl;
 		 return 0;
 }
 
@@ -44,14 +46,14 @@ int quit()
 
 int getevent()
 {
-	SDL_Event event;
 	if(SDL_PollEvent(&event))
 	{
 		switch(event.type)
 		{
 			case SDL_QUIT:
 			{
-				quit();
+
+				Running = false;
 				break;
 			}
 			default:
@@ -63,29 +65,53 @@ int getevent()
 	return 0;
 }
 
+void update()
+{
+    Uint32 starttime,passtime;
+    starttime = SDL_GetTicks();
+    SourceRect.w = 73 * int((SDL_GetTicks()/8));
+    SDL_RenderClear(g_pRenderer);
+    SDL_RenderCopyEx(g_pRenderer,texture,&SourceRect,0,0,0,SDL_FLIP_HORIZONTAL);  //DestinationRect 改为了0
+    SDL_RenderPresent(g_pRenderer);
+    passtime = starttime-SDL_GetTicks();
+    if( passtime < 1000/60)
+    {
+        SDL_Delay(Uint32( 1000/60 ) - passtime);
+    }
+
+}
+
 int LoadBMP(const char* filename)
 {
-	SDL_Surface* surface = SDL_LoadBMP(filename);
+	SDL_Surface* surface = IMG_Load(filename);
 	texture = SDL_CreateTextureFromSurface(g_pRenderer,surface);
 	SDL_FreeSurface(surface);
     SDL_QueryTexture(texture,NULL,NULL,&SourceRect.w,&SourceRect.h);
+    SourceRect.w = 73;
+    SourceRect.h = 174;
     DestinationRect.x = SourceRect.x = 0;
     DestinationRect.y = SourceRect.y = 0;
-    DestinationRect.w = SourceRect.w;
-    DestinationRect.h = SourceRect.h;
+    //DestinationRect.w = SourceRect.w;
+    //DestinationRect.h = SourceRect.h;
     SDL_RenderClear(g_pRenderer);
     //SDL_RenderCopy(g_pRenderer,tex ture,&SourceRect,&DestinationRect);
-    SDL_RenderCopy(g_pRenderer,texture,0,0);
+    SDL_RenderCopyEx(g_pRenderer,texture,&SourceRect,&DestinationRect,0,0,SDL_FLIP_HORIZONTAL);
     SDL_RenderPresent(g_pRenderer);
 	return 0;
 }
 
 int main(int argc,char* args[])
 {
+    Running = true;
     //std::string title("SDL Test");
     init("SDL_Test",SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,640,480,0);
     //SDL_RenderClear(g_pRenderer);
-    LoadBMP("../BMPTEST.bmp");
-    SDL_Delay(2000);
+    LoadBMP("../image/timg.jpg");
+    while(Running)
+    {
+        update();
+        getevent();
+    }
+    std::cout<<"Quit";
     return 0;
 }
