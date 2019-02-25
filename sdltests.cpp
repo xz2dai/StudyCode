@@ -71,13 +71,15 @@ void update()
     starttime = SDL_GetTicks();
     SourceRect.w = 73 * int((SDL_GetTicks()/8));
     SDL_RenderClear(g_pRenderer);
-    SDL_RenderCopyEx(g_pRenderer,texture,&SourceRect,0,0,0,SDL_FLIP_HORIZONTAL);  //DestinationRect 改为了0
+    SDL_RenderCopy(g_pRenderer, texture, &SourceRect, &DestinationRect);
+    //SDL_RenderCopyEx(g_pRenderer,texture,&SourceRect,0,0,0,SDL_FLIP_HORIZONTAL);  //DestinationRect 改为了0
     SDL_RenderPresent(g_pRenderer);
     passtime = starttime-SDL_GetTicks();
-    if( passtime < 1000/60)
+    /*if( passtime < 1000/60)
     {
         SDL_Delay(Uint32( 1000/60 ) - passtime);
-    }
+    }*/
+    SDL_Delay(100);
 
 }
 
@@ -86,17 +88,17 @@ int LoadBMP(const char* filename)
 	SDL_Surface* surface = IMG_Load(filename);
 	texture = SDL_CreateTextureFromSurface(g_pRenderer,surface);
 	SDL_FreeSurface(surface);
-    SDL_QueryTexture(texture,NULL,NULL,&SourceRect.w,&SourceRect.h);
+    //SDL_QueryTexture(texture,NULL,NULL,&SourceRect.w,&SourceRect.h);
     SourceRect.w = 73;
     SourceRect.h = 174;
     DestinationRect.x = SourceRect.x = 0;
     DestinationRect.y = SourceRect.y = 0;
     //DestinationRect.w = SourceRect.w;
     //DestinationRect.h = SourceRect.h;
-    SDL_RenderClear(g_pRenderer);
+    //SDL_RenderClear(g_pRenderer);
     //SDL_RenderCopy(g_pRenderer,tex ture,&SourceRect,&DestinationRect);
-    SDL_RenderCopyEx(g_pRenderer,texture,&SourceRect,&DestinationRect,0,0,SDL_FLIP_HORIZONTAL);
-    SDL_RenderPresent(g_pRenderer);
+    //SDL_RenderCopyEx(g_pRenderer,texture,&SourceRect,&DestinationRect,0,0,SDL_FLIP_HORIZONTAL);
+    //SDL_RenderPresent(g_pRenderer);
 	return 0;
 }
 
@@ -107,6 +109,7 @@ int main(int argc,char* args[])
     init("SDL_Test",SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,640,480,0);
     //SDL_RenderClear(g_pRenderer);
     LoadBMP("../image/timg.jpg");
+    update();
     while(Running)
     {
         update();
