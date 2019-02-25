@@ -105,6 +105,7 @@ int LoadBMP(const char* filename)
 int main(int argc,char* args[])
 {
     Running = true;
+    std::cout<<"Hello World";
     //std::string title("SDL Test");
     init("SDL_Test",SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,640,480,0);
     //SDL_RenderClear(g_pRenderer);
