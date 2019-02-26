@@ -2,6 +2,7 @@
 #include <SDL2/SDL_image.h>
 #include <iostream>
 #include <string>
+#include <map>
 
 bool Running;
 SDL_Window* g_pWindow = 0;
@@ -10,7 +11,7 @@ SDL_Texture* texture;
 SDL_Rect SourceRect;
 SDL_Rect DestinationRect;
 SDL_Event event;
-
+std::map<std::string,SDL_Texture*> TextureMap;
 
 int init(const char* title,int xpos,int ypos,int high,int wide,Uint32 flag)
 {
@@ -100,6 +101,26 @@ int LoadBMP(const char* filename)
     //SDL_RenderCopyEx(g_pRenderer,texture,&SourceRect,&DestinationRect,0,0,SDL_FLIP_HORIZONTAL);
     //SDL_RenderPresent(g_pRenderer);
 	return 0;
+}
+
+int loadIMG(std::string filename,std::string id)
+{
+    SDL_Surface* surface = IMG_Load(filename.c_str());
+    if(surface == 0)
+    {
+        std::cout<<"Load IMG Fail"<<std::endl;
+        return 1
+    }
+    SDL_Texture* texture1 = SDL_CreateTextureFromSurface(g_pRenderer,surface);
+    SDL_FreeSurface(surface);
+    if(texture1 != 0)
+    {
+        TextureMap[id] = texture1;
+        std::cout<<"Load IMG to Map success"<<std::endl;
+        return 0;
+    }
+    std::cout<<"Load IMG Fail"<<std::endl;
+    return 1;
 }
 
 int main(int argc,char* args[])
