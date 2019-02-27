@@ -3,6 +3,7 @@
 
 int main(int argc,char* args[])
 {
+    Base base;
     //std::string title("SDL Test");
     base.init("SDL_Test",SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,640,480,0);
     //SDL_RenderClear(g_pRenderer);

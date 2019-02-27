@@ -21,6 +21,6 @@ SDL_Rect SourceRect;
 SDL_Rect DestinationRect;
 SDL_Event event;
 std::map<std::string,SDL_Texture*> TextureMap;
-Base base;
+
 
 #endif //NMSL_RETRO_SNAKER_CONFIG_H
