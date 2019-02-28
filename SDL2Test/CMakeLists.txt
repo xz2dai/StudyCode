@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.9.0)
 
-project(NMSL-Retro-Snaker)
+project(SDL2_Test)
 
 include_directories(
         ./

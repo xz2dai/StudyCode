@@ -62,14 +62,14 @@ int Base::getevent()
 
 void Base::update()
 {
-    Uint32 starttime,passtime;
-    starttime = SDL_GetTicks();
+    //Uint32 starttime,passtime;
+    //starttime = SDL_GetTicks();
     SourceRect.w = 73 * int((SDL_GetTicks()/8));
     SDL_RenderClear(g_pRenderer);
     SDL_RenderCopy(g_pRenderer, texture, &SourceRect, &DestinationRect);
     //SDL_RenderCopyEx(g_pRenderer,texture,&SourceRect,0,0,0,SDL_FLIP_HORIZONTAL);  //DestinationRect 改为了0
     SDL_RenderPresent(g_pRenderer);
-    passtime = starttime-SDL_GetTicks();
+    //passtime = starttime-SDL_GetTicks();
     /*if( passtime < 1000/60)
     {
         SDL_Delay(Uint32( 1000/60 ) - passtime);
@@ -103,7 +103,7 @@ int Base::LoadIMG(std::string filename,std::string id)
     if(surface == 0)
     {
         std::cout<<"Load IMG Fail"<<std::endl;
-        return 1
+        return 1;
     }
     SDL_Texture* texture1 = SDL_CreateTextureFromSurface(g_pRenderer,surface);
     SDL_FreeSurface(surface);
