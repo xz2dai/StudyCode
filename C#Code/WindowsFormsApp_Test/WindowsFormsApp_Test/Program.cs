@@ -17,6 +17,8 @@ namespace WindowsFormsApp_Test
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            Form Form2 = new Form();
+            MessageBox.Show("窗口关闭成功"); 
         }
     }
 }
