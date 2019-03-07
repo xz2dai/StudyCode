@@ -12,15 +12,15 @@ namespace WindowsFormsApp_Test
 {
     public partial class Form2 : Form
     {
-        System.Timers.Timer t1 = new System.Timers.Timer(6300);
+        System.Timers.Timer t1 = new System.Timers.Timer();
         public Form2()
         {
             InitializeComponent();
-            t1.Elapsed +=new System.Timers.ElapsedEventHandler(excuce);
-            t1.AutoReset = true;
-            t1.Enabled = true;
+            Control.CheckForIllegalCrossThreadCalls = false;
             t1.Start();
-            
+            t1.Interval = 6400;
+            t1.Elapsed += new System.Timers.ElapsedEventHandler(excute);
+            t1.AutoReset = false;
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -28,15 +28,17 @@ namespace WindowsFormsApp_Test
 
         }
 
-        private void Form2_Shown(object sender, EventArgs e)
+        private void excute(object sender,System.Timers.ElapsedEventArgs e)
+        {
+            t1.Stop();
+            t1.Close();
+            this.Close();
+            MessageBox.Show("Link Fail");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
-        }
-        public void excuce(object sender, System.Timers.ElapsedEventArgs e)
-        {
-            MessageBox.Show("Link Fail");
-            t1.Stop();
-            this.Close();
         }
     }
 }

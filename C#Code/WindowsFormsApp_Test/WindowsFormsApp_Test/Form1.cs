@@ -17,13 +17,15 @@ namespace WindowsFormsApp_Test
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
+            Form2 f2 = new Form2();
+            f2.Show();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
