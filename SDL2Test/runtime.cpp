@@ -116,3 +116,17 @@ int Base::LoadIMG(std::string filename,std::string id)
     std::cout<<"Load IMG Fail"<<std::endl;
     return 1;
 }
+int GameObject::Get_Pos_X()
+{
+    return x;
+}
+int GameObject::Get_POS_Y()
+{
+    return y;
+}
+void GameObject::move()
+{
+    x+=s_x;
+    y+=s_y;
+    return;
+}

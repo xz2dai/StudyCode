@@ -63,9 +63,29 @@ namespace WindowsFormsApp_Test.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap _70431221be9b7a276c2c01f97b5cb624 {
+            get {
+                object obj = ResourceManager.GetObject("70431221be9b7a276c2c01f97b5cb624", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap LinkStart {
             get {
                 object obj = ResourceManager.GetObject("LinkStart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap SAO_BackGround {
+            get {
+                object obj = ResourceManager.GetObject("SAO_BackGround", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -32,7 +32,21 @@ class Base
         int LoadBMP(const char* filename);
         int LoadIMG(std::string filename,std::string id);
 };
-
+class GameObject
+{
+    private:
+         int width;
+         int height;
+         int x;
+         int y;
+         int s_x;
+         int s_y;
+    public:
+        void move();
+        int Hit_judge();
+        int Get_Pos_X();
+        int Get_POS_Y();
+};
 
 
 #endif

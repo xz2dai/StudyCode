@@ -19,7 +19,7 @@ namespace WindowsFormsApp_Test
 
         public void button1_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
+            Form2 f2 = Form2.SingleMethod();
             f2.Show();
             
         }

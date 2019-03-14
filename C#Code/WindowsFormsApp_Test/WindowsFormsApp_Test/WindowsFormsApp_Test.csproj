@@ -92,5 +92,10 @@
   <ItemGroup>
     <None Include="Resources\LinkStart.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\70431221be9b7a276c2c01f97b5cb624.jpg" />
+    <None Include="Resources\SAO_BackGround.jpg" />
+    <None Include="Resources\70431221be9b7a276c2c01f97b5cb6241.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

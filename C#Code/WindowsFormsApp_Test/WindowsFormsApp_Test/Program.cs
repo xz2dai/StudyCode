@@ -20,4 +20,8 @@ namespace WindowsFormsApp_Test
             MessageBox.Show("欢迎再次登陆"); 
         }
     }
+    public class Basiccontrol
+    {
+        
+    }
 }
