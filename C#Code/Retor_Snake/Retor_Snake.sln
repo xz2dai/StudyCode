@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Retor_Snake", "Retor_Snake\Retor_Snake.csproj", "{35F723E0-7B37-4255-BEB3-996AEF7EB169}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35F723E0-7B37-4255-BEB3-996AEF7EB169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F723E0-7B37-4255-BEB3-996AEF7EB169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F723E0-7B37-4255-BEB3-996AEF7EB169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F723E0-7B37-4255-BEB3-996AEF7EB169}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E6109D5-AE5C-4738-84CD-D3D713B54A67}
+	EndGlobalSection
+EndGlobal
