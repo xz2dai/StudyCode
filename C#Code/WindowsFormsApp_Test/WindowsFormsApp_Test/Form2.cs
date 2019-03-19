@@ -23,7 +23,7 @@ namespace WindowsFormsApp_Test
             Control.CheckForIllegalCrossThreadCalls = false;
             t1.Start();
             t1.Interval = 6400;
-            t1.Elapsed += new System.Timers.ElapsedEventHandler(excute);
+            t1.Elapsed += new System.Timers.ElapsedEventHandler(Excute);
             t1.AutoReset = false;
         }
 
@@ -33,7 +33,7 @@ namespace WindowsFormsApp_Test
             pictureBox1.Height = image.Height;
         }
 
-        private void excute(object sender,System.Timers.ElapsedEventArgs e)
+        private void Excute(object sender,System.Timers.ElapsedEventArgs e)
         {
             t1.Stop();
             t1.Close();
@@ -41,7 +41,7 @@ namespace WindowsFormsApp_Test
             MessageBox.Show("Link Fail");
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
 
         }
