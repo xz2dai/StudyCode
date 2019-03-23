@@ -178,6 +178,11 @@ namespace Retor_Snake
             Is_Running = true;
             return 0;
         }
+        static bool Hit(int x1,int y1,int x2,int y2)
+        {
+            if()
+            return false;
+        }
     }
     class Item
     {
