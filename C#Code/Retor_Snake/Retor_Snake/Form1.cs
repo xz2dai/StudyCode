@@ -15,10 +15,12 @@ namespace Retor_Snake
 {
     public partial class Form1 : Form
     {
+        /*
         [DllImport("kernel32.dll")]
         static extern bool FreeConsole();
         [DllImport("kernel32.dll")]
         public static extern bool AllocConsole();
+        */
         Graphics m_graphics;
         Game Game;
         public Form1()
@@ -28,17 +30,16 @@ namespace Retor_Snake
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            AllocConsole();
-            Console.WriteLine("开始加载渲染器");
+            this.Text = "开始加载渲染器";
             try
             {
                 m_graphics = this.CreateGraphics();
             }
             catch
             {
-                Console.WriteLine("渲染器加载失败");
+                MessageBox.Show("渲染器加载失败");
             }
-            Console.WriteLine("窗体加载完成");
+            this.Text = "窗体加载完成";
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -71,12 +72,11 @@ namespace Retor_Snake
                         break;
                     }
             }
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("开始加载游戏");
+            this.Text = "开始加载游戏";
             try
             {
                 Game = Game.Single_game();
@@ -84,8 +84,9 @@ namespace Retor_Snake
             }
             catch
             {
-                Console.WriteLine("加载游戏失败");
+                MessageBox.Show("加载游戏失败");
             }
+            button1.Visible = false;
         }
     }
     class Game
@@ -104,6 +105,7 @@ namespace Retor_Snake
             }
             return Game_s;
         }
+        /*
         class Handevents:Game  
         {
             public delegate void BoilerLogHander(string status);
@@ -113,6 +115,7 @@ namespace Retor_Snake
 
             }
         }
+        */
         class FrapsManage
         {
             System.DateTime timer = new DateTime();
@@ -130,11 +133,11 @@ namespace Retor_Snake
         public void Excution()
         {
             FrapsManage frapsManage = new FrapsManage();
-            Handevents handevents = new Handevents();
+            //Handevents handevents = new Handevents();
             while (!Is_Running)
             {
                 frapsManage.Start();
-                handevents.Getevent();
+                //handevents.Getevent();
                 Flip();
                 frapsManage.Delay();
             }
@@ -143,7 +146,7 @@ namespace Retor_Snake
         {
             if(Init()==1)
             {
-                Console.WriteLine("初始化失败");
+                MessageBox.Show("初始化失败");
             }
         }
         public void Flip()                                  
@@ -159,7 +162,6 @@ namespace Retor_Snake
                 if (snakelist[i] == null) break;
                 snakelist[i].Draw(Tools.m_graphics);
             }
-            Console.WriteLine("刷新");
         }
         public int Init()
         {
@@ -178,31 +180,44 @@ namespace Retor_Snake
             Is_Running = true;
             return 0;
         }
-        static bool Hit(int x1,int y1,int x2,int y2)
+        static bool Hit(Item hiter,Item ishit)
         {
-            if()
+            if(
+                (hiter.X == ishit.X && hiter.X == ishit.Y) ||
+                (hiter.X >= ishit.X-10 && hiter.Y == ishit.Y) ||
+                (hiter.X == ishit.X && hiter.Y <= ishit.Y-10) ||
+                (hiter.X <= ishit.X+10 && hiter.X == ishit.Y) ||
+                (hiter.X == ishit.X && hiter.X >= ishit.Y+10) 
+               )
+            {
+
+            }
             return false;
         }
     }
     class Item
     {
-        protected int x;
-        protected int y;
+        private int x;
+        private int y;
         readonly protected int w = 10;
         readonly protected int h = 10;
+
+        public int X { get => x; set => x = value; }
+        public int Y { get => y; set => y = value; }
+
         public Item()
         {
-            x = (int)Tools.Random.Next(10) * 100;
-            y = (int)Tools.Random.Next(10) * 100;
+            X = (int)Tools.Random.Next(10) * 100;
+            Y = (int)Tools.Random.Next(10) * 100;
         }
         public virtual void Draw(Graphics g)
         {
-            g.DrawRectangle(Tools.pen_white, x, y, w, h);
+            g.DrawRectangle(Tools.pen_white, X, Y, w, h);
         }
         public virtual void Set(int setx,int sety)
         {
-            x = setx;
-            y = sety;
+            X = setx;
+            Y = sety;
         }
     }
     class Snake : Item
@@ -211,12 +226,11 @@ namespace Retor_Snake
         int V_y = 10;
         public  Snake()
         {
-            Console.WriteLine("snake被创建");
         }
         public void Move()
         {
-            x += V_x;
-            y += V_y;
+            X += V_x;
+            Y += V_y;
         }
         public override void Draw(Graphics g)
         {
@@ -248,7 +262,6 @@ namespace Retor_Snake
         static Fruit Single_Fruit;
         private Fruit()
         {
-            Console.WriteLine("wall被创建");
         }
         public static Fruit SingleFruit()                       //单例fruit
         {
@@ -261,7 +274,7 @@ namespace Retor_Snake
         }
         public override void Draw(Graphics g)
         {
-            g.DrawRectangle(Tools.pen_pink, x, y, w, h);
+            g.DrawRectangle(Tools.pen_pink, X, Y, w, h);
         }
         private void Reborn()
         {
@@ -272,12 +285,11 @@ namespace Retor_Snake
     {
         public Wall()
         {
-            Console.WriteLine("wall被创建");
         }
 
         public override void Draw(Graphics g)
         {
-            g.DrawRectangle(Tools.pen_white, x, y, w, h);
+            g.DrawRectangle(Tools.pen_white, X, Y, w, h);
         }
     }
     static public class Tools
