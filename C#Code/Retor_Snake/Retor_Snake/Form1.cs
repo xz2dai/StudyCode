@@ -30,16 +30,7 @@ namespace Retor_Snake
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Text = "开始加载渲染器";
-            try
-            {
-                m_graphics = this.CreateGraphics();
-            }
-            catch
-            {
-                MessageBox.Show("渲染器加载失败");
-            }
-            this.Text = "窗体加载完成";
+            
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -76,7 +67,19 @@ namespace Retor_Snake
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            this.Text = "开始加载游戏";
+            this.Text = "开始加载渲染器";
+            try
+            {
+                m_graphics = this.CreateGraphics();
+                Game.DrawSide(m_graphics,this);
+                Tools.m_graphics = m_graphics;
+            }
+            catch
+            {
+                MessageBox.Show("渲染器加载失败");
+            }
+            this.Text = "窗体加载完成";
+            this.Text = "开始加载主部件";
             try
             {
                 Game = Game.Single_game();
@@ -84,9 +87,11 @@ namespace Retor_Snake
             }
             catch
             {
-                MessageBox.Show("加载游戏失败");
+                MessageBox.Show("加载失败");
+                this.Close();
             }
             button1.Visible = false;
+            this.Text = "加载主部件完成";
         }
     }
     class Game
@@ -144,10 +149,15 @@ namespace Retor_Snake
         }
         Game()
         {
-            if(Init()==1)
+            try
+            {
+                Init();
+            }
+            catch
             {
                 MessageBox.Show("初始化失败");
             }
+            
         }
         public void Flip()                                  
         {
@@ -175,7 +185,6 @@ namespace Retor_Snake
             for (int i = 1; i <= 4; i++)
             {
                 snakelist.Add(new Snake());      //初始化Snake
-                
             }
             Is_Running = true;
             return 0;
@@ -190,9 +199,19 @@ namespace Retor_Snake
                 (hiter.X == ishit.X && hiter.X >= ishit.Y+10) 
                )
             {
-
+                return true;
             }
             return false;
+        }
+        public static void DrawSide(Graphics g,Form form)
+        {
+            /*
+            g.FillRectangle(Tools.brush_white, 10, 0, 620, 10);
+            g.FillRectangle(Tools.brush_white, 0, 0, 10, 470);
+            g.FillRectangle(Tools.brush_white, 630, 0, 10, 470);
+            g.FillRectangle(Tools.brush_white, 0, 630, 620, 10);
+            */
+            g.DrawRectangle(Tools.pen_white_10,0,0,form.Width,form.Height);
         }
     }
     class Item
@@ -207,12 +226,12 @@ namespace Retor_Snake
 
         public Item()
         {
-            X = (int)Tools.Random.Next(10) * 100;
-            Y = (int)Tools.Random.Next(10) * 100;
+            X = (int)Tools.Random.Next(6) * 100;
+            Y = (int)Tools.Random.Next(4) * 100;
         }
         public virtual void Draw(Graphics g)
         {
-            g.DrawRectangle(Tools.pen_white, X, Y, w, h);
+            g.FillRectangle(Tools.brush_white, x, y, 10, 10);
         }
         public virtual void Set(int setx,int sety)
         {
@@ -226,6 +245,8 @@ namespace Retor_Snake
         int V_y = 10;
         public  Snake()
         {
+            X = 320;
+            Y = 240;
         }
         public void Move()
         {
@@ -234,7 +255,7 @@ namespace Retor_Snake
         }
         public override void Draw(Graphics g)
         {
-            base.Draw(g);
+            g.DrawRectangle(Tools.pen_white, X, Y, w, h);
         }
         public void M_UP()
         {
@@ -262,6 +283,8 @@ namespace Retor_Snake
         static Fruit Single_Fruit;
         private Fruit()
         {
+            //X = Tools.Random.Next();
+            //Y = Tools.Random.Next();
         }
         public static Fruit SingleFruit()                       //单例fruit
         {
@@ -298,10 +321,15 @@ namespace Retor_Snake
         static public Brush brs_white = new SolidBrush(Color.White);
         static public Brush brs_pink = new SolidBrush(Color.Pink);
         static public Pen pen_white = new Pen(Color.White);
+        static public Pen pen_white_10 = new Pen(Color.White,10);
         static public Pen pen_pink = new Pen(Color.Pink);
         static public Pen pen_black = new Pen(Color.Black);
         static public Random Random = new Random();
         static public Graphics m_graphics;
+        static public Brush brush_white = new SolidBrush(Color.White);
+        static public Brush brush_black = new SolidBrush(Color.Black);
+        static public Brush brush_pink = new SolidBrush(Color.Pink);
     }
     
 }
+ 
