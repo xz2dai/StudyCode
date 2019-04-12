@@ -51,6 +51,8 @@ int main(int argc, char const *argv[])
 				app[j]=c;
 			}
 		}
+		for(k=i+1;k<=n;k++)
+			cout<<app[k];
 	}
 	cout<<cost;
         return 0;
