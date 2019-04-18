@@ -31,5 +31,15 @@ namespace GUI绘图测试
             g.DrawRectangle(pen_black, (int)this.Width / 2, (int)this.Height / 2, 20, 20);
             g.FillRectangle(brush_black, (int)this.Width / 2, (int)this.Height / 2, 20, 20);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
     }
 }
