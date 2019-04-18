@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Application1</string>
+    <string name="res_test">字符串引用测试</string>
 </resources>
