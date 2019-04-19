@@ -1,5 +1,7 @@
 #include<stdio.h>
 int a[101];
+void swap(int *a, int *b);
+void qsort(int low, int high);
 int main(int argc,char* args[])
 {
 	int i, n;
@@ -17,16 +19,17 @@ int main(int argc,char* args[])
 	getchar();
 	return 0;
 }
-int qsort(int low,int high)
+void qsort(int low,int high)
 {
 	if(low>=high)
-		return 0;
+		return;
 	int i=low+1, j=high, key=a[low];
 	while(i<j && a[i]<key) 
 		i++;
 	while(i<j && a[j]>key)
 		j++;
-	swap()
+	swap(&key,&a[i]);
+
 }
 int max(a,b)
 {
@@ -40,4 +43,10 @@ int min(a,b)
 	else
 		return b;
 }
-int swap(int a,int b)
+void swap(int *a,int *b)
+{
+    int t;
+    t = *a;
+    *a = *b;
+    *b = t;
+}

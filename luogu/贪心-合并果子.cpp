@@ -1,6 +1,5 @@
 //先快排然后合并，每一次合并后都要更新序列，合并后的果堆不一定是最小果堆
-#include<iostream>
-#include<cstdlib>
+#include<bits/stdc++.h>
 using namespace std;
 void qsort(int *arr,int low,int high)
 {
@@ -30,16 +29,17 @@ int main(int argc, char const *argv[])
 {
     int n, i, j, k;
 	int cost = 0;
-    int app[10001];
+    int app[100001];
     cin >> n;
     for (i = 1; i <= n;i++)
         cin >> app[i];
-    qsort(app,1,n);
+    qsort(app,1,n);								//排序果堆,找出最小的两个堆
 	for (i=1;i<=n-1;i++)
 	{
-		cost+=app[i]+app[i+1];
+		cost+=app[i]+app[i+1];					//合并果堆
 		app[i+1]+=app[i];
-		for(j=i+2;j<=n;j++)
+		/*
+		for(j=i+2;j<=n;j++)						//刷新果堆排序
 		{
 			if(app[i+1]>app[j])
 			{
@@ -51,9 +51,27 @@ int main(int argc, char const *argv[])
 				app[j]=c;
 			}
 		}
-		for(k=i+1;k<=n;k++)
-			cout<<app[k];
+		*/
+		//用冒泡解决剩余数据试试
+		for (j = i + 1; j <= n;j++)
+		{
+			for (k = j+1; k <= n;k++)
+			{
+				if(app[j]>app[k])
+				{
+					int t;
+					t=app[i];
+					app[i]=app[j];
+					app[j]=t;
+				}
+			}
+		}
+		///*
+		for (k = i + 1; k <= n; k++)
+			cout << app[k] << " ";
+		cout << endl;
+		//*/
 	}
 	cout<<cost;
-        return 0;
+    return 0;
 }
