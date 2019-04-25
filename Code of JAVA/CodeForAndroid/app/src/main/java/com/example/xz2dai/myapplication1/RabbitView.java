@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Paint;
 import android.view.View;
+import java.awt.*;
 
 public class RabbitView extends View {
     public float bitmapX;
@@ -16,11 +17,14 @@ public class RabbitView extends View {
         bitmapY = 130;
     }
     @Override
-    protected  void onDraw(Canvans canvans){
+    protected void onDraw(Canvans canvans){
         super.onDraw();
         Paint paint = new Paint();
-        Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(),R.drawable.rabbit);
-        canvans.drawBitmap
+        Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(),R.drawable.wandou);
+        canvans.drawBitmap(bitmap,bitmapX,bitmapY,paint);
+        if(bitmap.isRecycled()){
+            bitmap.recycle();
+        }
     }
 
 }
