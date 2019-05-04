@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrapsManage.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Interface\Item.cs" />
     <Compile Include="Interface\plants.cs" />
@@ -96,6 +97,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\豌豆射手.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Peashooter.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PeashooterLimpid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SunFlower.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SunFlowerLimpid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zombie.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZombieAttack.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\除草机.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
