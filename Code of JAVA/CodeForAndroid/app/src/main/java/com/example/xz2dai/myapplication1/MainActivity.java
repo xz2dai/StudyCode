@@ -1,14 +1,19 @@
 package com.example.xz2dai.myapplication1;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.*;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
-    @Override
+    private Button torich;
+	private TextView richnum;
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+		torich = (Button)findViewById(R.id.torich);
+		richnum = (TextView)findViewById(R.id.richnum);
     }
 }
