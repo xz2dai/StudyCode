@@ -52,8 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrapsManage.cs" />
+    <Compile Include="Plants\PutDownPlant.cs" />
+    <Compile Include="Tools\Flip.cs" />
+    <Compile Include="Tools\FrapsManage.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Interface\IAddItemFactory.cs" />
+    <Compile Include="Interface\IDrawFactory.cs" />
     <Compile Include="Interface\Item.cs" />
     <Compile Include="Interface\plants.cs" />
     <Compile Include="Plants\Ammo.cs" />

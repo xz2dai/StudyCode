@@ -16,8 +16,7 @@ namespace 植物大战僵尸
     {
         FrapsManage timer;
         Graphics g;
-        Image Background = Properties.Resources.map;
-        Ammo ammo = new Ammo();
+        Image map,Loginimage;
         public Form1()
         {
             InitializeComponent();
@@ -25,20 +24,27 @@ namespace 植物大战僵尸
         }
 
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)             //启动页面及启动按钮,以及加载资源
         {
+            map = Properties.Resources.map;
+            Loginimage = Properties.Resources.Logo;
             timer = new FrapsManage();
+            this.BackgroundImage = Properties.Resources.Logo;           //设置背景
             this.FormBorderStyle = FormBorderStyle.None;
-            this.Width = Background.Width - (int)0.21*(Background.Width);
-            this.Height = Background.Height;
+            this.Width = this.BackgroundImage.Width;
+            this.Height = this.BackgroundImage.Height;
+            SettingButton.Location = new Point(this.Width - SettingButton.Width, 0);        //调整菜单按钮位置
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)          //转入游戏界面
         {
             g = this.CreateGraphics();
+            this.BackgroundImage = map;                 //设置背景地图
             this.Width = this.BackgroundImage.Width;
-            this.BackgroundImage = Background;
-            button1.Visible = false;
+            this.Height = this.BackgroundImage.Height;
+            button1.Visible = false;                      //隐藏开始按钮
+            button1.Enabled = false;
+            SettingButton.Location = new Point(this.Width - SettingButton.Width, 0);       //调整菜单按钮
         }
 
         private void Form1_Click(object sender, EventArgs e)
@@ -49,6 +55,11 @@ namespace 植物大战僵尸
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
             //Iplants plant = new Plants.plant_1(g, e.Location.X, e.Location.Y);
+        }
+
+        private void SettingButton_Click(object sender, EventArgs e)        //菜单按钮按下事件
+        {
+
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
