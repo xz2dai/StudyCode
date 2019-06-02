@@ -30,14 +30,14 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.SettingButton = new System.Windows.Forms.Button();
+            this.QuitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(531, 544);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(354, 340);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(417, 118);
+            this.button1.Size = new System.Drawing.Size(278, 74);
             this.button1.TabIndex = 0;
             this.button1.Text = "开始";
             this.button1.UseVisualStyleBackColor = true;
@@ -46,24 +46,35 @@
             // SettingButton
             // 
             this.SettingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SettingButton.Location = new System.Drawing.Point(1457, 12);
+            this.SettingButton.Location = new System.Drawing.Point(971, 8);
+            this.SettingButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SettingButton.Name = "SettingButton";
-            this.SettingButton.Size = new System.Drawing.Size(126, 43);
+            this.SettingButton.Size = new System.Drawing.Size(84, 27);
             this.SettingButton.TabIndex = 1;
             this.SettingButton.Text = "菜单";
             this.SettingButton.UseVisualStyleBackColor = true;
             this.SettingButton.Click += new System.EventHandler(this.SettingButton_Click);
             // 
+            // QuitButton
+            // 
+            this.QuitButton.Location = new System.Drawing.Point(354, 445);
+            this.QuitButton.Name = "QuitButton";
+            this.QuitButton.Size = new System.Drawing.Size(278, 87);
+            this.QuitButton.TabIndex = 2;
+            this.QuitButton.Text = "退出";
+            this.QuitButton.UseVisualStyleBackColor = true;
+            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1586, 939);
+            this.ClientSize = new System.Drawing.Size(1057, 587);
+            this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.SettingButton);
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -77,6 +88,7 @@
         #endregion
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button SettingButton;
+        private System.Windows.Forms.Button QuitButton;
     }
 }
 
