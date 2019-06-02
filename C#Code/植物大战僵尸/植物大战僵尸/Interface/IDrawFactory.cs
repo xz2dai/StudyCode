@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace 植物大战僵尸.Interface
+namespace 植物大战僵尸
 {
     interface IDrawFactory      //绘制基本接口
     {

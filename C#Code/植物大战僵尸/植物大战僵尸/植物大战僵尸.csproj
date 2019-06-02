@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Plants\AddPlantFactory.cs" />
     <Compile Include="Plants\PutDownPlant.cs" />
     <Compile Include="Tools\Flip.cs" />
     <Compile Include="Tools\FrapsManage.cs" />
@@ -70,6 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Zombies\AddZombieFactory.cs" />
     <Compile Include="Zombies\NormalZombie.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

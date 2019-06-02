@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace 植物大战僵尸.Zombies
+namespace 植物大战僵尸
 {
     class NormalZombie : IZombies
     {

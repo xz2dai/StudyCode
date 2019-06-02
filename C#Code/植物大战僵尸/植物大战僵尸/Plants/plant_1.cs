@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace 植物大战僵尸.Plants
+namespace 植物大战僵尸
 {
     public class plant_1: Iplants
     {
