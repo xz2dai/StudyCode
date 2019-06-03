@@ -78,13 +78,14 @@ namespace 植物大战僵尸
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-            
+
+            Point NowLocation = this.PointToClient(Control.MousePosition);
             //Iplants plant = new Plants.plant_1(g, e.Location.X, e.Location.Y);       //用于测试植物生成
-            if(NowMouseState == MouseState.PlantingPlant && !(MousePosition.X < 231 || MousePosition.X > 1000 || MousePosition.Y < 70 || MousePosition.Y > 578))
+            if(NowMouseState == MouseState.PlantingPlant && !(NowLocation.X < 231 || NowLocation.X > 1000 || NowLocation.Y < 70 || NowLocation.Y > 578))
             {
                 int m_X, m_Y;
-                m_X = MapManager.FixXLocation(MousePosition.X);
-                m_Y = MapManager.FixYLocation(MousePosition.Y);
+                m_X = MapManager.FixXLocation(NowLocation.X);
+                m_Y = MapManager.FixYLocation(NowLocation.Y);
                 if (m_X > 9 || m_Y > 5) return;
                 if(Map_HavePlant[m_X, m_Y] == 0)//判断该点是否已有植物
                 {
@@ -217,7 +218,7 @@ namespace 植物大战僵尸
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-            SunCountLabel.Text = MousePosition.ToString();
+            SunCountLabel.Text = this.PointToClient(Control.MousePosition).ToString();
         }
 
         void UseSun(int num)

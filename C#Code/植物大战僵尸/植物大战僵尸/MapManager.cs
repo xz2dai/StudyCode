@@ -12,7 +12,7 @@ namespace 植物大战僵尸
         public static int FixXLocation(int Receive_X)           //修正植物安放位置为栅格化地图定点位置
         {
             int MidX, FinX;
-            MidX = Receive_X - 231;
+            MidX = Receive_X - 255;
             if(MidX >= 0)
             {
                 FinX = MidX / 80;
@@ -26,13 +26,13 @@ namespace 植物大战僵尸
 
         public static int ReturnFixX(int X)
         {
-            return (X * 80) + 234;
+            return (X * 80) + 255;
         }
 
         public static int FixYLocation(int Receive_Y)
         {
             int MidY, FinY;
-            MidY = Receive_Y - 70;
+            MidY = Receive_Y - 75;
             if (MidY >= 0)
             {
                 FinY = MidY / 100;
@@ -46,7 +46,7 @@ namespace 植物大战僵尸
 
         public static int ReturnFixY(int Y)
         {
-            return (Y * 100) + 70;
+            return (Y * 100) + 75;
         }
     }
 }
