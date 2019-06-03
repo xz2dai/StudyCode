@@ -73,6 +73,16 @@ namespace 植物大战僵尸.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap frame_0 {
+            get {
+                object obj = ResourceManager.GetObject("frame_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
@@ -113,9 +123,29 @@ namespace 植物大战僵尸.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap PrepareGrowPlants {
+            get {
+                object obj = ResourceManager.GetObject("PrepareGrowPlants", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap SunFlower {
             get {
                 object obj = ResourceManager.GetObject("SunFlower", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap sunflower__2_ {
+            get {
+                object obj = ResourceManager.GetObject("sunflower__2_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +176,16 @@ namespace 植物大战僵尸.Properties {
         internal static System.Drawing.Bitmap ZombieAttack {
             get {
                 object obj = ResourceManager.GetObject("ZombieAttack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap ZombiesWon {
+            get {
+                object obj = ResourceManager.GetObject("ZombiesWon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

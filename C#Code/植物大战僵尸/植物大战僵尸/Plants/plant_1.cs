@@ -9,13 +9,14 @@ namespace 植物大战僵尸
 {
     public class plant_1: Iplants
     {
-        private int HP = 10;
+        private int HP;
         Point Location;
-        public plant_1(Graphics g,int x,int y)
+        public Bitmap bitmap;
+        public plant_1(Bitmap R_bitmap,int X,int Y)
         {
-            Location.X = x;
-            Location.Y = y;
-            g.DrawImage(Properties.Resources.豌豆射手, x, y, 50, 50);
+            bitmap = R_bitmap;
+            Location.X = X;
+            Location.Y = Y;
         }
         public void BeHit(int damage)
         {

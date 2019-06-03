@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace 植物大战僵尸
+namespace 植物大战僵尸.Zombies
 {
-    public interface Iitem
+    class CreatZombie
     {
-        void Hit();
-        void BeHit(int damage);
-
     }
 }
