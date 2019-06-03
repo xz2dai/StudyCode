@@ -113,6 +113,26 @@ namespace 植物大战僵尸.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap peashooter0 {
+            get {
+                object obj = ResourceManager.GetObject("peashooter0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Peashooter1 {
+            get {
+                object obj = ResourceManager.GetObject("Peashooter1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap PeashooterLimpid {
             get {
                 object obj = ResourceManager.GetObject("PeashooterLimpid", resourceCulture);
@@ -143,9 +163,19 @@ namespace 植物大战僵尸.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap sunflower__2_ {
+        internal static System.Drawing.Bitmap sunflower0 {
             get {
-                object obj = ResourceManager.GetObject("sunflower__2_", resourceCulture);
+                object obj = ResourceManager.GetObject("sunflower0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap SunFlower1 {
+            get {
+                object obj = ResourceManager.GetObject("SunFlower1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,16 +226,6 @@ namespace 植物大战僵尸.Properties {
         internal static System.Drawing.Bitmap 僵尸 {
             get {
                 object obj = ResourceManager.GetObject("僵尸", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap 豌豆射手 {
-            get {
-                object obj = ResourceManager.GetObject("豌豆射手", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

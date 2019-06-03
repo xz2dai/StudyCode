@@ -20,15 +20,17 @@ namespace 植物大战僵尸
             plantlist.Add(plant);
         }
    
-        public plant_1 CreatPlant(Bitmap bitmap,int X,int Y)
+        public plant_1 CreatPlant(int X,int Y)
         {
-            plant_1 newplant = new plant_1(bitmap,X,Y);
+            plant_1 newplant = new plant_1(X,Y);
             return newplant;
         }
 
-        public void DrawItem(IDrawFactory drawFactory,Graphics g,plant_1 plant,int x,int y)
+        public void DrawItem(IDrawFactory drawFactory,Graphics g,plant_1 plant)
         {
-            drawFactory.TargetDraw(plant.bitmap, g, x, y);
+            drawFactory.TargetDraw(plant.bitmap, g, plant.Location.X, plant.Location.Y);
         }
+
+
     }
 }

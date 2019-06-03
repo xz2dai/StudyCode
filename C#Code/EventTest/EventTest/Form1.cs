@@ -22,5 +22,10 @@ namespace EventTest
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Controls.Remove(button1);
+        }
     }
 }

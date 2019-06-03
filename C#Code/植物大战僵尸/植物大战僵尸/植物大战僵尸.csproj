@@ -52,7 +52,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MapManager.cs" />
     <Compile Include="Plants\AddPlantFactory.cs" />
+    <Compile Include="Plants\PlantDrawFactory.cs" />
     <Compile Include="Plants\PutDownPlant.cs" />
     <Compile Include="Tools\Flip.cs" />
     <Compile Include="Tools\FrapsManage.cs" />
@@ -146,6 +148,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sunflower %282%29.Png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Peashooter.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SunFlower.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Peashooter\0.Png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SunFlower\0.Png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
