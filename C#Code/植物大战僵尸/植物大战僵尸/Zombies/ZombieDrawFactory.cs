@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace 植物大战僵尸.Zombies
 {
-    class CreatZombie
+    class ZombieDrawFactory
     {
-
     }
 }

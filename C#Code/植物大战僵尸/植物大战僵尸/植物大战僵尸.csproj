@@ -76,6 +76,7 @@
     <Compile Include="Zombies\AddZombieFactory.cs" />
     <Compile Include="Zombies\CreatZombie.cs" />
     <Compile Include="Zombies\NormalZombie.cs" />
+    <Compile Include="Zombies\ZombieDrawFactory.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +161,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SunFlower\0.Png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plantshadow8.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,6 +14,6 @@ namespace 植物大战僵尸
 {
     interface IDrawFactory      //绘制基本接口
     {
-        void TargetDraw(Image bitmap, Graphics g, int x, int y);
+        void TargetDraw(Bitmap[] bitmap, Graphics g, int x, int y);
     }
 }

@@ -13,6 +13,8 @@ namespace EventTest
     public partial class Form1 : Form
     {
         delegate void EventHander();
+        Image image;
+        Graphics g;
         public Form1()
         {
             InitializeComponent();
@@ -20,12 +22,15 @@ namespace EventTest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //image = Image.FromFile(@"..\..\bitmaps\Peashooter\peashooter.png"); 高二级目录
+            image = Image.FromFile(@".\bitmaps\Peashooter\peashooter.png");  //exe同级目录
+            g = this.CreateGraphics();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Controls.Remove(button1);
+            //this.Controls.Remove(button1);
+            g.DrawImage(image, 100, 100);
         }
     }
 }

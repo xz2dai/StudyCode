@@ -10,6 +10,7 @@ using System.Resources;
 using System.Collections;
 using System.Runtime;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace 植物大战僵尸
 {
@@ -30,6 +31,7 @@ namespace 植物大战僵尸
         FrapsManage timer;
         Graphics g;
         Image map,Loginimage;
+        Bitmap[] SunFlowerBitmaps, PeaShooterBitmaps;
         plant_1.Plants NowSettingPlant;
         FormState NowFormState;
         MouseState NowMouseState;
@@ -86,28 +88,32 @@ namespace 植物大战僵尸
                 int m_X, m_Y;
                 m_X = MapManager.FixXLocation(NowLocation.X);
                 m_Y = MapManager.FixYLocation(NowLocation.Y);
-                if (m_X > 9 || m_Y > 5) return;
-                if(Map_HavePlant[m_X, m_Y] == 0)//判断该点是否已有植物
+                if (m_X > 8 || m_Y > 4) return;
+                if (Map_HavePlant[m_X, m_Y] == 0)//判断该点是否已有植物
                 {
+                    
                     Map_HavePlant[m_X, m_Y] = 1;
-                    plant_1 m_plant = plantFactory.CreatPlant(MapManager.ReturnFixX(m_X), MapManager.ReturnFixY(m_Y));//放置栅格化定位植物位置
-                    switch(NowSettingPlant)
+                    plant_1 m_plant = new plant_1();
+                    switch (NowSettingPlant)
                     {
                             case plant_1.Plants.sunflower:
                             {
-                                m_plant.bitmap = Properties.Resources.SunFlower1;
-                                //m_plant.LoadBitmap(Application.StartupPath + @"\bitmaps\Sunflower\");
+                                //m_plant.bitmap = Properties.Resources.SunFlower1;
+                                //m_plant.LoadBitmap(@".\bitmaps\Sunflower\");
+                                m_plant = plantFactory.CreatPlant(MapManager.ReturnFixX(m_X), MapManager.ReturnFixY(m_Y), SunFlowerBitmaps,g);//放置栅格化定位植物位置
+                                
                                 break;
                             }
                             case plant_1.Plants.peashooter:
                             {
-                                m_plant.bitmap = Properties.Resources.Peashooter1;
-                                //m_plant.LoadBitmap(Application.StartupPath + @"\bitmaps\Peashooter\");
+                                //m_plant.bitmap = Properties.Resources.Peashooter1;
+                                //m_plant.LoadBitmap(@".\bitmaps\Peashooter\");
+                                m_plant = plantFactory.CreatPlant(MapManager.ReturnFixX(m_X), MapManager.ReturnFixY(m_Y), PeaShooterBitmaps,g);//放置栅格化定位植物位置
+                                
                                 break;
                             }
                     }
-                    plantFactory.AddToList(plantlist, m_plant);
-                    plantFactory.DrawItem(PlantDrawFactory, g, m_plant);
+                    plantlist.Add(m_plant);
                 }
                 else
                 {
@@ -179,7 +185,9 @@ namespace 植物大战僵尸
             SettingButton.Location = new Point(this.Width - SettingButton.Width, 0);       //调整菜单按钮
             plantFactory = new AddPlantFactory();
             zombieFactory = new AddZombieFactory();
-            
+            LoadBitmaps();
+            Thread thread = new Thread(Flip);
+            thread.Start();
         }
 
         void ShowSetting()
@@ -201,7 +209,15 @@ namespace 植物大战僵尸
         {
             if(NowMouseState == MouseState.PlantingPlant)
             {
-
+                switch (NowSettingPlant)
+                {
+                    case plant_1.Plants.peashooter:
+                        g.DrawImage(PeaShooterBitmaps[0], this.PointToClient(MousePosition));
+                        break;
+                    case plant_1.Plants.sunflower:
+                        //  g.DrawImage(PeaShooterBitmaps[0], this.PointToClient(MousePosition));
+                        break;
+                }
             }
         }
 
@@ -225,6 +241,28 @@ namespace 植物大战僵尸
         {
             SunCount -= num;
             SunCountLabel.Text = SunCount.ToString();
+        }
+
+        void LoadBitmaps()
+        {
+            SunFlowerBitmaps = new Bitmap[12];
+            PeaShooterBitmaps = new Bitmap[12];
+            for (int i = 0;i<=11;i++)
+            {
+                SunFlowerBitmaps[i] = new Bitmap(@".\bitmaps\SunFlower\" + i.ToString() + ".Png");
+                PeaShooterBitmaps[i] = new Bitmap(@".\bitmaps\Peashooter\" + i.ToString() + ".Png");
+            }
+        }
+
+        void Flip()
+        {
+            while(NowFormState == FormState.Gaming)
+            {
+                while(plantlist.Count() == 0 && Zombielist.Count() == 0) continue;
+                timer.Start();
+                timer.flip.FlipPlants(plantlist, g);
+                timer.Delay();
+            }
         }
     }
 }

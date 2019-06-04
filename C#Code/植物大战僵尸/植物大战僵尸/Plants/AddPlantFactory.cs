@@ -15,14 +15,10 @@ namespace 植物大战僵尸
 {
     class AddPlantFactory : IAddItemFactory 
     {
-        public void AddToList(List<plant_1> plantlist,plant_1 plant)
-        {
-            plantlist.Add(plant);
-        }
    
-        public plant_1 CreatPlant(int X,int Y)
+        public plant_1 CreatPlant(int X,int Y, Bitmap[] bitmaps,Graphics g)
         {
-            plant_1 newplant = new plant_1(X,Y);
+            plant_1 newplant = new plant_1(X,Y,bitmaps,g);
             return newplant;
         }
 
