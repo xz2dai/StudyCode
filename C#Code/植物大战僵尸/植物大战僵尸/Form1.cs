@@ -260,6 +260,7 @@ namespace 植物大战僵尸
             {
                 while(plantlist.Count() == 0 && Zombielist.Count() == 0) continue;
                 timer.Start();
+                this.Invalidate();
                 timer.flip.FlipPlants(plantlist, g);
                 timer.Delay();
             }

@@ -58,7 +58,16 @@ public void LoadBitmap(string FileLocation)
 
         public void Action(Graphics g)
         {
-            m_PlantDrawFactory.TargetDraw(bitmap[NowFrame+1], g, Location);
+            if(NowFrame == 11)
+            {
+                NowFrame = 0;
+                m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], g, Location);
+            }
+            else
+            {
+                m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], g, Location);
+                NowFrame++;
+            }
         }
     }
 }

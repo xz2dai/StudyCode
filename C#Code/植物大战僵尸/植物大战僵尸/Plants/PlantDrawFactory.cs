@@ -31,9 +31,10 @@ namespace 植物大战僵尸
             //bitmap.CopyTo(bitmaps, 0);
             m_g = g;
             Location = point;
-            g.DrawImage(Properties.Resources.shadow, Location.X - 13, Location.Y + 45);
-            g.DrawImage(bitmap, Location);
+            Bitmap shadow = Properties.Resources.shadow;
+            g.DrawImage(shadow, Location.X - 13, Location.Y + 45);
 
+            g.DrawImage(bitmap, Location);
         }
 
         

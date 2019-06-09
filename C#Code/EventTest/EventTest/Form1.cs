@@ -32,5 +32,11 @@ namespace EventTest
             //this.Controls.Remove(button1);
             g.DrawImage(image, 100, 100);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Invalidate();
+        }
+
     }
 }
