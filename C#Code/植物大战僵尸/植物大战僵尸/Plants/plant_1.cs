@@ -25,7 +25,7 @@ namespace 植物大战僵尸
             bitmaps.CopyTo(bitmap, 0);
             Location.X = X;
             Location.Y = Y;
-            m_PlantDrawFactory = new PlantDrawFactory();
+            m_PlantDrawFactory = new PlantDrawFactory(g);
             m_PlantDrawFactory.TargetDraw(bitmap[0], g, Location);
             NowFrame = 0;
         }

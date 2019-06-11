@@ -56,7 +56,7 @@ namespace 植物大战僵尸
             NowFormState = FormState.Start;
             NowMouseState = MouseState.None;
             plantlist = new List<plant_1>();
-            PlantDrawFactory = new PlantDrawFactory();
+            //PlantDrawFactory = new PlantDrawFactory(this);
             Zombielist = new List<NormalZombie>();
             Map_HavePlant = new int[9, 5];
             map = Properties.Resources.map;
@@ -99,8 +99,9 @@ namespace 植物大战僵尸
                             case plant_1.Plants.sunflower:
                             {
                                 //m_plant.bitmap = Properties.Resources.SunFlower1;
-                                //m_plant.LoadBitmap(@".\bitmaps\Sunflower\");
-                                m_plant = plantFactory.CreatPlant(MapManager.ReturnFixX(m_X), MapManager.ReturnFixY(m_Y), SunFlowerBitmaps,g);//放置栅格化定位植物位置
+                                //m_plant.LoadBitmap(@".\bitmaps\Sunflower\");              //对读取路径的多个测试
+                                Graphics M_g = this.CreateGraphics();
+                                m_plant = plantFactory.CreatPlant(MapManager.ReturnFixX(m_X), MapManager.ReturnFixY(m_Y), SunFlowerBitmaps,M_g);//放置栅格化定位植物位置
                                 
                                 break;
                             }
@@ -108,7 +109,8 @@ namespace 植物大战僵尸
                             {
                                 //m_plant.bitmap = Properties.Resources.Peashooter1;
                                 //m_plant.LoadBitmap(@".\bitmaps\Peashooter\");
-                                m_plant = plantFactory.CreatPlant(MapManager.ReturnFixX(m_X), MapManager.ReturnFixY(m_Y), PeaShooterBitmaps,g);//放置栅格化定位植物位置
+                                Graphics M_g = this.CreateGraphics();
+                                m_plant = plantFactory.CreatPlant(MapManager.ReturnFixX(m_X), MapManager.ReturnFixY(m_Y), PeaShooterBitmaps,M_g);//放置栅格化定位植物位置
                                 
                                 break;
                             }
@@ -200,9 +202,11 @@ namespace 植物大战僵尸
 
         void QuitSetting()
         {
-            QuitButton.Enabled = false;
             QuitButton.Visible = false;
+            //QuitButton.Enabled = false;
+            
             NowFormState = FormState.Gaming;
+            Flip();
         }
 
         private void Form1_Move(object sender, EventArgs e)
