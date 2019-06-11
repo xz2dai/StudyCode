@@ -10,7 +10,7 @@ namespace 植物大战僵尸
     class FrapsManage       //手动控制帧率，system.timer相对于winform.timer来说采用了多线程，帧率控制更精确
     {
         System.DateTime timer = new DateTime();
-        private int passtime, starttime, LastCreatSun;
+        private int passtime, starttime;
         public Flip flip;
         public void Start()
         {

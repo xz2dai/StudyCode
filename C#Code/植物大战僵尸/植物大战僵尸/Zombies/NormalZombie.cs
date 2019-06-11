@@ -12,35 +12,54 @@ namespace 植物大战僵尸
         private int HP = 50;
         private int V_x = 10;
         Point Location;
-        
+        enum ZombieState
+        {
+            Move,
+            Attact,
+            Die
+        }
+        ZombieState NowZombieState;
+        private int NowFrame;
+        private Bitmap[] bitmap;
+
         public void BeHit(int damage)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void BeKill()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Born()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Eat()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Hit()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Move()
         {
-            throw new NotImplementedException();
+            Location.X += V_x;
+        }
+
+        public NormalZombie(int X, int Y, Bitmap[] bitmaps, Graphics g)
+        {
+            //bitmap = bitmaps;
+            bitmap = new Bitmap[12];
+            bitmaps.CopyTo(bitmap, 0);
+            Location.X = X;
+            Location.Y = Y;
+            NowFrame = 0;
         }
     }
 }

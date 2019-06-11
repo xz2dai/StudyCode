@@ -3,24 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace 植物大战僵尸
 {
     class AddZombieFactory : IAddItemFactory
     {
-        public void AddToList(List<Iitem> itemlist)
+        public NormalZombie CreatZombie(int X, int Y, Bitmap[] bitmaps, Graphics g)
         {
-            throw new NotImplementedException();
+            NormalZombie normalZombie = new NormalZombie(X,Y,bitmaps,g);
+            return normalZombie;
         }
 
-        public Iitem CreatItem(Iitem iitem)
+        public void DrawZombie(IDrawFactory drawFactory, Graphics g, NormalZombie normalZombie)
         {
-            throw new NotImplementedException();
-        }
 
-        public void DrawItem(IDrawFactory drawFactory)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace 植物大战僵尸.Suns
 {
-    class SunFactory
+    class SunFactory            //太阳工厂
     {
+
     }
 }

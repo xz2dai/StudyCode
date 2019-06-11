@@ -53,11 +53,13 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="MapManager.cs" />
+    <Compile Include="Plants\Shoot.cs" />
+    <Compile Include="Suns\Sun.cs" />
     <Compile Include="Plants\AddPlantFactory.cs" />
     <Compile Include="Plants\PlantDrawFactory.cs" />
     <Compile Include="Plants\PutDownPlant.cs" />
-    <Compile Include="Tools\Flip.cs" />
-    <Compile Include="Tools\FrapsManage.cs" />
+    <Compile Include="Others\Flip.cs" />
+    <Compile Include="Others\FrapsManage.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Interface\IAddItemFactory.cs" />
     <Compile Include="Interface\IDrawFactory.cs" />
@@ -73,6 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Suns\SunFactory.cs" />
     <Compile Include="Zombies\AddZombieFactory.cs" />
     <Compile Include="Zombies\CreatZombie.cs" />
     <Compile Include="Zombies\NormalZombie.cs" />
