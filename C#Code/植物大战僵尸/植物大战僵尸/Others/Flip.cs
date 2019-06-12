@@ -17,5 +17,15 @@ namespace 植物大战僵尸
                 plantlist[i].Action(g);
             }
         }
+
+        public void FlipZombies(List<NormalZombie> zombielist,Graphics g)
+        {
+            if (zombielist.Count() == 0) return;
+            for (int i = 0; i <= zombielist.Count - 1; i++)
+            {
+                zombielist[i].Move(g);
+            }
+
+        }
     }
 }

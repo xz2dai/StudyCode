@@ -12,7 +12,7 @@ namespace 植物大战僵尸
         //Bitmap[] bitmaps;
         Graphics m_g;
         Point Location;
-        Graphics mGraphics;
+        //Graphics mGraphics;
 
         public void TargetDraw(Bitmap[] bitmap, Graphics g, int x, int y)
         {

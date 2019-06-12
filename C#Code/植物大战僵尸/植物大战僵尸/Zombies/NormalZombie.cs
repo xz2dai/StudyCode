@@ -7,11 +7,13 @@ using System.Drawing;
 
 namespace 植物大战僵尸
 {
-    class NormalZombie : IZombies
+    public class NormalZombie : IZombies
     {
         private int HP = 50;
         private int V_x = 10;
-        Point Location;
+        //public Point Location;
+        //public Bitmap[] bitmap;
+         Point Location;
         enum ZombieState
         {
             Move,
@@ -24,7 +26,7 @@ namespace 植物大战僵尸
 
         public void BeHit(int damage)
         {
-            
+            HP -= damage;
         }
 
         public void BeKill()
@@ -47,7 +49,7 @@ namespace 植物大战僵尸
             
         }
 
-        public void Move()
+        public void Move(Graphics g)
         {
             Location.X += V_x;
         }
@@ -55,6 +57,7 @@ namespace 植物大战僵尸
         public NormalZombie(int X, int Y, Bitmap[] bitmaps, Graphics g)
         {
             //bitmap = bitmaps;
+            Born();
             bitmap = new Bitmap[12];
             bitmaps.CopyTo(bitmap, 0);
             Location.X = X;
