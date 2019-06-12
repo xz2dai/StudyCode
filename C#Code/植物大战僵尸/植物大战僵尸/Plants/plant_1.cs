@@ -12,7 +12,8 @@ namespace 植物大战僵尸
         public enum Plants
         {
             sunflower,
-            peashooter
+            peashooter,
+            None
         }
         private int HP,NowFrame;
         public Point Location;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace 植物大战僵尸
 {
-    class Sun       太阳
+    class Sun       //太阳
     {
 
     }

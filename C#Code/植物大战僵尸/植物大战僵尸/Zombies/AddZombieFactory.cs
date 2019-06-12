@@ -9,15 +9,15 @@ namespace 植物大战僵尸
 {
     class AddZombieFactory : IAddItemFactory
     {
-        public NormalZombie CreatZombie(int X, int Y, Bitmap[] bitmaps, Graphics g)
+        public NormalZombie CreatZombie(Bitmap[] bitmaps, Graphics g)
         {
-            NormalZombie normalZombie = new NormalZombie(X,Y,bitmaps,g);
+            NormalZombie normalZombie = new NormalZombie(bitmaps,g);
             return normalZombie;
         }
 
-        public void DrawZombie(IDrawFactory drawFactory, Graphics g, NormalZombie normalZombie)
+        public void DrawItem(IDrawFactory drawFactory, Graphics g, NormalZombie normalZombie)
         {
-
+            drawFactory.TargetDraw(normalZombie.bitmap, g, normalZombie.Location.X, normalZombie.Location.Y);
         }
     }
 }

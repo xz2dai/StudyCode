@@ -13,17 +13,17 @@ namespace 植物大战僵尸
         private int V_x = 10;
         //public Point Location;
         //public Bitmap[] bitmap;
-         Point Location;
+        public Point Location;
         enum ZombieState
         {
             Move,
             Attact,
             Die
         }
-        ZombieState NowZombieState;
+        private ZombieState NowZombieState;
         private int NowFrame;
-        private Bitmap[] bitmap;
-
+        public Bitmap[] bitmap;
+        private ZombieDrawFactory m_ZombieDrawFactory;
         public void BeHit(int damage)
         {
             HP -= damage;
@@ -31,38 +31,58 @@ namespace 植物大战僵尸
 
         public void BeKill()
         {
-            
+
         }
 
         public void Born()
         {
-            
+            Random m_random = new Random();
+            int m_XToLine = m_random.Next(1, 5);
+            Location.Y = m_XToLine * 75;
+            Location.X = 1018;
         }
 
         public void Eat()
         {
-            
+
         }
 
         public void Hit()
         {
-            
+
         }
 
         public void Move(Graphics g)
         {
-            Location.X += V_x;
+            Location.X -= V_x;
+            if(NowZombieState == ZombieState.Move)
+            {
+                if (NowFrame == 11)
+                {
+                    NowFrame = 0;
+                    m_ZombieDrawFactory.TargetDraw(bitmap[NowFrame + 1], g, Location);
+                }
+                else
+                {
+                    m_ZombieDrawFactory.TargetDraw(bitmap[NowFrame + 1], g, Location);
+                    NowFrame++;
+                }
+            }
         }
 
-        public NormalZombie(int X, int Y, Bitmap[] bitmaps, Graphics g)
+        public NormalZombie(Bitmap[] bitmaps, Graphics g)
         {
-            //bitmap = bitmaps;
             Born();
             bitmap = new Bitmap[12];
             bitmaps.CopyTo(bitmap, 0);
-            Location.X = X;
-            Location.Y = Y;
+            m_ZombieDrawFactory = new ZombieDrawFactory(g);
+            m_ZombieDrawFactory.TargetDraw(bitmap[0], g, Location);
             NowFrame = 0;
+        }
+
+        public NormalZombie()
+        {
+
         }
     }
 }
