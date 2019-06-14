@@ -18,10 +18,10 @@ namespace 植物大战僵尸
         {
             //bitmaps = new Bitmap[12];
             //bitmap.CopyTo(bitmaps, 0);
-            m_g = g;
+            //m_g = g;
             Location.X = x;
             Location.Y = y;
-            g.DrawImage(Properties.Resources.shadow, x - 13, y + 45);
+            //g.DrawImage(Properties.Resources.shadow, x - 13, y + 45);
             g.DrawImage(bitmap[0],x,y);
             
         }

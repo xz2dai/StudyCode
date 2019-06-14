@@ -9,21 +9,36 @@ namespace 植物大战僵尸
 {
     public class Flip      //刷新画面类
     {
-        public void FlipPlants(List<plant_1> plantlist,Graphics g)
+        List<plant_1> plantlist;
+        List<NormalZombie> zombielist;
+        Graphics g;
+        public void SetPlantMethod(List<plant_1> plantlist)
+        {
+            this.plantlist = plantlist;
+            //this.g = g;
+        }
+
+        public void SetZombieMethod(List<NormalZombie> zombielist)
+        {
+            this.zombielist = zombielist;
+            //this.g = g;
+        }
+
+        public void FlipPlants(object sender,System.Timers.ElapsedEventArgs e)
         {
             if (plantlist.Count() == 0) return;
-            for (int i = 0;i<= plantlist.Count-1; i++)
+            for (int i = 0; i <= plantlist.Count - 1; i++)
             {
-                plantlist[i].Action(g);
+                plantlist[i].Action();
             }
         }
 
-        public void FlipZombies(List<NormalZombie> zombielist,Graphics g)
+        public void FlipZombies(object sender,System.Timers.ElapsedEventArgs e)
         {
             if (zombielist.Count() == 0) return;
             for (int i = 0; i <= zombielist.Count - 1; i++)
             {
-                zombielist[i].Move(g);
+                zombielist[i].Move();
             }
 
         }

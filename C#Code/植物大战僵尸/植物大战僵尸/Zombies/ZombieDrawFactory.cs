@@ -28,8 +28,8 @@ namespace 植物大战僵尸
 
             
             Location = point;
-            Bitmap shadow = new Bitmap(Properties.Resources.shadow);
-            m_g.DrawImage(shadow, Location.X - 13, Location.Y + 45);
+            //Bitmap shadow = new Bitmap(Properties.Resources.shadow);
+            //m_g.DrawImage(shadow, Location.X - 13, Location.Y + 45);
 
             m_g.DrawImage(bitmap, Location);
             

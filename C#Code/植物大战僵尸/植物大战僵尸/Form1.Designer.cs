@@ -35,6 +35,7 @@
             this.PlantButton2 = new System.Windows.Forms.Button();
             this.SunCountPicture = new System.Windows.Forms.PictureBox();
             this.SunCountLabel = new System.Windows.Forms.Label();
+            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             ((System.ComponentModel.ISupportInitialize)(this.SunCountPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,6 +163,7 @@
         private System.Windows.Forms.Button PlantButton2;
         private System.Windows.Forms.PictureBox SunCountPicture;
         private System.Windows.Forms.Label SunCountLabel;
+        private System.DirectoryServices.DirectoryEntry directoryEntry1;
     }
 }
 

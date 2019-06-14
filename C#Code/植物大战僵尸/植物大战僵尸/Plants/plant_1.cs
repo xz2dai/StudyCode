@@ -19,16 +19,24 @@ namespace 植物大战僵尸
         public Point Location;
         public Bitmap[] bitmap;
         PlantDrawFactory m_PlantDrawFactory;
-        public plant_1(int X,int Y, Bitmap[] bitmaps,Graphics g)
+        public Graphics m_g;
+        public plant_1(int X,int Y, Bitmap[] bitmaps)
         {
             //bitmap = bitmaps;
             bitmap = new Bitmap[12];
             bitmaps.CopyTo(bitmap, 0);
             Location.X = X;
             Location.Y = Y;
-            m_PlantDrawFactory = new PlantDrawFactory(g);
-            m_PlantDrawFactory.TargetDraw(bitmap[0], g, Location);
+            
             NowFrame = 0;
+            
+            //m_g = g;
+        }
+
+        public void SetDrawFactory()
+        {
+            m_PlantDrawFactory = new PlantDrawFactory(m_g);
+            m_PlantDrawFactory.TargetDraw(bitmap[0], m_g, Location);
         }
 
         public plant_1()
@@ -57,16 +65,17 @@ public void LoadBitmap(string FileLocation)
             
         }
 
-        public void Action(Graphics g)
+        public void Action()
         {
-            if(NowFrame == 11)
+            if(NowFrame >= 11)
             {
                 NowFrame = 0;
-                m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], g, Location);
+                m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], m_g, Location);
+                NowFrame++;
             }
             else
             {
-                m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], g, Location);
+                m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], m_g, Location);
                 NowFrame++;
             }
         }
