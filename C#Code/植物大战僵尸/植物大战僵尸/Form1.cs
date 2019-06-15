@@ -45,6 +45,7 @@ namespace 植物大战僵尸
         List<NormalZombie> Zombielist;
         PlantDrawFactory PlantDrawFactory;
         ZombieDrawFactory ZombieDrawFactory;
+        Rectangle RefreshMapRect = new Rectangle(255,70,745,505);
         public Form1()
         {
             InitializeComponent();
@@ -210,7 +211,7 @@ namespace 植物大战僵尸
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-            //SunCountLabel.Text = this.PointToClient(Control.MousePosition).ToString();
+            SunCountLabel.Text = this.PointToClient(Control.MousePosition).ToString();
             if (NowMouseState == MouseState.PlantingPlant || NowFormState == FormState.Gaming)
             {
                 switch (NowSettingPlant)
@@ -316,7 +317,7 @@ namespace 植物大战僵尸
 
         public void RefreshMap(object sender,System.Timers.ElapsedEventArgs e)
         {
-            this.Invalidate();
+            this.Invalidate(RefreshMapRect);
             
         }
     }

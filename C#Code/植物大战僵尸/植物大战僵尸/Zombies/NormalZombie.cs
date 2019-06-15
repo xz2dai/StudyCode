@@ -61,7 +61,7 @@ namespace 植物大战僵尸
             
             if (NowZombieState == ZombieState.Move)
             {
-                if (Location.X <= 10)
+                if (Location.X <= 255)
                 {
                     Die();
                     return;

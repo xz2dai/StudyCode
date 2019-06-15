@@ -169,5 +169,8 @@
   <ItemGroup>
     <None Include="Resources\plantshadow8.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="更新日志.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

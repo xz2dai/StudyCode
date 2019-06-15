@@ -9,7 +9,7 @@ namespace 植物大战僵尸
 {
     class FrapsManage       //手动控制帧率，datatimer相对于winform.timer来说采用了多线程，帧率控制更精确
     {
-        //System.DateTime timer;                //6.13更新：使用更为先进的system.timer
+        //System.DateTime timer;                //6.13更新：使用更为先进的system.timer,使用委托、方法与更优秀的多线程解决方案
         System.Timers.Timer timer;
         private int starttime;
         private int passtime;
