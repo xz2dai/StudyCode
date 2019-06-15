@@ -26,6 +26,7 @@ namespace 植物大战僵尸
         public Bitmap[] bitmap;
         private ZombieDrawFactory m_ZombieDrawFactory;
         public Graphics m_g;
+        int BelongLine;
         public void BeHit(int damage)
         {
             HP -= damage;
@@ -40,6 +41,7 @@ namespace 植物大战僵尸
         {
             Random m_random = new Random();
             int m_XToLine = m_random.Next(1, 5);
+            BelongLine = m_XToLine;
             Location.Y = m_XToLine * 75;
             Location.X = 928;
             NowZombieState = ZombieState.Move;
@@ -108,6 +110,14 @@ namespace 植物大战僵尸
         void Die()
         {
             NowZombieState = ZombieState.Die;
+        }
+
+        public bool IsDie()
+        {
+            if (NowZombieState == ZombieState.Die)
+                return true;
+            else
+                return false;
         }
     }
 }

@@ -15,6 +15,7 @@ namespace 植物大战僵尸
             peashooter,
             None
         }
+        List<Ammo>[] AmmoList;
         private int HP,NowFrame;
         public Point Location;
         public Bitmap[] bitmap;
@@ -29,7 +30,7 @@ namespace 植物大战僵尸
             Location.Y = Y;
             
             NowFrame = 0;
-            
+            AmmoList = new List<Ammo>[12];
             //m_g = g;
         }
 

@@ -39,6 +39,8 @@ namespace 植物大战僵尸
             for (int i = 0; i <= zombielist.Count - 1; i++)
             {
                 zombielist[i].Move();
+                if (zombielist[i].IsDie())
+                    zombielist.RemoveAt(i);
             }
 
         }

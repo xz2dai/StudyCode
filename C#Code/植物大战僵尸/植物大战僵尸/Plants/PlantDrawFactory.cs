@@ -34,12 +34,19 @@ namespace 植物大战僵尸
             //Image m_image = bitmap;
             //m_g = Graphics.FromImage(m_image);           //无法贴图，在更新6.11中修改了此问题
             //m_g = g;
-            Location = point;
-            Bitmap shadow = new Bitmap(Properties.Resources.shadow);
-            m_g.DrawImage(shadow, Location.X - 13, Location.Y + 45);
+            try
+            {
+                Location = point;
+                Bitmap shadow = new Bitmap(Properties.Resources.shadow);
+                m_g.DrawImage(shadow, Location.X - 13, Location.Y + 45);
 
-            m_g.DrawImage(bitmap, Location);
-            //m_g.Dispose();
+                m_g.DrawImage(bitmap, Location);
+                //m_g.Dispose();
+            }
+            catch(Exception)
+            {
+                
+            }
         }
 
         public PlantDrawFactory(Graphics g)

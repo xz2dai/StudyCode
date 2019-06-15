@@ -10,9 +10,18 @@ namespace 植物大战僵尸
 {
     class Ammo
     {
-        public void DrawAmmo(Graphics g,int x,int y)
+        int V_x = 10;
+        Point Location;
+        public void DrawAmmo(Graphics g)
         {
-            g.DrawImage(Properties.Resources.ammo, x, y, 10, 10);
+            g.DrawImage(Properties.Resources.ammo, Location.X, Location.Y, 10, 10);
+            Location.X += V_x;
+        }
+        public Ammo(int x,int y)
+        {
+            Location.X = x;
+            Location.Y = y;
+             
         }
     }
 }
