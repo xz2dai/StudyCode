@@ -45,7 +45,7 @@ namespace 植物大战僵尸
         List<NormalZombie> Zombielist;
         PlantDrawFactory PlantDrawFactory;
         ZombieDrawFactory ZombieDrawFactory;
-        Rectangle RefreshMapRect = new Rectangle(255,70,745,505);
+        Rectangle BattleMapRect = new Rectangle(255,70,745,505);
         public Form1()
         {
             InitializeComponent();
@@ -91,18 +91,22 @@ namespace 植物大战僵尸
 
             Point NowLocation = this.PointToClient(Control.MousePosition);
             //Iplants plant = new Plants.plant_1(g, e.Location.X, e.Location.Y);       //用于测试植物生成
-            if(NowMouseState == MouseState.PlantingPlant && !(NowLocation.X < 231 || NowLocation.X > 1000 || NowLocation.Y < 70 || NowLocation.Y > 578))
+            if(NowFormState == FormState.Gaming)
             {
-                ClickToPlant(NowLocation);
-                NowMouseState = MouseState.None;
-                NowSettingPlant = plant_1.Plants.None;
-            }
-            else
-            {
-                NormalZombie normalZombie = zombieFactory.CreatZombie(NormalZombieBitmaps);
-                normalZombie.m_g = this.CreateGraphics();
-                normalZombie.SetDrawFactory();
-                Zombielist.Add(normalZombie);
+                if (NowMouseState == MouseState.PlantingPlant && !(NowLocation.X < 231 || NowLocation.X > 1000 || NowLocation.Y < 70 || NowLocation.Y > 578))
+                {
+                    ClickToPlant(NowLocation);
+                    NowMouseState = MouseState.None;
+                    NowSettingPlant = plant_1.Plants.None;
+                }
+                else
+                {
+                    NormalZombie normalZombie = zombieFactory.CreatZombie(NormalZombieBitmaps);
+                    normalZombie.m_g = this.CreateGraphics();
+                    normalZombie.SetDrawFactory();
+                    Zombielist.Add(normalZombie);
+
+                }
 
             }
         }
@@ -228,7 +232,7 @@ namespace 植物大战僵尸
             }
         }
 
-        void UseSun(int num)
+        void UseSun(int num) 
         {
             SunCount -= num;
             SunCountLabel.Text = SunCount.ToString();
@@ -317,7 +321,7 @@ namespace 植物大战僵尸
 
         public void RefreshMap(object sender,System.Timers.ElapsedEventArgs e)
         {
-            this.Invalidate(RefreshMapRect);
+            this.Invalidate();
             
         }
     }

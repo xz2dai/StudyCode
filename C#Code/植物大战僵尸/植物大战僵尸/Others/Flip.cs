@@ -30,6 +30,8 @@ namespace 植物大战僵尸
             for (int i = 0; i <= plantlist.Count - 1; i++)
             {
                 plantlist[i].Action();
+                if (plantlist[i].IsDie())
+                    plantlist.RemoveAt(i);
             }
         }
 

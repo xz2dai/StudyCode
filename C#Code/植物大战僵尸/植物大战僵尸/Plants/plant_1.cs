@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace 植物大战僵尸
 {
@@ -15,12 +16,20 @@ namespace 植物大战僵尸
             peashooter,
             None
         }
-        List<Ammo>[] AmmoList;
+        public enum PlantState
+        {
+            None,
+            Attact,
+            Die
+        }
+        PlantState NowPlantState;
+        List<Ammo> AmmoList;
         private int HP,NowFrame;
         public Point Location;
         public Bitmap[] bitmap;
         PlantDrawFactory m_PlantDrawFactory;
         public Graphics m_g;
+        System.Timers.Timer m_timer;
         public plant_1(int X,int Y, Bitmap[] bitmaps)
         {
             //bitmap = bitmaps;
@@ -30,8 +39,13 @@ namespace 植物大战僵尸
             Location.Y = Y;
             
             NowFrame = 0;
-            AmmoList = new List<Ammo>[12];
+            AmmoList = new List<Ammo>(12);
             //m_g = g;
+            NowPlantState = PlantState.None;
+            m_timer = new System.Timers.Timer(500);
+            m_timer.Elapsed += Shoot;
+            m_timer.AutoReset = true;
+            m_timer.Start();
         }
 
         public void SetDrawFactory()
@@ -43,7 +57,18 @@ namespace 植物大战僵尸
         public plant_1()
         {
         }
-
+        /*
+        ~plant_1()
+        {
+            AmmoList.Clear();
+            m_g.Dispose();
+            m_timer.Dispose();
+            foreach(Bitmap bitmap in bitmap)
+            {
+                bitmap.Dispose();
+            }
+        }
+        */                              //尝试手动释放对象
         /*
 public void LoadBitmap(string FileLocation)
 {
@@ -59,6 +84,7 @@ public void LoadBitmap(string FileLocation)
         public void BeHit(int damage)
         {
             HP -= damage;
+            if (HP <= 0) NowPlantState = PlantState.Die;
         }
 
         void Iitem.Hit()
@@ -68,7 +94,29 @@ public void LoadBitmap(string FileLocation)
 
         public void Action()
         {
-            if(NowFrame >= 11)
+            this.NextFrame();
+            this.AmmoAction();
+
+            
+        }
+
+        public bool IsDie()
+        {
+            if (NowPlantState == PlantState.Die)
+                return true;
+            else
+                return false;
+        }
+
+        void Shoot(object sender,System.Timers.ElapsedEventArgs e)
+        {
+            Ammo m_ammo = new Ammo(this.Location.X + 55, this.Location.Y + 10);
+            this.AmmoList.Add(m_ammo);
+        }
+
+        void NextFrame()
+        {
+            if (NowFrame >= 11)
             {
                 NowFrame = 0;
                 m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], m_g, Location);
@@ -78,6 +126,14 @@ public void LoadBitmap(string FileLocation)
             {
                 m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], m_g, Location);
                 NowFrame++;
+            }
+        }
+
+        void AmmoAction()
+        {
+            for(int i = 0;i<=AmmoList.Count-1;i++)
+            {
+                AmmoList[i].DrawAmmo(m_g);
             }
         }
     }
