@@ -12,6 +12,8 @@ namespace GUI绘图测试
 {
     public partial class Form1 : Form
     {
+        public Bitmap[] shooterbitmap;
+        public System.Timers.Timer timer;
         public Form1()
         {
             InitializeComponent();
@@ -20,26 +22,27 @@ namespace GUI绘图测试
         private void Form1_Load(object sender, EventArgs e)
         {
             g = this.CreateGraphics();
+            shooterbitmap = new Bitmap[12];
+            timer = new System.Timers.Timer(500);
+            for(int i=0;i<=11;i++)
+            {
+                shooterbitmap[i] = new Bitmap(@".\bitmaps\Peashooter\" + i.ToString() + ".Png");
+            }
         }
 
-        Graphics g;
+        public Graphics g;
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Pen pen_black = new Pen(Color.Black);
-            Brush brush_black = new SolidBrush(Color.Black);
-            g.DrawRectangle(pen_black, (int)this.Width / 2, (int)this.Height / 2, 20, 20);
-            g.FillRectangle(brush_black, (int)this.Width / 2, (int)this.Height / 2, 20, 20);
+            shooter shooter = new shooter(this.Width / 2, this.Height / 2, this);
+            timer.Start();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        
+
+        void FlipScren(object sender,System.Timers.ElapsedEventArgs e)
         {
-
-        }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
+            this.Invalidate();
         }
     }
 }

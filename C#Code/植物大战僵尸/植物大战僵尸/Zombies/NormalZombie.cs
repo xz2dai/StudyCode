@@ -70,7 +70,7 @@ namespace 植物大战僵尸
                 }
                 Location.X -= V_x;
                 
-                if (NowFrame == 11)
+                if (NowFrame >= 11)
                 {
                     NowFrame = 0;
 

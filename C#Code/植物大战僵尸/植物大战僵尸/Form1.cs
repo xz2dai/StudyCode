@@ -216,19 +216,45 @@ namespace 植物大战僵尸
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
             SunCountLabel.Text = this.PointToClient(Control.MousePosition).ToString();
-            if (NowMouseState == MouseState.PlantingPlant || NowFormState == FormState.Gaming)
+            
+            if (NowMouseState == MouseState.PlantingPlant)
             {
+                Graphics m_g2 = this.CreateGraphics();
+                Bitmap m_bitmap;
+                //lock (m_g2) ;
                 switch (NowSettingPlant)
                 {
                     case plant_1.Plants.peashooter:
-                        g.DrawImage(PeaShooterBitmaps[0], this.PointToClient(MousePosition));
-                        break;
+                        try
+                        {
+                            m_bitmap = new Bitmap(PeaShooterBitmaps[0]);
+                            m_g2.DrawImage(m_bitmap, this.PointToClient(MousePosition));
+                            m_bitmap.Dispose();
+                        
+                        }
+                        catch(Exception)
+                        {
+
+                        }
+                        return;
                     case plant_1.Plants.sunflower:
-                        //  g.DrawImage(PeaShooterBitmaps[0], this.PointToClient(MousePosition));
-                        break;
+                        try
+                        {
+                            m_bitmap = new Bitmap(SunFlowerBitmaps[0]);
+                            m_g2.DrawImage(m_bitmap, this.PointToClient(MousePosition));
+                            m_bitmap.Dispose();
+
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                        return;
                     default:
-                        break;
+                        return;
                 }
+                m_g2.Dispose();
+                return;
             }
         }
 

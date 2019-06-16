@@ -23,7 +23,7 @@ namespace 植物大战僵尸
             Die
         }
         PlantState NowPlantState;
-        List<Ammo> AmmoList;
+        //List<Ammo> AmmoList;              //在6.15中计划使用list保存子弹，在6.16更改为用享元模式
         private int HP,NowFrame;
         public Point Location;
         public Bitmap[] bitmap;
@@ -33,7 +33,7 @@ namespace 植物大战僵尸
         public plant_1(int X,int Y, Bitmap[] bitmaps)
         {
             //bitmap = bitmaps;
-            bitmap = new Bitmap[12];
+            bitmap = new Bitmap[13];
             bitmaps.CopyTo(bitmap, 0);
             Location.X = X;
             Location.Y = Y;
@@ -116,15 +116,17 @@ public void LoadBitmap(string FileLocation)
 
         void NextFrame()
         {
-            if (NowFrame >= 11)
+            if (NowFrame >= 10)
             {
                 NowFrame = 0;
-                m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], m_g, Location);
+                //m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], m_g, Location);
+                DrawTest();
                 NowFrame++;
             }
             else
             {
-                m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], m_g, Location);
+                //m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], m_g, Location);
+                DrawTest();
                 NowFrame++;
             }
         }
@@ -134,6 +136,28 @@ public void LoadBitmap(string FileLocation)
             for(int i = 0;i<=AmmoList.Count-1;i++)
             {
                 AmmoList[i].DrawAmmo(m_g);
+                if (AmmoList[i].IsDie())
+                {
+                    //AmmoList[i] = null;
+                    AmmoList.RemoveAt(i);
+                    GC.Collect();
+                }
+            }
+        }
+
+        void DrawTest()
+        {
+            //Location = point;
+            try
+            {
+                Bitmap shadow = new Bitmap(Properties.Resources.shadow);
+                m_g.DrawImage(shadow, Location.X - 13, Location.Y + 45);
+
+                m_g.DrawImage(bitmap[NowFrame], Location);
+            }
+            catch(Exception)
+            {
+
             }
         }
     }
