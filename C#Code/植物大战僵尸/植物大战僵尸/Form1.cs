@@ -45,7 +45,7 @@ namespace 植物大战僵尸
         List<NormalZombie> Zombielist;
         PlantDrawFactory PlantDrawFactory;
         ZombieDrawFactory ZombieDrawFactory;
-        Rectangle BattleMapRect = new Rectangle(255,70,745,505);
+        Rectangle BattleMapRect = new Rectangle(255,70,745,505);            //草坪矩阵
         public Form1()
         {
             InitializeComponent();
@@ -126,7 +126,7 @@ namespace 植物大战僵尸
             
         }
 
-        private void QuitButton_Click(object sender, EventArgs e)
+        private void QuitButton_Click(object sender, EventArgs e)           //退出按钮
         {
             this.Close();
         }
@@ -136,13 +136,13 @@ namespace 植物大战僵尸
 
         }
 
-        private void PlantButton1_Click(object sender, EventArgs e)
+        private void PlantButton1_Click(object sender, EventArgs e)             //太阳花
         {
             NowMouseState = MouseState.PlantingPlant;
             NowSettingPlant = plant_1.Plants.sunflower;
         }
 
-        private void PlantButton2_Click(object sender, EventArgs e)
+        private void PlantButton2_Click(object sender, EventArgs e)                 //豌豆射手
         {
             NowMouseState = MouseState.PlantingPlant;
             NowSettingPlant = plant_1.Plants.peashooter;
@@ -154,7 +154,7 @@ namespace 植物大战僵尸
 
         }
 
-        void GameStart()
+        void GameStart()                    //开始游戏时的加载部分
         {
             NowFormState = FormState.Gaming;
             QuitButton.Enabled = false;
@@ -215,9 +215,9 @@ namespace 植物大战僵尸
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-            SunCountLabel.Text = this.PointToClient(Control.MousePosition).ToString();
+            SunCountLabel.Text = this.PointToClient(Control.MousePosition).ToString();      //测试：显示鼠标坐标
             
-            if (NowMouseState == MouseState.PlantingPlant)
+            if (NowMouseState == MouseState.PlantingPlant)              //判断在种植植物状态
             {
                 Graphics m_g2 = this.CreateGraphics();
                 Bitmap m_bitmap;
@@ -264,7 +264,7 @@ namespace 植物大战僵尸
             SunCountLabel.Text = SunCount.ToString();
         }
 
-        void LoadBitmaps()
+        void LoadBitmaps()              //导入角色图组
         {
             SunFlowerBitmaps = new Bitmap[12];
             PeaShooterBitmaps = new Bitmap[12];
@@ -280,7 +280,7 @@ namespace 植物大战僵尸
 
         
 
-        void Flip()
+        void Flip()             //刷新界面
         {
             timer.flip.SetPlantMethod(plantlist);
 
@@ -340,7 +340,7 @@ namespace 植物大战僵尸
             }
         }
 
-        void ZombieBornTime()
+        void ZombieBornTime()                   //随机时间生成僵尸
         {
             
         }

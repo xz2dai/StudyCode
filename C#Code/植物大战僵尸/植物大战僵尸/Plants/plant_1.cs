@@ -39,7 +39,7 @@ namespace 植物大战僵尸
             Location.Y = Y;
             
             NowFrame = 0;
-            AmmoList = new List<Ammo>(12);
+            //AmmoList = new List<Ammo>(12);
             //m_g = g;
             NowPlantState = PlantState.None;
             m_timer = new System.Timers.Timer(500);
@@ -95,7 +95,7 @@ public void LoadBitmap(string FileLocation)
         public void Action()
         {
             this.NextFrame();
-            this.AmmoAction();
+            //this.AmmoAction();
 
             
         }
@@ -111,7 +111,7 @@ public void LoadBitmap(string FileLocation)
         void Shoot(object sender,System.Timers.ElapsedEventArgs e)
         {
             Ammo m_ammo = new Ammo(this.Location.X + 55, this.Location.Y + 10);
-            this.AmmoList.Add(m_ammo);
+           // this.AmmoList.Add(m_ammo);
         }
 
         void NextFrame()
@@ -130,12 +130,11 @@ public void LoadBitmap(string FileLocation)
                 NowFrame++;
             }
         }
-
+        /*
         void AmmoAction()
         {
-            for(int i = 0;i<=AmmoList.Count-1;i++)
-            {
-                AmmoList[i].DrawAmmo(m_g);
+
+            AmmoList[i].DrawAmmo(m_g);
                 if (AmmoList[i].IsDie())
                 {
                     //AmmoList[i] = null;
@@ -144,6 +143,7 @@ public void LoadBitmap(string FileLocation)
                 }
             }
         }
+        */
 
         void DrawTest()
         {

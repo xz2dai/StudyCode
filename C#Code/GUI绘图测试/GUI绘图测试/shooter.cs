@@ -18,12 +18,15 @@ namespace GUI绘图测试
             Location.X = x;
             Location.Y = y;
             m_form = form1;
+            m_form.g.DrawImage(m_form.shooterbitmap[0], Location);
+            NowFrame = 1;
         }
 
         public void Action(object sender,System.Timers.ElapsedEventArgs e)
         {
+            m_form.Invalidate();
             if (NowFrame >= 11)
-            {
+            { 
                 NowFrame = 0;
                 m_form.g.DrawImage(m_form.shooterbitmap[NowFrame], Location);
                 NowFrame++;

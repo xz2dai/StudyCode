@@ -14,6 +14,8 @@ namespace GUI绘图测试
     {
         public Bitmap[] shooterbitmap;
         public System.Timers.Timer timer;
+        shooter shooter;
+        public Graphics g;
         public Form1()
         {
             InitializeComponent();
@@ -23,24 +25,29 @@ namespace GUI绘图测试
         {
             g = this.CreateGraphics();
             shooterbitmap = new Bitmap[12];
-            timer = new System.Timers.Timer(500);
+            timer = new System.Timers.Timer(300);
             for(int i=0;i<=11;i++)
             {
                 shooterbitmap[i] = new Bitmap(@".\bitmaps\Peashooter\" + i.ToString() + ".Png");
             }
+            
         }
 
-        public Graphics g;
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
-            shooter shooter = new shooter(this.Width / 2, this.Height / 2, this);
+            //shooter shooter = new shooter(this.Width / 2, this.Height / 2, this);
+            shooter = new shooter(this.Width / 2, this.Height / 2, this);
+            timer.Elapsed += shooter.Action;
+            // timer.Elapsed += FlipScren;
+            timer.AutoReset = true;
             timer.Start();
         }
 
         
 
-        void FlipScren(object sender,System.Timers.ElapsedEventArgs e)
+        public void FlipScren()
         {
             this.Invalidate();
         }

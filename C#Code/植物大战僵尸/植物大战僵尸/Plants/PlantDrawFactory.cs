@@ -26,7 +26,7 @@ namespace 植物大战僵尸
             
         }
 
-        public void TargetDraw(Bitmap bitmap, Graphics g,Point point)
+        public void TargetDraw(Bitmap bitmap, Graphics g,Point point)           //绘制目标图像
         {
 
             //bitmaps = new Bitmap[12];
