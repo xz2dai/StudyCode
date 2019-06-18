@@ -12,6 +12,13 @@ namespace 植物大战僵尸
         List<plant_1> plantlist;
         List<NormalZombie> zombielist;
         Graphics g;
+        Form1 form;
+
+        public Flip(Form1 form)
+        {
+            this.form = form;
+        }
+
         public void SetPlantMethod(List<plant_1> plantlist)
         {
             this.plantlist = plantlist;

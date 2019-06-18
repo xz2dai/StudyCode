@@ -47,7 +47,7 @@ namespace 植物大战僵尸
 
             timer.Interval = 1000 / targetfraps;
             //timer.Interval = targetfraps;
-            flip = new Flip();
+            //flip = new Flip();
             //timer.Enabled = true;
             timer.AutoReset = true;
             timer.Elapsed += flip.FlipPlants;

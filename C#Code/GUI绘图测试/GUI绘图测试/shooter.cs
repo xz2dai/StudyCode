@@ -24,7 +24,7 @@ namespace GUI绘图测试
 
         public void Action(object sender,System.Timers.ElapsedEventArgs e)
         {
-            m_form.Invalidate();
+            //m_form.Invalidate();
             if (NowFrame >= 11)
             { 
                 NowFrame = 0;
