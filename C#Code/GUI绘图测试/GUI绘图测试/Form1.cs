@@ -66,10 +66,11 @@ namespace GUI绘图测试
             //g.Clear(Color.White);
             BufferedGraphics.Render();
             //BufferedGraphics.Graphics.DrawImage(BufferBitmap, 0, 0);
-            BufferedGraphics.Dispose();
+            
         }
         void CreatBuffer(object sender,System.Timers.ElapsedEventArgs e)
         {
+            //BufferedGraphics.Dispose();
             BufferedGraphics = BufferedGraphicsContext.Allocate(this.CreateGraphics(), this.ClientRectangle);
             //BufferedGraphics.Graphics.FillRectangle(new SolidBrush(Color.Transparent), this.ClientRectangle);
             g = BufferedGraphics.Graphics;

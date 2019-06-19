@@ -54,6 +54,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="MapManager.cs" />
+    <Compile Include="Others\BitmapManager.cs" />
     <Compile Include="Plants\Shoot.cs" />
     <Compile Include="Suns\Sun.cs" />
     <Compile Include="Plants\AddPlantFactory.cs" />

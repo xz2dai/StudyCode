@@ -30,6 +30,7 @@ namespace 植物大战僵尸
         }
         Random Random;
         FrapsManage timer;
+        public BitmapManager BitmapManager;
         Graphics g;
         BufferedGraphicsContext BufferedGraphicsContext;
         BufferedGraphics BufferedGraphics;
@@ -57,7 +58,7 @@ namespace 植物大战僵尸
 
         private void Form1_Load(object sender, EventArgs e)             //启动页面及启动按钮,以及加载资源
         {
-            DoubleBuffered = true;
+            
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
                         ControlStyles.ResizeRedraw |
                         ControlStyles.AllPaintingInWmPaint, true);
@@ -70,9 +71,7 @@ namespace 植物大战僵尸
             Map_HavePlant = new int[9, 5];
             map = Properties.Resources.map;
             Loginimage = Properties.Resources.Logo;
-            timer = new FrapsManage(targetfraps);
-            timer.flip = new Flip(this);
-            timer.AddEvent();
+            BitmapManager = new BitmapManager();
             this.BackgroundImage = Properties.Resources.Logo;           //设置背景
             this.Width = this.BackgroundImage.Width;
             this.Height = this.BackgroundImage.Height;
@@ -161,6 +160,19 @@ namespace 植物大战僵尸
         void GameStart()                    //开始游戏时的加载部分
         {
             NowFormState = FormState.Gaming;
+            
+            this.Width = Properties.Resources.map.Width;
+            this.Height = Properties.Resources.map.Height;
+            this.BackgroundImage = Properties.Resources.map;                 //设置背景地图
+            DoubleBuffered = true;
+            BufferedGraphicsContext = BufferedGraphicsManager.Current;
+            BufferedGraphics = BufferedGraphicsContext.Allocate(this.CreateGraphics(), new Rectangle(0, 0, Properties.Resources.map.Width, Properties.Resources.map.Height));
+
+            g = BufferedGraphics.Graphics;                  //创建双缓冲绘图区域与绘图
+            g.DrawImage(Properties.Resources.map, 0, 0,this.Width,this.Height);
+            timer = new FrapsManage(targetfraps);
+            timer.flip = new Flip(this);
+            timer.AddEvent();
             QuitButton.Enabled = false;
             QuitButton.Visible = false;
             PlantButton1.Visible = true;
@@ -171,12 +183,9 @@ namespace 植物大战僵尸
             SunCountLabel.Visible = true;
             SunCount = 0;
             SunCountLabel.Text = SunCount.ToString();
-            this.BackgroundImage = map;                 //设置背景地图
-            this.Width = this.BackgroundImage.Width;
-            this.Height = this.BackgroundImage.Height;
-            BufferedGraphicsContext = BufferedGraphicsManager.Current;
-            BufferedGraphics = BufferedGraphicsContext.Allocate(this.CreateGraphics(), this.ClientRectangle);
-            g = BufferedGraphics.Graphics;                  //创建双缓冲绘图区域与绘图
+            
+            
+            
             button1.Visible = false;                      //隐藏开始按钮
             button1.Enabled = false;
             SettingButton.Location = new Point(this.Width - SettingButton.Width, 0);       //调整菜单按钮
@@ -226,7 +235,7 @@ namespace 植物大战僵尸
             
             if (NowMouseState == MouseState.PlantingPlant)              //判断在种植植物状态
             {
-                Graphics m_g2 = BufferedGraphics.Graphics;
+                //Graphics m_g2 = BufferedGraphics.Graphics;
                 Bitmap m_bitmap;
                 //lock (m_g2) ;
                 switch (NowSettingPlant)
@@ -235,7 +244,7 @@ namespace 植物大战僵尸
                         try
                         {
                             m_bitmap = new Bitmap(PeaShooterBitmaps[0]);
-                            m_g2.DrawImage(m_bitmap, this.PointToClient(MousePosition));
+                            g.DrawImage(m_bitmap, this.PointToClient(MousePosition));
                             m_bitmap.Dispose();
                         
                         }
@@ -248,7 +257,7 @@ namespace 植物大战僵尸
                         try
                         {
                             m_bitmap = new Bitmap(SunFlowerBitmaps[0]);
-                            m_g2.DrawImage(m_bitmap, this.PointToClient(MousePosition));
+                            g.DrawImage(m_bitmap, this.PointToClient(MousePosition));
                             m_bitmap.Dispose();
 
                         }
@@ -323,9 +332,11 @@ namespace 植物大战僵尸
                             //m_plant.bitmap = Properties.Resources.SunFlower1;
                             //m_plant.LoadBitmap(@".\bitmaps\Sunflower\");              //对读取路径的多个测试
                             //Graphics M_g = this.CreateGraphics();
-                            m_plant = plantFactory.CreatPlant(MapManager.ReturnFixX(m_X), MapManager.ReturnFixY(m_Y), SunFlowerBitmaps);//放置栅格化定位植物位置
+                            m_plant = plantFactory.CreatPlant(MapManager.ReturnFixX(m_X), MapManager.ReturnFixY(m_Y), plant_1.Plants.sunflower);//放置栅格化定位植物位置
+                            m_plant.SetFartherForm(this);
                             m_plant.m_g = BufferedGraphics.Graphics;
                             m_plant.SetDrawFactory();
+                            
                             break;
                         }
                     case plant_1.Plants.peashooter:
@@ -333,9 +344,11 @@ namespace 植物大战僵尸
                             //m_plant.bitmap = Properties.Resources.Peashooter1;
                             //m_plant.LoadBitmap(@".\bitmaps\Peashooter\");
                             //Graphics M_g = this.CreateGraphics();
-                            m_plant = plantFactory.CreatPlant(MapManager.ReturnFixX(m_X), MapManager.ReturnFixY(m_Y), PeaShooterBitmaps);//放置栅格化定位植物位置
+                            m_plant = plantFactory.CreatPlant(MapManager.ReturnFixX(m_X), MapManager.ReturnFixY(m_Y), plant_1.Plants.peashooter);//放置栅格化定位植物位置
+                            m_plant.SetFartherForm(this);
                             m_plant.m_g = BufferedGraphics.Graphics;
                             m_plant.SetDrawFactory();
+                            
                             break;
                         }
                 }
@@ -356,14 +369,15 @@ namespace 植物大战僵尸
         {
             //this.Invalidate();
             BufferedGraphics.Render();
-            BufferedGraphics.Dispose();
+
+            //BufferedGraphics.Dispose();
         }
 
         public void RecreatBuffer(object sender,System.Timers.ElapsedEventArgs e)       //重创建对象，以达到动态图的效果，去掉重影
         {
             BufferedGraphics = BufferedGraphicsContext.Allocate(this.CreateGraphics(), this.ClientRectangle);
             g = BufferedGraphics.Graphics;
-            g.DrawImage(Properties.Resources.map, 0, 0);
+            g.DrawImage(Properties.Resources.map, 0, 0,this.Width,this.Height);
         }
     }
 }

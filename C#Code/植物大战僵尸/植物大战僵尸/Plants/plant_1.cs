@@ -24,17 +24,19 @@ namespace 植物大战僵尸
         }
         PlantState NowPlantState;
         //List<Ammo> AmmoList;              //在6.15中计划使用list保存子弹，在6.16更改为用享元模式
+        Plants PlantKind;
         private int HP,NowFrame;
         public Point Location;
-        public Bitmap[] bitmap;
+        public Bitmap[] bitmap;                   //在6.19更新计划中，将植物图片也改为享元模式
         PlantDrawFactory m_PlantDrawFactory;
         public Graphics m_g;
         System.Timers.Timer m_timer;
-        public plant_1(int X,int Y, Bitmap[] bitmaps)
+        Form1 FatherForm;
+        public plant_1(int X,int Y, Plants plants)
         {
             //bitmap = bitmaps;
-            bitmap = new Bitmap[13];
-            bitmaps.CopyTo(bitmap, 0);
+            //bitmap = new Bitmap[13];
+            //bitmaps.CopyTo(bitmap, 0);
             Location.X = X;
             Location.Y = Y;
             
@@ -46,12 +48,13 @@ namespace 植物大战僵尸
             m_timer.Elapsed += Shoot;
             m_timer.AutoReset = true;
             m_timer.Start();
+            
         }
 
         public void SetDrawFactory()
         {
             m_PlantDrawFactory = new PlantDrawFactory(m_g);
-            m_PlantDrawFactory.TargetDraw(bitmap[0], m_g, Location);
+            DrawTest();
         }
 
         public plant_1()
@@ -145,19 +148,60 @@ public void LoadBitmap(string FileLocation)
         }
         */
 
+        public void SetFartherForm(Form1 form1)
+        {
+            this.FatherForm = form1;
+        }
+
         void DrawTest()
         {
             //Location = point;
-            try
+            switch(PlantKind)
             {
-                Bitmap shadow = new Bitmap(Properties.Resources.shadow);
-                m_g.DrawImage(shadow, Location.X - 13, Location.Y + 45);
-
-                m_g.DrawImage(bitmap[NowFrame], Location);
+                case Plants.peashooter:
+                    Peashooter_DrawFrame();
+                    break;
+                case Plants.sunflower:
+                    SunFlower_DrawFrame();
+                    break;
+                default:
+                    break;
             }
-            catch(Exception)
+        }
+        
+        void Peashooter_DrawFrame()                 //6.19测试性功能，需要将此功能拓展，以达到增强拓展性和复用性的目的
+        {
+            
+            if (NowFrame >= 10)
             {
-
+                NowFrame = 0;
+                //m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], m_g, Location);
+                m_PlantDrawFactory.TargetDraw(FatherForm.BitmapManager.PeaShooterBitmaps[NowFrame++], m_g, Location);
+                NowFrame++;
+            }
+            else
+            {
+                //m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], m_g, Location);
+                m_PlantDrawFactory.TargetDraw(FatherForm.BitmapManager.PeaShooterBitmaps[NowFrame++], m_g, Location);
+                NowFrame++;
+            }
+        }
+        
+        void SunFlower_DrawFrame()
+        {
+            
+            if (NowFrame >= 10)
+            {
+                NowFrame = 0;
+                //m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], m_g, Location);
+                m_PlantDrawFactory.TargetDraw(FatherForm.BitmapManager.SunFlowerBitmaps[NowFrame++], m_g, Location);
+                NowFrame++;
+            }
+            else
+            {
+                //m_PlantDrawFactory.TargetDraw(bitmap[NowFrame + 1], m_g, Location);
+                m_PlantDrawFactory.TargetDraw(FatherForm.BitmapManager.SunFlowerBitmaps[NowFrame++], m_g, Location);
+                NowFrame++;
             }
         }
     }

@@ -16,9 +16,9 @@ namespace 植物大战僵尸
     class AddPlantFactory : IAddItemFactory 
     {
    
-        public plant_1 CreatPlant(int X,int Y, Bitmap[] bitmaps)
+        public plant_1 CreatPlant(int X,int Y, plant_1.Plants plants)
         {
-            plant_1 newplant = new plant_1(X,Y,bitmaps);
+            plant_1 newplant = new plant_1(X,Y,plants);
             return newplant;
         }
 
