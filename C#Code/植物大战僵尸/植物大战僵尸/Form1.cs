@@ -72,6 +72,7 @@ namespace 植物大战僵尸
             Loginimage = Properties.Resources.Logo;
             timer = new FrapsManage(targetfraps);
             timer.flip = new Flip(this);
+            timer.AddEvent();
             this.BackgroundImage = Properties.Resources.Logo;           //设置背景
             this.Width = this.BackgroundImage.Width;
             this.Height = this.BackgroundImage.Height;
@@ -362,6 +363,7 @@ namespace 植物大战僵尸
         {
             BufferedGraphics = BufferedGraphicsContext.Allocate(this.CreateGraphics(), this.ClientRectangle);
             g = BufferedGraphics.Graphics;
+            g.DrawImage(Properties.Resources.map, 0, 0);
         }
     }
 }

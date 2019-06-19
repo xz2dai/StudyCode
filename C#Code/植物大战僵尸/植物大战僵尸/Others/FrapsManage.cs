@@ -50,9 +50,14 @@ namespace 植物大战僵尸
             //flip = new Flip();
             //timer.Enabled = true;
             timer.AutoReset = true;
+            
+
+        }
+
+        public void AddEvent()
+        {
             timer.Elapsed += flip.FlipPlants;
             timer.Elapsed += flip.FlipZombies;
-
         }
     }
 }

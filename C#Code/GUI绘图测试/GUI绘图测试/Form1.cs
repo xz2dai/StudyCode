@@ -18,7 +18,7 @@ namespace GUI绘图测试
         public Graphics g;
         BufferedGraphicsContext BufferedGraphicsContext;
         BufferedGraphics BufferedGraphics;
-        Bitmap BufferBitmap;
+        //Bitmap BufferBitmap;
         public Form1()
         {
             InitializeComponent();
@@ -27,11 +27,11 @@ namespace GUI绘图测试
         private void Form1_Load(object sender, EventArgs e)
         {
             //g = this.CreateGraphics();
-            BufferBitmap = new Bitmap(this.Width, this.Height);
+            //BufferBitmap = new Bitmap(Properties.Resources.豌豆射手,this.Width, this.Height);
             BufferedGraphicsContext = BufferedGraphicsManager.Current;
-            BufferedGraphics = BufferedGraphicsContext.Allocate(Graphics.FromImage(Properties.Resources.豌豆射手), this.ClientRectangle);
+            BufferedGraphics = BufferedGraphicsContext.Allocate(this.CreateGraphics(), this.ClientRectangle);
             //BufferedGraphics.Graphics.FillRectangle(new SolidBrush(Color.Transparent), this.ClientRectangle);
-            BufferBitmap.MakeTransparent(Color.Black);
+            //BufferBitmap.MakeTransparent(Color.Black);
             g = BufferedGraphics.Graphics;
             
             shooterbitmap = new Bitmap[12];
@@ -39,6 +39,7 @@ namespace GUI绘图测试
             for(int i=0;i<=11;i++)
             {
                 shooterbitmap[i] = new Bitmap(@".\bitmaps\Peashooter\" + i.ToString() + ".Png");
+                //shooterbitmap[i].MakeTransparent(Color.Black);
             }
             
         }
@@ -62,8 +63,9 @@ namespace GUI绘图测试
         {
             //this.Invalidate();
             //g.Clear(Color.Empty);
+            //g.Clear(Color.White);
             BufferedGraphics.Render();
-            BufferedGraphics.Graphics.DrawImage(BufferBitmap, 0, 0);
+            //BufferedGraphics.Graphics.DrawImage(BufferBitmap, 0, 0);
             BufferedGraphics.Dispose();
         }
         void CreatBuffer(object sender,System.Timers.ElapsedEventArgs e)
@@ -72,11 +74,13 @@ namespace GUI绘图测试
             //BufferedGraphics.Graphics.FillRectangle(new SolidBrush(Color.Transparent), this.ClientRectangle);
             g = BufferedGraphics.Graphics;
             //g.Clear(Color.Transparent);
+            //g.Clear(Color.White);
+            g.DrawImage(Properties.Resources.豌豆射手,0,0,this.Width,this.Height);
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            BufferBitmap.MakeTransparent(Color.Black);
+            //BufferBitmap.MakeTransparent(Color.Black);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -90,6 +94,9 @@ namespace GUI绘图测试
             Graphics g = bg.Graphics;//(3)
 
             //随机 宽400 高400
+            //g.Clear(Color.Transparent);
+
+            //g.DrawImage(Properties.Resources.豌豆射手,0,0);
 
 
 
