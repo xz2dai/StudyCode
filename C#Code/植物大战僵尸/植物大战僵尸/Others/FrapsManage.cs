@@ -24,7 +24,7 @@ namespace 植物大战僵尸
             //starttime = timer.Millisecond;
             //timer.Elapsed += form1.Invalidate;
             timer.Elapsed += form1.RefreshMap;
-            
+            timer.Elapsed += form1.RecreatBuffer;
             timer.Start();
 
         }

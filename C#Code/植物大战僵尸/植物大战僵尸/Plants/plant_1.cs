@@ -44,6 +44,7 @@ namespace 植物大战僵尸
             //AmmoList = new List<Ammo>(12);
             //m_g = g;
             NowPlantState = PlantState.None;
+            PlantKind = plants;
             m_timer = new System.Timers.Timer(500);
             m_timer.Elapsed += Shoot;
             m_timer.AutoReset = true;

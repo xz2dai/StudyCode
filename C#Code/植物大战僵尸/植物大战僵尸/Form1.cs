@@ -35,12 +35,12 @@ namespace 植物大战僵尸
         BufferedGraphicsContext BufferedGraphicsContext;
         BufferedGraphics BufferedGraphics;
         Image map,Loginimage;
-        Bitmap[] SunFlowerBitmaps, PeaShooterBitmaps,NormalZombieBitmaps;
+        //Bitmap[] SunFlowerBitmaps, PeaShooterBitmaps,NormalZombieBitmaps;
         plant_1.Plants NowSettingPlant;
         FormState NowFormState;
         MouseState NowMouseState;
         bool Settingplant;
-        int SunCount,targetfraps = 300;
+        int SunCount,targetfraps = 10;
         int[,] Map_HavePlant;
         AddZombieFactory zombieFactory;
         AddPlantFactory plantFactory;
@@ -104,7 +104,7 @@ namespace 植物大战僵尸
                 }
                 else
                 {
-                    NormalZombie normalZombie = zombieFactory.CreatZombie(NormalZombieBitmaps);
+                    NormalZombie normalZombie = zombieFactory.CreatZombie(BitmapManager.NormalZombieBitmaps);
                     normalZombie.m_g = this.CreateGraphics();
                     normalZombie.SetDrawFactory();
                     Zombielist.Add(normalZombie);
@@ -172,7 +172,7 @@ namespace 植物大战僵尸
             g.DrawImage(Properties.Resources.map, 0, 0,this.Width,this.Height);
             timer = new FrapsManage(targetfraps);
             timer.flip = new Flip(this);
-            timer.AddEvent();
+            
             QuitButton.Enabled = false;
             QuitButton.Visible = false;
             PlantButton1.Visible = true;
@@ -236,16 +236,16 @@ namespace 植物大战僵尸
             if (NowMouseState == MouseState.PlantingPlant)              //判断在种植植物状态
             {
                 //Graphics m_g2 = BufferedGraphics.Graphics;
-                Bitmap m_bitmap;
+                //Bitmap m_bitmap;
                 //lock (m_g2) ;
                 switch (NowSettingPlant)
                 {
                     case plant_1.Plants.peashooter:
                         try
                         {
-                            m_bitmap = new Bitmap(PeaShooterBitmaps[0]);
-                            g.DrawImage(m_bitmap, this.PointToClient(MousePosition));
-                            m_bitmap.Dispose();
+                            //m_bitmap = new Bitmap(PeaShooterBitmaps[0]);
+                            g.DrawImage(BitmapManager.PeaShooterBitmaps[0], this.PointToClient(MousePosition));
+                            //m_bitmap.Dispose();
                         
                         }
                         catch(Exception)
@@ -256,9 +256,9 @@ namespace 植物大战僵尸
                     case plant_1.Plants.sunflower:
                         try
                         {
-                            m_bitmap = new Bitmap(SunFlowerBitmaps[0]);
-                            g.DrawImage(m_bitmap, this.PointToClient(MousePosition));
-                            m_bitmap.Dispose();
+                            //m_bitmap = new Bitmap(SunFlowerBitmaps[0]);
+                            g.DrawImage(BitmapManager.SunFlowerBitmaps[0], this.PointToClient(MousePosition));
+                            //m_bitmap.Dispose();
 
                         }
                         catch (Exception)
@@ -282,6 +282,7 @@ namespace 植物大战僵尸
 
         void LoadBitmaps()              //导入角色图组
         {
+            /*
             SunFlowerBitmaps = new Bitmap[12];
             PeaShooterBitmaps = new Bitmap[12];
             NormalZombieBitmaps = new Bitmap[12];
@@ -291,7 +292,7 @@ namespace 植物大战僵尸
                 PeaShooterBitmaps[i] = new Bitmap(@".\bitmaps\Peashooter\" + i.ToString() + ".Png");
                 NormalZombieBitmaps[i] = new Bitmap(@".\bitmaps\NormalZombie\" + i.ToString() + ".Png");
             }
-            
+            */
         }
 
         
@@ -311,6 +312,7 @@ namespace 植物大战僵尸
                 //timer.Delay();
             }
             */
+            timer.AddEvent();
             timer.Start(this);
         }
 
@@ -367,15 +369,17 @@ namespace 植物大战僵尸
 
         public void RefreshMap(object sender,System.Timers.ElapsedEventArgs e)          //刷新地图
         {
-            //this.Invalidate();
+            
             BufferedGraphics.Render();
-
+            //this.Invalidate();
+            //BufferedGraphics.Dispose();
             //BufferedGraphics.Dispose();
         }
 
         public void RecreatBuffer(object sender,System.Timers.ElapsedEventArgs e)       //重创建对象，以达到动态图的效果，去掉重影
         {
-            BufferedGraphics = BufferedGraphicsContext.Allocate(this.CreateGraphics(), this.ClientRectangle);
+            BufferedGraphics.Dispose();
+            BufferedGraphics = BufferedGraphicsContext.Allocate(this.CreateGraphics(), new Rectangle(0, 0, Properties.Resources.map.Width, Properties.Resources.map.Height));
             g = BufferedGraphics.Graphics;
             g.DrawImage(Properties.Resources.map, 0, 0,this.Width,this.Height);
         }
