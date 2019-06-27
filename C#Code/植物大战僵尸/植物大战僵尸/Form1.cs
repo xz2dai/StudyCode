@@ -104,11 +104,8 @@ namespace 植物大战僵尸
                 }
                 else
                 {
-                    NormalZombie normalZombie = zombieFactory.CreatZombie(BitmapManager.NormalZombieBitmaps);
-                    normalZombie.m_g = this.CreateGraphics();
-                    normalZombie.SetDrawFactory();
-                    Zombielist.Add(normalZombie);
-
+                    ClickToCreakZombie();
+                    ClickToCreatSun();
                 }
 
             }
@@ -179,7 +176,8 @@ namespace 植物大战僵尸
             PlantButton1.BackgroundImage = Properties.Resources.SunFlowerLimpid;
             PlantButton2.Visible = true;
             PlantButton2.BackgroundImage = Properties.Resources.PeashooterLimpid;
-            SunCountPicture.Visible = true;
+            //SunCountPicture.Visible = true;
+            SunButton.Visible = true;
             SunCountLabel.Visible = true;
             SunCount = 0;
             SunCountLabel.Text = SunCount.ToString();
@@ -238,6 +236,7 @@ namespace 植物大战僵尸
                 //Graphics m_g2 = BufferedGraphics.Graphics;
                 //Bitmap m_bitmap;
                 //lock (m_g2) ;
+                
                 switch (NowSettingPlant)
                 {
                     case plant_1.Plants.peashooter:
@@ -271,7 +270,9 @@ namespace 植物大战僵尸
                 }
                 //m_g2.Dispose();
                 //return;
+                
             }
+            
         }
 
         void UseSun(int num) 
@@ -378,10 +379,29 @@ namespace 植物大战僵尸
 
         public void RecreatBuffer(object sender,System.Timers.ElapsedEventArgs e)       //重创建对象，以达到动态图的效果，去掉重影
         {
-            BufferedGraphics.Dispose();
-            BufferedGraphics = BufferedGraphicsContext.Allocate(this.CreateGraphics(), new Rectangle(0, 0, Properties.Resources.map.Width, Properties.Resources.map.Height));
-            g = BufferedGraphics.Graphics;
+            //BufferedGraphics.Dispose();
+            //BufferedGraphics = BufferedGraphicsContext.Allocate(this.CreateGraphics(), new Rectangle(0, 0, Properties.Resources.map.Width, Properties.Resources.map.Height));
+            //g = BufferedGraphics.Graphics;
+            g.Clear(Color.Transparent);
             g.DrawImage(Properties.Resources.map, 0, 0,this.Width,this.Height);
+        }
+
+        private void SunButton_Click(object sender, EventArgs e)
+        {
+            SunCount += 50;
+        }
+
+        void ClickToCreatSun()              //6.20测试性生成阳光功能
+        {
+            
+        }
+
+        void ClickToCreakZombie()       //测试性生成僵尸功能
+        {
+            NormalZombie normalZombie = zombieFactory.CreatZombie(BitmapManager.NormalZombieBitmaps);
+            normalZombie.m_g = g;
+            normalZombie.SetDrawFactory();
+            Zombielist.Add(normalZombie);
         }
     }
 }

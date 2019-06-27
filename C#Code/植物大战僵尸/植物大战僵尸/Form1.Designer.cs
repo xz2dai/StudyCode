@@ -33,10 +33,8 @@
             this.QuitButton = new System.Windows.Forms.Button();
             this.PlantButton1 = new System.Windows.Forms.Button();
             this.PlantButton2 = new System.Windows.Forms.Button();
-            this.SunCountPicture = new System.Windows.Forms.PictureBox();
             this.SunCountLabel = new System.Windows.Forms.Label();
-            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
-            ((System.ComponentModel.ISupportInitialize)(this.SunCountPicture)).BeginInit();
+            this.SunButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -95,19 +93,6 @@
             this.PlantButton2.Visible = false;
             this.PlantButton2.Click += new System.EventHandler(this.PlantButton2_Click);
             // 
-            // SunCountPicture
-            // 
-            this.SunCountPicture.BackColor = System.Drawing.Color.Transparent;
-            this.SunCountPicture.BackgroundImage = global::植物大战僵尸.Properties.Resources.frame_0;
-            this.SunCountPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SunCountPicture.Location = new System.Drawing.Point(30, 523);
-            this.SunCountPicture.Margin = new System.Windows.Forms.Padding(2);
-            this.SunCountPicture.Name = "SunCountPicture";
-            this.SunCountPicture.Size = new System.Drawing.Size(59, 50);
-            this.SunCountPicture.TabIndex = 5;
-            this.SunCountPicture.TabStop = false;
-            this.SunCountPicture.Visible = false;
-            // 
             // SunCountLabel
             // 
             this.SunCountLabel.AutoSize = true;
@@ -122,17 +107,36 @@
             this.SunCountLabel.Visible = false;
             this.SunCountLabel.TextChanged += new System.EventHandler(this.SunCountLabel_TextChanged);
             // 
+            // SunButton
+            // 
+            this.SunButton.BackColor = System.Drawing.Color.Transparent;
+            this.SunButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SunButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SunButton.FlatAppearance.BorderSize = 0;
+            this.SunButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SunButton.ForeColor = System.Drawing.Color.Transparent;
+            this.SunButton.Image = global::植物大战僵尸.Properties.Resources.frame_0;
+            this.SunButton.Location = new System.Drawing.Point(30, 521);
+            this.SunButton.Name = "SunButton";
+            this.SunButton.Size = new System.Drawing.Size(58, 55);
+            this.SunButton.TabIndex = 7;
+            this.SunButton.Text = "\r\n";
+            this.SunButton.UseVisualStyleBackColor = false;
+            this.SunButton.Visible = false;
+            this.SunButton.Click += new System.EventHandler(this.SunButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::植物大战僵尸.Properties.Resources.map;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1057, 587);
             this.ControlBox = false;
+            this.Controls.Add(this.SunButton);
             this.Controls.Add(this.SunCountLabel);
-            this.Controls.Add(this.SunCountPicture);
             this.Controls.Add(this.PlantButton2);
             this.Controls.Add(this.PlantButton1);
             this.Controls.Add(this.QuitButton);
@@ -149,7 +153,6 @@
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.Move += new System.EventHandler(this.Form1_Move);
-            ((System.ComponentModel.ISupportInitialize)(this.SunCountPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,9 +164,8 @@
         private System.Windows.Forms.Button QuitButton;
         private System.Windows.Forms.Button PlantButton1;
         private System.Windows.Forms.Button PlantButton2;
-        private System.Windows.Forms.PictureBox SunCountPicture;
         private System.Windows.Forms.Label SunCountLabel;
-        private System.DirectoryServices.DirectoryEntry directoryEntry1;
+        private System.Windows.Forms.Button SunButton;
     }
 }
 
