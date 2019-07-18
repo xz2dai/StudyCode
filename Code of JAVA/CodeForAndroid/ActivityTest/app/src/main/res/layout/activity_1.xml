@@ -11,10 +11,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <Button
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="切换activity1"/>
     <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="切换activity2"/>
