@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-public class Test3_2 {
-    public static void Question2Answer(){
+public class Test3_2 implements TestTemplate {
+    public void QuestionAnswer(){
         int x,n,k,totol = 0 ;
         Scanner scanner = new Scanner(System.in);
         k = x = scanner.nextInt();n = scanner.nextInt();    //从键盘读入
