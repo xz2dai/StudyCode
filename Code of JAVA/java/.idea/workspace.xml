@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee07ed44-3795-4f59-a471-a106c0c16d48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Test6_2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RandomTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test0.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/java/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/Voter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/Voter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/Test6_2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/Test6_2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Voter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Voter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Hello_World!.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../Hello_World!.exe" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

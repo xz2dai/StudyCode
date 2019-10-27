@@ -9,8 +9,8 @@ public class Main
 
     public static void main(String[] args) throws IOException {
 
-    Test6_2 test = new Test6_2();
-    test.QuestionAnswer();
+    RandomTest rt = new RandomTest();
+    rt.QuestionAnswer();
 
 
     }
