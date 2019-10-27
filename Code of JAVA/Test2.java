@@ -3,7 +3,7 @@ import java.util.*;
 import javax.print.DocFlavor;
 import javax.swing.*;
 
-public class Main
+public class Test2
 {
 
     public static void main(String[] args){

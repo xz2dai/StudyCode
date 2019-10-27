@@ -4,7 +4,7 @@ import java.util.Scanner;
 import javax.print.DocFlavor;
 import javax.swing.*;
 
-public class Main
+public class Test
 {
 
     public static void main(String[] args) throws IOException {
