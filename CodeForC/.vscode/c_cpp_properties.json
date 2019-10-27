@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "MinGW",
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "C:/LLVM/bin/gcc.exe",
+            "includePath": [
+                "${workspaceFolder}",
+                "C:/x86_64-7.2.0-posix-seh-rt_v5-rev1/mingw64/x86_64-w64-mingw32/include",
+                "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++",
+                "C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.2.0/include/c++/tr1"
+            ],
+            "defines": [],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

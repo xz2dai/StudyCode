@@ -1,3 +1,0 @@
-C:/Users/Administrator/Documents/study/cmake-build-debug/CMakeFiles/sdltests.dir
-C:/Users/Administrator/Documents/study/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Administrator/Documents/study/cmake-build-debug/CMakeFiles/rebuild_cache.dir

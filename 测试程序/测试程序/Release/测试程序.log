@@ -1,8 +1,0 @@
-﻿  统计考试成绩.c
-c:\users\我的电脑\documents\study\oj\统计考试成绩.c(5): warning C4101: “k”: 未引用的局部变量
-  正在生成代码
-  1 of 7 functions (14.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  已完成代码的生成
-  测试程序.vcxproj -> C:\Users\我的电脑\Documents\study\测试程序\Release\测试程序.exe
