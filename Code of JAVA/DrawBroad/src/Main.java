@@ -8,26 +8,22 @@ import java.awt.event.MouseEvent;
 public class Main {
 
     static JFrame frame = null;
-    static JPanel panel = null;
 
     public static void main(String[] args) {
 
         Graphics2D g;
         frame = new JFrame("DrawBroad");
-        panel = new JPanel();
-        panel.setBackground(Color.GRAY);
         frame.setBounds(600, 300, 500, 400);
         JFrame.setDefaultLookAndFeelDecorated(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new BorderLayout());
+        frame.setLayout(new FlowLayout());
         frame.setBackground(Color.white);
-        Label LX = new Label();
-        Label LY = new Label();
-        panel.add(LX);
-        panel.add(LY);
-        frame.add(panel);
+        TextField LX = new TextField();
+        TextField LY = new TextField();
+        frame.add(LX);
+        frame.add(LY);
         frame.setVisible(true);
-        g = (Graphics2D)panel.getGraphics();
+        g = (Graphics2D)frame.getGraphics();
         g.setColor(Color.BLACK);
         g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         frame.addMouseListener(new MouseAdapter() {
