@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22bf65fd-b209-4e04-be70-75905202ea54" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DrawBroad/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawBroad/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DrawBroad/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawBroad/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CodeForC/SDL2Test/sdltests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../CodeForC/SDL2Test/sdltests.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +81,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
