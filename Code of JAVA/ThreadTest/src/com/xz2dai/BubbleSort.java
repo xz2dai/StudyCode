@@ -13,6 +13,7 @@ public class BubbleSort extends Thread {
 
     @Override
     public void run() {
+        System.out.println("冒泡排序开始");
         startTime = System.currentTimeMillis();
         sort();
         costTime = System.currentTimeMillis() - startTime;
@@ -21,9 +22,9 @@ public class BubbleSort extends Thread {
 
     private void sort(){
         int cup;
-        for (int i =0 ;i<=arry.length;i++){
-            for(int j = 0;j<=arry.length-i;j++){
-                if(arry[i] > arry[j]){
+        for (int i =0 ;i<arry.length;i++){
+            for(int j = 0;j<arry.length;j++){
+                if(arry[i] < arry[j]){
                     cup = arry[i];
                     arry[i] = arry[j];
                     arry[j] = cup;
@@ -35,7 +36,7 @@ public class BubbleSort extends Thread {
 
     public void display(){
         System.out.println("冒泡排序后数组为");
-        for (int i = 0;i<=arry.length;i++){
+        for (int i = 0;i<arry.length;i++){
             System.out.print(arry[i]+" ");
         }
         System.out.println();

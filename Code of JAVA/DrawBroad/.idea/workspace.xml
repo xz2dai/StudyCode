@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22bf65fd-b209-4e04-be70-75905202ea54" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../CodeForC/SDL2Test/sdltests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../CodeForC/SDL2Test/sdltests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DrawBroad/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawBroad/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DrawBroad/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DrawBroad/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThreadTest/src/com/xz2dai/BubbleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ThreadTest/src/com/xz2dai/BubbleSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThreadTest/src/com/xz2dai/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ThreadTest/src/com/xz2dai/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThreadTest/src/com/xz2dai/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ThreadTest/src/com/xz2dai/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CodeForC/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../CodeForC/.vscode/settings.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +32,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572171286931" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../IOTest" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

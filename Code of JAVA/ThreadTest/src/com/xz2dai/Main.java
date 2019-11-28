@@ -17,37 +17,39 @@ public class Main {
 
 class ArrayManager{
 
-    private final int MAX = 10;     //最大数组长度
+    private static int MAX = 10;     //最大数组长度
 
-    private int[] arry;
+    private int[] arry = new int[MAX];
 
     Random random;
-    QuickSort qs;
-    BubbleSort bs;
+
 
     public ArrayManager(){
-        random = new Random();
-        BornArray(arry);
+        BornArray();
 
     }
 
     public void BeginTest(){                    //开始线程
         System.out.println("排序前数组为:");
-        for (int i = 0;i<=arry.length;i++){
-            System.out.print(arry[i]+" ");
-        }
+        showArray();
         System.out.println();
-        bs = new BubbleSort(arry);
+        BubbleSort bs = new BubbleSort(arry);
         bs.start();
-        qs = new QuickSort(arry);
+        QuickSort qs = new QuickSort(arry);
         Thread qsThread = new Thread(qs);
+        qsThread.start();
     }
 
-    public int[] BornArray(int[] arry){         //随机生成数组
-        arry = new int[MAX];
-        for(int i =0 ;i<=MAX;i++){
-            random.nextInt(MAX);
+    public void BornArray(){         //随机生成数组
+        random = new Random();
+        for(int i =0 ;i<MAX;i++){
+            arry[i] = random.nextInt(MAX);
         }
-        return arry;
+    }
+
+    public void showArray(){
+        for(int i =0;i<MAX;i++){
+            System.out.print(arry[i] + " ");
+        }
     }
 }
