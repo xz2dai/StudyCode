@@ -1,7 +1,5 @@
 package com.xz2dai;
 
-import java.lang.Runnable;
-
 public class QuickSort implements Runnable {
 
     private int[] arry;
