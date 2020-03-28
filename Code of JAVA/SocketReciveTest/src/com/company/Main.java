@@ -8,18 +8,23 @@ import java.net.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
         int count = 0;
-        String inf,deinf;
+        int port = 2333;
+        Socket sc;
+
+        /*
 
         try{
-            ServerSocket server = new ServerSocket(2333);
+
             TestPack tp = null;
-            System.out.println("开始对端口2333进行监听");
+            String inf = null;
+            ServerSocket server = new ServerSocket(port);
+            System.out.println("start listening port "+port);
 
             while(true){
-                Socket sc = server.accept();
+                sc = server.accept();
 
                 DataInputStream din=new DataInputStream(sc.getInputStream());
 
@@ -35,13 +40,15 @@ public class Main {
 
 
                 if(din!= null) {
+                    dout.writeUTF("服务端已接受到信息");
+                    dout.flush();
                     System.out.println("服务端接收到信息："+inf);
-                    tp = JSON.parseObject(inf, TestPack.class);
-                    System.out.println("信息已解码：");
-                    System.out.println("ID:"+tp.getId());
-                    System.out.println("内容:"+tp.getInformation());
+                    //tp = JSON.parseObject(inf, TestPack.class);
+                    //System.out.println("信息已解码：");
+                    //System.out.println("ID:"+tp.getId());
+                    //System.out.println("内容:"+tp.getInformation());
                 }else{
-                    System.out.println("客户端发出信息为空！");
+                    dout.writeUTF("null message！");
                 }
 
                 din.close();
@@ -52,5 +59,20 @@ public class Main {
             e.printStackTrace();
         }
 
+
+         */
+
+        try {
+            ServerSocket server = new ServerSocket(port);
+            while (true){
+                sc = server.accept();
+                System.out.println("socket connect successful");
+                ConnectThread ct = new ConnectThread(sc);
+                System.out.println("creat connectthread successful");
+                ct.run();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

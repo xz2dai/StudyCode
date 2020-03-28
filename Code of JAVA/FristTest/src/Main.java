@@ -5,3 +5,7 @@ public class Main {
         System.out.println("Hello World!");
     }
 }
+
+class MyThread extends Thread{
+
+}

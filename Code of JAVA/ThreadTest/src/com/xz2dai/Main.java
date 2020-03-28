@@ -1,55 +1,27 @@
 package com.xz2dai;
 
-import java.util.Arrays;
-import java.util.Random;
-
 public class Main {
 
-
-
     public static void main(String[] args) {
-        ArrayManager arrayManager = new ArrayManager();
-        arrayManager.BeginTest();
+
+        MyThread mt = new MyThread(2);
+        mt.run();
     }
-
-
 }
 
-class ArrayManager{
+class MyThread extends Thread{
 
-    private static int MAX = 10;     //最大数组长度
+    int j;
 
-    private int[] arry = new int[MAX];
-
-    Random random;
-
-
-    public ArrayManager(){
-        BornArray();
-
+    public MyThread(int i){
+        this.j = i;
+        System.out.println("线程初始化成功");
     }
 
-    public void BeginTest(){                    //开始线程
-        System.out.println("排序前数组为:");
-        showArray();
-        System.out.println();
-        BubbleSort bs = new BubbleSort(arry);
-        bs.start();
-        QuickSort qs = new QuickSort(arry);
-        Thread qsThread = new Thread(qs);
-        qsThread.start();
-    }
-
-    public void BornArray(){         //随机生成数组
-        random = new Random();
-        for(int i =0 ;i<MAX;i++){
-            arry[i] = random.nextInt(MAX);
-        }
-    }
-
-    public void showArray(){
-        for(int i =0;i<MAX;i++){
-            System.out.print(arry[i] + " ");
+    public void run(){
+        System.out.println("线程启动");
+        for(int i=j;i<=10;i++){
+            System.out.println(i);
         }
     }
 }

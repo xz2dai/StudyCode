@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7a9e3b65-6a37-424c-8e42-83cb63dbad6a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/.idea/artifacts/TestCilent.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/out/artifacts/TestCilent/TestCilent.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/src/com/company/ConnectThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VisualCilent/.idea/artifacts/TestCilent.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VisualCilent/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocketReciveTest/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SocketReciveTest/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocketReciveTest/.idea/libraries/fastjson_1_1_33.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SocketReciveTest/.idea/libraries/fastjson_1_1_33.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocketReciveTest/.idea/libraries/fastjson_1_1_33__2_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocketReciveTest/SocketReciveTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../SocketReciveTest/SocketReciveTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocketReciveTest/out/production/SocketReciveTest/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SocketReciveTest/out/production/SocketReciveTest/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocketReciveTest/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SocketReciveTest/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThreadTest/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ThreadTest/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThreadTest/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ThreadTest/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ThreadTest/src/com/xz2dai/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ThreadTest/src/com/xz2dai/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisualCilent/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../VisualCilent/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisualCilent/out/production/VisualCilent/com/xz2dai/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../VisualCilent/out/production/VisualCilent/com/xz2dai/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisualCilent/src/com/xz2dai/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VisualCilent/src/com/xz2dai/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1ZZNvB51v2Ep0HLBB3MEk1btsUX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a9e3b65-6a37-424c-8e42-83cb63dbad6a" name="Default Changelist" comment="" />
+      <created>1585042884583</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585042884583</updated>
+      <workItem from="1585042885867" duration="132000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585042958655">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1585042958655" />
+    <state x="754" y="339" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585042957364">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="754" y="339" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1585042957364" />
+    <state x="870" y="445" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585042896953">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="870" y="445" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1585042896953" />
+    <state x="805" y="297" key="FileChooserDialogImpl" timestamp="1585042984956">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="805" y="297" key="FileChooserDialogImpl/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1585042984956" />
+    <state x="434" y="166" key="new project wizard" timestamp="1585043011360">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="434" y="166" key="new project wizard/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1585043011360" />
+  </component>
+</project>

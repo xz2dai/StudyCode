@@ -4,39 +4,51 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.xz2dai.bean.TestPack;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 	// write your code here
-        try{
-            Socket sc = new Socket(InetAddress.getLocalHost(),2333);
 
-            DataInputStream din = new DataInputStream(sc.getInputStream());
+        //Socket sc = new Socket("101.133.235.230",2333);
+         Socket sc = new Socket(InetAddress.getLocalHost(),2333);
 
-            DataOutputStream dout = new DataOutputStream(sc.getOutputStream());
 
-            TestPack testpack = new TestPack();
-            testpack.setId(10086);
-            testpack.setInformation("hao!");
+        /*
+        BufferedReader br = new BufferedReader(new InputStreamReader(sc.getInputStream()));
 
-            String jsonstr = JSON.toJSONString(testpack);
+        DataOutputStream dout = new DataOutputStream(sc.getOutputStream());
 
-            dout.writeUTF(jsonstr);
+         */
 
-            System.out.println("客户端："+din.readUTF());
+        BufferedReader din = new BufferedReader(new InputStreamReader(sc.getInputStream(), StandardCharsets.UTF_8));
+        BufferedWriter dout = new BufferedWriter(new OutputStreamWriter(sc.getOutputStream(), StandardCharsets.UTF_8));
 
-            din.close();
-            dout.close();
-            sc.close();
+        TestPack testpack = new TestPack();
+        testpack.setId(10086);
+        testpack.setInformation("hao!");
 
-        }catch(Exception e) {
-            e.printStackTrace();
-        }
+        JSONObject job = (JSONObject)JSON.toJSON(testpack);
+        job.put("type","search");
+        job.put("login","1");
+        String jstr = JSONObject.toJSONString(job);
+
+        System.out.println("send message...");
+        dout.write(jstr+"\n");
+        dout.flush();
+        System.out.println("send message successful");
+
+        System.out.println("客户端："+din.readLine());
+        System.out.println("客户端："+din.readLine());
+
+        din.close();
+        dout.close();
+        sc.close();
+
+
     }
 }
