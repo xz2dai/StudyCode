@@ -28,7 +28,7 @@ public class ConnectThread extends Thread{
 			System.out.println("thread start");
 			input = new BufferedReader(new InputStreamReader(sc.getInputStream(), StandardCharsets.UTF_8));
 			out = new BufferedWriter(new OutputStreamWriter(sc.getOutputStream(), StandardCharsets.UTF_8));
-			String message = input.readLine();
+			message = input.readLine();
 			if(message == null){
 				System.out.println("error:null cilent message ");
 				interrupt();
@@ -66,6 +66,7 @@ public class ConnectThread extends Thread{
 				break;
 			}
 			case "updata":{
+				System.out.println("get updata type，but no method find");
 				break;
 			}
 			default:{
