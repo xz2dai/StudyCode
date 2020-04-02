@@ -1,6 +1,6 @@
 package com.xz2dai;
 
-public class Connect {
+public class Connect  {
 
     /**
      * 网络连接方法

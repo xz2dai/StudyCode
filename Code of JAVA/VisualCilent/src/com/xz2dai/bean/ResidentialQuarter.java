@@ -3,7 +3,7 @@ package com.xz2dai.bean;
 /**
  * 小区数据接受对象转换实现类
  */
-public class ResidentialQuarter_Bean {
+public class ResidentialQuarter {
     private int id;
     private String communityName;//小区名称
     private String communityAddress;//小区地址
