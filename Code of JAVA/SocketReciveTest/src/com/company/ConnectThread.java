@@ -2,8 +2,10 @@ package com.company;
 
 import com.alibaba.fastjson.JSONObject;
 import com.company.bean.TestPack;
+import com.company.bean.UserOrdinary;
 
 
+import java.beans.ParameterDescriptor;
 import java.io.*;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
@@ -31,10 +33,8 @@ public class ConnectThread extends Thread{
 			message = input.readLine();
 			if(message == null){
 				System.out.println("error:null cilent message ");
-				interrupt();
 			}
 			System.out.println("recived cilent message:"+message);
-			out.write("message recived\n");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -61,7 +61,12 @@ public class ConnectThread extends Thread{
 			switch (type) {
 			case "search":{
 				if(jsonData.get("login") != null) {
-					login();
+				String id = "",password = "";
+				id = jsonData.get("id").toString();
+				System.out.println("get id:"+id);
+				password = jsonData.get("password").toString();
+				System.out.println("get password:"+ password);
+				login(id,password);
 				}
 				break;
 			}
@@ -78,21 +83,25 @@ public class ConnectThread extends Thread{
 	}
 
 
-	private void login() {
-
-				System.out.println("login successful");
-				TestPack user = new TestPack();
-				user.setId(10086);
-				user.setInformation("Test information");
-				JSONObject jsonUser = (JSONObject)JSONObject.toJSON(user);
-				System.out.println("user data："+jsonUser.toJSONString());
-				try {
-					out.write(jsonUser.toJSONString()+"\n");
-					out.flush();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				System.out.println("send user data successful!");
+	private void login(String id,String password) {
+		String sendData = "";
+		System.out.println("login successful");
+		UserOrdinary testpack = new UserOrdinary();
+		testpack.setId(Integer.parseInt(id));
+		testpack.setPassword(password);
+		testpack.setAccountNum("0000000");
+		JSONObject jsonUser = (JSONObject)JSONObject.toJSON(testpack);
+		jsonUser.put("type","search");
+		jsonUser.put("login","1");
+		System.out.println("user data："+jsonUser.toJSONString());
+		sendData = jsonUser.toJSONString();
+		try {
+			out.write(sendData+"\n");
+			out.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println("send user data successful!");
 
 
 	}

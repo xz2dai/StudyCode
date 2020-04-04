@@ -2,26 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a9e3b65-6a37-424c-8e42-83cb63dbad6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/.idea/artifacts/TestCilent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/out/artifacts/TestCilent/TestCilent.war" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/src/com/company/ConnectThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisualCilent/.idea/artifacts/TestCilent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../VisualCilent/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/fastjson_1_1_33.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fastjson-1.1.33.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/out/production/SocketReceiveTest/com/company/ConnectThread.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/out/production/SocketReceiveTest/com/company/Decode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/out/production/SocketReceiveTest/com/company/Encode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/out/production/SocketReceiveTest/com/company/InitSocket.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/out/production/SocketReceiveTest/com/company/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/out/production/SocketReceiveTest/com/company/VisualCilent.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/out/production/SocketReceiveTest/com/company/bean/TestPack.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/out/production/SocketReceiveTest/com/company/bean/UserOrdinary.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SocketReciveTest/src/com/company/bean/UserOrdinary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FristTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FristTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocketReciveTest/.idea/artifacts/TestCilent.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SocketReciveTest/.idea/artifacts/TestCilent.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SocketReciveTest/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SocketReciveTest/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocketReciveTest/.idea/libraries/fastjson_1_1_33.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SocketReciveTest/.idea/libraries/fastjson_1_1_33.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocketReciveTest/.idea/libraries/fastjson_1_1_33__2_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocketReciveTest/SocketReciveTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../SocketReciveTest/SocketReciveTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SocketReciveTest/out/production/SocketReciveTest/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../SocketReciveTest/out/production/SocketReciveTest/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocketReciveTest/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SocketReciveTest/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocketReciveTest/SocketReciveTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../SocketReciveTest/SocketReceiveTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SocketReciveTest/src/com/company/ConnectThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SocketReciveTest/src/com/company/ConnectThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SocketReciveTest/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SocketReciveTest/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThreadTest/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ThreadTest/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThreadTest/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ThreadTest/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ThreadTest/src/com/xz2dai/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ThreadTest/src/com/xz2dai/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../VisualCilent/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../VisualCilent/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../VisualCilent/out/production/VisualCilent/com/xz2dai/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../VisualCilent/out/production/VisualCilent/com/xz2dai/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisualCilent/src/com/xz2dai/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VisualCilent/src/com/xz2dai/Connect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../VisualCilent/src/com/xz2dai/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VisualCilent/src/com/xz2dai/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VisualCilent/src/com/xz2dai/bean/Userbean.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +49,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../IOTest" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\book\Documents\Code\study\Code of JAVA\FristTest\src" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -55,6 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585042884583</updated>
       <workItem from="1585042885867" duration="132000" />
+      <workItem from="1585999959129" duration="224000" />
     </task>
     <servers />
   </component>
@@ -70,13 +83,15 @@
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="754" y="339" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1585042957364" />
-    <state x="870" y="445" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585042896953">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state x="637" y="384" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1586000024080">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
+    <state x="637" y="384" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1500.960@0.0.1500.960" timestamp="1586000024080" />
     <state x="870" y="445" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1585042896953" />
-    <state x="805" y="297" key="FileChooserDialogImpl" timestamp="1585042984956">
-      <screen x="0" y="0" width="2048" height="1112" />
+    <state x="590" y="256" key="FileChooserDialogImpl" timestamp="1586000175278">
+      <screen x="0" y="0" width="1500" height="960" />
     </state>
+    <state x="590" y="256" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1586000175278" />
     <state x="805" y="297" key="FileChooserDialogImpl/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1585042984956" />
     <state x="434" y="166" key="new project wizard" timestamp="1585043011360">
       <screen x="0" y="0" width="2048" height="1112" />

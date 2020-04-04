@@ -12,7 +12,7 @@ public class Main {
 
         int count = 0;
         int port = 2333;
-        Socket sc;
+        Socket sc = null;
 
         /*
 
@@ -62,17 +62,24 @@ public class Main {
 
          */
 
+
+        ServerSocket server = null;
         try {
-            ServerSocket server = new ServerSocket(port);
-            while (true){
+            server = new ServerSocket(port);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        while (true){
+            try {
                 sc = server.accept();
-                System.out.println("socket connect successful");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println("socket connect successful");
                 ConnectThread ct = new ConnectThread(sc);
                 System.out.println("creat connectthread successful");
                 ct.run();
             }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+
     }
 }
