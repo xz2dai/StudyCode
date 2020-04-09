@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args)  {
 
         int count = 0;
-        int port = 2333;
+        int port = 5423;
         Socket sc = null;
 
         /*
@@ -71,7 +71,9 @@ public class Main {
         }
         while (true){
             try {
-                sc = server.accept();
+                if (server != null) {
+                    sc = server.accept();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }

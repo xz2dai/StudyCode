@@ -62,9 +62,9 @@ public class ConnectThread extends Thread{
 			case "search":{
 				if(jsonData.get("login") != null) {
 				String id = "",password = "";
-				id = jsonData.get("id").toString();
+				id = (String)jsonData.get("id");
 				System.out.println("get id:"+id);
-				password = jsonData.get("password").toString();
+				password = (String)jsonData.get("password");
 				System.out.println("get password:"+ password);
 				login(id,password);
 				}
@@ -87,8 +87,12 @@ public class ConnectThread extends Thread{
 		String sendData = "";
 		System.out.println("login successful");
 		UserOrdinary testpack = new UserOrdinary();
-		testpack.setId(Integer.parseInt(id));
-		testpack.setPassword(password);
+		if(id != null){
+			testpack.setId(Integer.parseInt(id));
+		}
+		if(password != null){
+			testpack.setPassword(password);
+		}
 		testpack.setAccountNum("0000000");
 		JSONObject jsonUser = (JSONObject)JSONObject.toJSON(testpack);
 		jsonUser.put("type","search");

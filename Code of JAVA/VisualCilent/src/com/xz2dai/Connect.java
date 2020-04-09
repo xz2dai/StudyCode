@@ -8,13 +8,16 @@ import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 public class Connect  {
 
     Socket sc = null;
-    BufferedWriter dout = null;
-    BufferedReader din = null;
+    OutputStreamWriter dout = null;
+    InputStreamReader din = null;
     JSONObject jsonData = null;
+
+    String replyMessage = "";
 
     /**
      * 网络连接方法
@@ -23,6 +26,7 @@ public class Connect  {
      * @param port 连接端口
      */
     public Connect(String ip,int port){
+
         try {
             sc = new Socket(ip,port);
             if(sc != null){
@@ -30,8 +34,10 @@ public class Connect  {
             }else{
                 System.out.println("connect server failed");
             }
-            din = new BufferedReader(new InputStreamReader(sc.getInputStream(), StandardCharsets.UTF_8));
-            dout = new BufferedWriter(new OutputStreamWriter(sc.getOutputStream(), StandardCharsets.UTF_8));
+            din = new InputStreamReader(sc.getInputStream(), StandardCharsets.UTF_8);
+            dout = new OutputStreamWriter(sc.getOutputStream(), StandardCharsets.UTF_8);
+            //replyMessage = din.readLine();
+            //System.out.println("server connect reply message:"+replyMessage);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -44,9 +50,13 @@ public class Connect  {
     public void sendMessage(String message){
         try {
             if(dout != null || message != null){
-                dout.write(message+"\n");
+                //message = message+"\n";
+                message = "{\"login\":\"1\",\"name\":\"123\",\"passWord\":\"123\",\"type\":\"search\"}\n";
+                //byte[] WaitToSendMsg = message.getBytes();
+                dout.write(message);
+                dout.flush();
             }
-            dout.flush();
+
             System.out.println("send message successful");
         } catch (IOException e) {
             System.out.println("向服务端发送数据时出错");
@@ -55,14 +65,18 @@ public class Connect  {
     }
 
     public String receiveMessage(){
-        String message = "";
+        char[] message = new char[1024];
+        String message_t = "";
         try {
-            message = din.readLine();
+            System.out.println("开始接受服务器消息");
+            int a = din.read(message);
+            message_t = Arrays.toString(message);
+            System.out.println("get message:"+message_t);
         } catch (IOException e) {
             System.out.println("接受消息失败");
             e.printStackTrace();
         }
-        return message;
+        return message_t;
     }
 
     //获取服务器返回数据操作类型
@@ -88,12 +102,11 @@ public class Connect  {
         String type = getDisposeType(message);
         JSONObject jdata = null;
         Object bufferpack = null;
-        System.out.println("get message:"+message);
         System.out.println("type:"+type);
         if(type != null) {
             switch (type) {
                 case "search":{
-                    /**
+                    /*
                      * 查询操作
                      * 进行判断查询类型
                      * 根据json数据中的其他数据进行查询
@@ -199,6 +212,7 @@ public class Connect  {
         }
         return jstr;
     }
+
 
 
     /**

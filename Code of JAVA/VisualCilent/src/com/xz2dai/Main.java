@@ -1,14 +1,15 @@
 package com.xz2dai;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.xz2dai.bean.TestPack;
+import com.xz2dai.bean.Login;
 import com.xz2dai.bean.UserOrdinary;
 
 import java.io.*;
-import java.net.InetAddress;
 
 public class Main {
+
+    private static String ip = "120.79.87.21";
+    private static int port = 5423;
+    private static int portUpload = 5422;
 
     public static void main(String[] args) throws IOException {
 	// write your code here
@@ -52,19 +53,21 @@ public class Main {
         */
 
 
-        UserOrdinary tp = new UserOrdinary();
-        tp.setId(10086);
-        tp.setPassword("qwer10086");
+        Login tp = new Login();
+        tp.setName("123");
+        tp.setPassWord("123");
 
-        Connect ct = new Connect("127.0.0.1",2333);
+        Connect ct = new Connect(ip,port);
         ct.sendMessage(ct.search("login",tp));
         String rec = "";
         rec = ct.receiveMessage();
         System.out.println("received server message:"+rec);
-        tp = (UserOrdinary)ct.disposeOperation(rec);
-        System.out.println("UserID:"+tp.getId());
-        System.out.println("PassWord:"+tp.getPassword());
-        System.out.println("AccountNum:"+tp.getAccountNum());
+        UserOrdinary uo = new UserOrdinary();
+        uo  = (UserOrdinary) ct.disposeOperation(rec);
+        if(uo!=null){
+            System.out.println("UserID:"+uo.getIdNum());
+            System.out.println("User PassWord:"+uo.getPassword());
+        }
         ct.close();
 
     }
