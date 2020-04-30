@@ -4,6 +4,8 @@ import com.xz2dai.bean.Login;
 import com.xz2dai.bean.UserOrdinary;
 
 import java.io.*;
+import java.net.Socket;
+import java.util.Arrays;
 
 public class Main {
 
@@ -52,23 +54,34 @@ public class Main {
         sc.close();
         */
 
-
+        /*
         Login tp = new Login();
         tp.setName("123");
         tp.setPassWord("123");
 
-        Connect ct = new Connect(ip,port);
-        ct.sendMessage(ct.search("login",tp));
+         */
+
+        String me = "{\"name\":\"12342\",\"newPassword\":\"110\",\"type\":\"updata\",\"updataPassword\":\"1\"}\n";
+
+        Connect ct = new Connect();
+
+        /*
+        Connect ct = new Connect(ip,portUpload);
+        ct.sendMessage(me);
         String rec = "";
         rec = ct.receiveMessage();
         System.out.println("received server message:"+rec);
+
+         */
+        /*
         UserOrdinary uo = new UserOrdinary();
         uo  = (UserOrdinary) ct.disposeOperation(rec);
         if(uo!=null){
             System.out.println("UserID:"+uo.getIdNum());
             System.out.println("User PassWord:"+uo.getPassword());
         }
-        ct.close();
+                */
+
 
     }
 }

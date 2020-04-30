@@ -2,6 +2,7 @@ package com.xz2dai;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.xz2dai.bean.NewMessage;
 import com.xz2dai.bean.UserOrdinary;
 
 import java.io.*;
@@ -49,17 +50,16 @@ public class Connect  {
       */
     public void sendMessage(String message){
         try {
-            if(dout != null || message != null){
-                //message = message+"\n";
-                message = "{\"login\":\"1\",\"name\":\"123\",\"passWord\":\"123\",\"type\":\"search\"}\n";
-                //byte[] WaitToSendMsg = message.getBytes();
-                dout.write(message);
+            if(dout != null || message != null){        //判断输出流或者消息是否为空，为空的话会产生nullpoint错误
+                byte[] me = message.getBytes();
+                dout.write(String.valueOf(me));
                 dout.flush();
+            }else{
+                System.out.println("The message to be sent is empty");
             }
-
             System.out.println("send message successful");
         } catch (IOException e) {
-            System.out.println("向服务端发送数据时出错");
+            System.out.println("send message to server failed");
             e.printStackTrace();
         }
     }
@@ -219,7 +219,7 @@ public class Connect  {
      * 包装update操作类型json数据
      * 参数用法同search方法
      */
-    public String update(String type,Object source){
+    public String updata(String type,Object source){
         JSONObject job = null;
         String jstr = null;
         switch (type){
@@ -241,6 +241,25 @@ public class Connect  {
         }
         return jstr;
     }
+
+    /**
+     * 获取新闻
+     * @param messageId 新闻框id
+     */
+    public NewMessage newMessage(int messageId){
+        JSONObject job = new JSONObject();
+        job.put("messageId",messageId);
+        job.put("search","1");
+        job.put("newMessage","1");
+
+        String Msend = "";
+        Msend = updata("newMessage",job);       //转换为字符串
+        sendMessage(Msend);
+        String reply = receiveMessage();    //获取服务器返回信息
+        NewMessage newMessage = JSON.parseObject(reply,NewMessage.class);       //转换为NewMessage JavaBean
+        return newMessage;
+    }
+
 
     /**
      * 关闭连接
