@@ -2,7 +2,10 @@ package com.xz2dai;
 
 import com.xz2dai.bean.Login;
 import com.xz2dai.bean.UserOrdinary;
+import javafx.scene.image.Image;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.io.*;
 import java.net.Socket;
 import java.util.Arrays;
@@ -10,8 +13,8 @@ import java.util.Arrays;
 public class Main {
 
     private static String ip = "120.79.87.21";
-    private static int port = 5423;
-    private static int portUpload = 5422;
+    private static int portUpload = 5423;
+    private static int port = 5422;
 
     public static void main(String[] args) throws IOException {
 	// write your code here
@@ -61,18 +64,20 @@ public class Main {
 
          */
 
-        String me = "{\"name\":\"12342\",\"newPassword\":\"110\",\"type\":\"updata\",\"updataPassword\":\"1\"}\n";
+        String me = "{\"name\":\"123\",\"type\":\"search\",\"upHeadPortrait\":\"2\"}\n";
 
-        Connect ct = new Connect();
 
-        /*
-        Connect ct = new Connect(ip,portUpload);
+
+        Connect ct = new Connect(ip,port);
         ct.sendMessage(me);
         String rec = "";
         rec = ct.receiveMessage();
+        System.out.println(rec);
+        Connect imageCt = new Connect(ip,portUpload);
+        ImageIO.
         System.out.println("received server message:"+rec);
 
-         */
+
         /*
         UserOrdinary uo = new UserOrdinary();
         uo  = (UserOrdinary) ct.disposeOperation(rec);
