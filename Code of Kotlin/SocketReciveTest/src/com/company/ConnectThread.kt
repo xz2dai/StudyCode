@@ -8,7 +8,7 @@ import java.nio.charset.StandardCharsets
 
 class ConnectThread(private val sc: Socket) : Thread() {
     var input: BufferedReader? = null
-    private var out: BufferedWriter? = null
+    var out: BufferedWriter? = null
     var message: String? = null
     override fun run() {
         try {
@@ -32,7 +32,7 @@ class ConnectThread(private val sc: Socket) : Thread() {
             when(message){
                 "2333","1","ez" ->{
                     val reply = "Connected!"
-                    out!!.write(reply.trimIndent())
+                    out!!.write(reply)
                     out!!.flush()
                 }
                 else ->{

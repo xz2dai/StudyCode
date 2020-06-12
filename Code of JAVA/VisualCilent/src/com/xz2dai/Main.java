@@ -72,7 +72,6 @@ public class Main {
 
         Connect ct = new Connect(ip,port);
         ct.sendMessage(me);
-        ct.sendMessage(me);
         String rec = "";
         rec = ct.receiveMessage();
         System.out.println(rec);

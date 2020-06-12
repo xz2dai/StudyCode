@@ -1,6 +1,10 @@
 package com.company
 
+import com.company.bean.TestPack
+import java.io.DataInputStream
+import java.io.DataOutputStream
 import java.io.IOException
+import java.lang.Exception
 import java.net.ServerSocket
 import java.net.Socket
 import java.util.concurrent.Executors
@@ -16,21 +20,21 @@ object Main {
         var sc: Socket? = null
 
 
-        /*
+
 
         try{
 
-            TestPack tp = null;
-            String inf = null;
-            ServerSocket server = new ServerSocket(port);
+            var tp: TestPack? = null
+            var inf: String? = null
+            val server:ServerSocket = ServerSocket(port)
             System.out.println("start listening port "+port);
 
             while(true){
                 sc = server.accept();
 
-                DataInputStream din=new DataInputStream(sc.getInputStream());
+                val din:DataInputStream = DataInputStream(sc.getInputStream())
 
-                DataOutputStream dout=new DataOutputStream(sc.getOutputStream());
+                val dout:DataOutputStream = DataOutputStream(sc.getOutputStream())
 
 
                 System.out.println("客户端ip地址是："+sc.getInetAddress());
@@ -43,6 +47,7 @@ object Main {
 
                 if(din!= null) {
                     dout.writeUTF("服务端已接受到信息");
+
                     dout.flush();
                     System.out.println("服务端接收到信息："+inf);
                     //tp = JSON.parseObject(inf, TestPack.class);
@@ -57,28 +62,30 @@ object Main {
                 dout.close();
                 sc.close();
             }
-        }catch (Exception e){
+        }catch (e:Exception){
             e.printStackTrace();
         }
 
 
-         */
-        var server: ServerSocket? = null
-        try {
-            server = ServerSocket(port)
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        while (true) {
-            try {
-                if (server != null) {
-                    sc = server.accept()
-                    mainthreadpoll.execute(ConnectThread(sc!!))
-                }
-            } catch (e: IOException) {
-                e.printStackTrace()
-            }
 
-        }
+
+
+//        var server: ServerSocket? = null
+//        try {
+//            server = ServerSocket(port)
+//        } catch (e: IOException) {
+//            e.printStackTrace()
+//        }
+//        while (true) {
+//            try {
+//                if (server != null) {
+//                    sc = server.accept()
+//                    mainthreadpoll.execute(ConnectThread(sc!!))
+//                }
+//            } catch (e: IOException) {
+//                e.printStackTrace()
+//            }
+//
+//        }
     }
 }

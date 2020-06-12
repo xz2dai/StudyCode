@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args)  {
 
         int count = 0;
-        int port = 5423;
+        int port = 2333;
         Socket sc = null;
 
         /*
