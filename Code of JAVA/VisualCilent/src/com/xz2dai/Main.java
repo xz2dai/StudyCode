@@ -12,9 +12,11 @@ import java.util.Arrays;
 
 public class Main {
 
-    private static String ip = "120.79.87.21";
-    private static int portUpload = 5423;
-    private static int port = 5422;
+    private final static String ip = "127.0.0.1";
+    private final static int port = 2333;
+//    private static String ip = "120.79.87.21";
+//    private static int portUpload = 5423;
+//    private static int port = 5422;
 
     public static void main(String[] args) throws IOException {
 	// write your code here
@@ -64,18 +66,18 @@ public class Main {
 
          */
 
-        String me = "{\"name\":\"123\",\"type\":\"search\",\"upHeadPortrait\":\"2\"}\n";
-
+//        String me = "{\"name\":\"123\",\"type\":\"search\",\"upHeadPortrait\":\"2\"}\n";
+        String me = "2333";
 
 
         Connect ct = new Connect(ip,port);
         ct.sendMessage(me);
+        ct.sendMessage(me);
         String rec = "";
         rec = ct.receiveMessage();
         System.out.println(rec);
-        Connect imageCt = new Connect(ip,portUpload);
-        ImageIO.
-        System.out.println("received server message:"+rec);
+//        Connect imageCt = new Connect(ip,portUpload);
+//        System.out.println("received server message:"+rec);
 
 
         /*
