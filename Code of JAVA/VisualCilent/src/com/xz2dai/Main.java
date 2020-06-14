@@ -12,8 +12,8 @@ import java.util.Arrays;
 
 public class Main {
 
-    private final static String ip = "127.0.0.1";
-    private final static int port = 2333;
+    private final static String ip = "101.133.235.230";
+    private final static int port = 8080;
 //    private static String ip = "120.79.87.21";
 //    private static int portUpload = 5423;
 //    private static int port = 5422;
@@ -70,14 +70,34 @@ public class Main {
         String me = "2333";
 
 
-        Connect ct = new Connect(ip,port);
-        ct.sendMessage(me);
-        String rec = "";
-        rec = ct.receiveMessage();
-        System.out.println(rec);
-//        Connect imageCt = new Connect(ip,portUpload);
-//        System.out.println("received server message:"+rec);
+//        Connect ct = Connect.getConncet();
+//        ct.sendMessage(me);
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        String rec = "";
+//        rec = ct.receiveMessage();
+//        System.out.println(rec);
 
+        Socket sc = new Socket(ip,port);
+
+        OutputStreamWriter output = new OutputStreamWriter(sc.getOutputStream());
+        InputStreamReader input = new InputStreamReader(sc.getInputStream());
+
+        output.write(me);
+        output.flush();
+        System.out.println("msg send");
+
+        char[] buffermsg = new char[1000];
+        int length = input.read(buffermsg);
+        if(length>-1){
+            String msg = new String(buffermsg,0,length);
+            System.out.println(msg);
+        }else{
+            System.out.println("null");
+        }
 
         /*
         UserOrdinary uo = new UserOrdinary();

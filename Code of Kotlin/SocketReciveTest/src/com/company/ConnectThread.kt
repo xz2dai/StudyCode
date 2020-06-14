@@ -1,21 +1,25 @@
 package com.company
 
+import com.alibaba.fastjson.JSON
 import com.alibaba.fastjson.JSONObject
 import com.company.bean.UserOrdinary
 import java.io.*
 import java.net.Socket
 import java.nio.charset.StandardCharsets
+import kotlin.reflect.jvm.internal.impl.load.kotlin.JvmType
 
 class ConnectThread(private val sc: Socket) : Thread() {
     var input: BufferedReader? = null
     var out: BufferedWriter? = null
     var message: String? = null
+    var reply:String? = null
     override fun run() {
+        val ct:Connect = Connect(sc)
+        ct.InitConnect()
         try {
+
             println("thread start:"+this.name)
-            input = BufferedReader(InputStreamReader(sc.getInputStream(), StandardCharsets.UTF_8))
-            out = BufferedWriter(OutputStreamWriter(sc.getOutputStream(), StandardCharsets.UTF_8))
-            message = input!!.readLine()
+            message = ct.receiveMessage()
             if (message == null) {
                 println("error:null cilent message ")
                 return
@@ -31,19 +35,19 @@ class ConnectThread(private val sc: Socket) : Thread() {
         }else{
             when(message){
                 "2333","1","ez" ->{
-                    val reply = "Connected!"
-                    out!!.write(reply)
-                    out!!.flush()
+                    reply = "Connected!"
                 }
                 else ->{
 
                 }
             }
         }
+        ct.sendMessage(reply)
+        ct.CloseConnect()
     }
 
     fun getDisposeType(message: String?): String? {
-        if (message == null || message == "") {
+        if (message == null || message == "" || message[0] != '{') {
             return null
         }
         jsonData = JSONObject.parseObject(message)
