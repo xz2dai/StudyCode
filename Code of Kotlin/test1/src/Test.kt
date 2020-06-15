@@ -1,5 +1,7 @@
 fun main(args:Array<String>) {
-    Test().just()
+    //Test().just()
+    doLog.newLog()
+    doLog.addLog("test test test","info")
 }
 
 class Test {

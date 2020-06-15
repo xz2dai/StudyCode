@@ -17,20 +17,21 @@ class ConnectThread(private val sc: Socket) : Thread() {
         val ct:Connect = Connect(sc)
         ct.InitConnect()
         try {
-
-            println("thread start:"+this.name)
+            doLog.addLog("thread start:"+this.name)
+            doLog.addLog("客户端ip地址是："+sc.getInetAddress());
             message = ct.receiveMessage()
             if (message == null) {
-                println("error:null cilent message ")
+                doLog.addLog("error:null cilent message ","error")
                 return
             }
-            println("recived cilent message:$message")
+            doLog.addLog("recived cilent message:$message")
         } catch (e: Exception) {
             e.printStackTrace()
+            doLog.addLog(e.toString())
         }
         val type = getDisposeType(message)
         if(type != null){
-            println("get message type:$type")
+            doLog.addLog("get message type:$type")
             disposeOperation(type)
         }else{
             when(message){
@@ -51,8 +52,7 @@ class ConnectThread(private val sc: Socket) : Thread() {
             return null
         }
         jsonData = JSONObject.parseObject(message)
-        var type: String
-        type = jsonData!!.get("type").toString()
+        val type: String = jsonData!!.get("type").toString()
         return type
     }
 
@@ -64,17 +64,17 @@ class ConnectThread(private val sc: Socket) : Thread() {
                         var id: String? = ""
                         var password: String? = ""
                         id = jsonData!!["id"] as String?
-                        println("get id:$id")
+                        doLog.addLog("get id:$id")
                         password = jsonData!!["password"] as String?
-                        println("get password:$password")
+                        doLog.addLog("get password:$password")
                         login(id, password)
                     }
                 }
                 "updata" -> {
-                    println("get updata type，but no method find")
+                    doLog.addLog("get updata type，but no method find")
                 }
                 else -> {
-                    println("none type get!")
+                    doLog.addLog("none type get!")
                 }
             }
         }
@@ -82,7 +82,7 @@ class ConnectThread(private val sc: Socket) : Thread() {
 
     private fun login(id: String?, password: String?) {
         var sendData = ""
-        println("login successful")
+        doLog.addLog("login successful")
         val testpack = UserOrdinary()
         if (id != null) {
             testpack.id = id.toInt()
@@ -94,7 +94,7 @@ class ConnectThread(private val sc: Socket) : Thread() {
         val jsonUser = JSONObject.toJSON(testpack) as JSONObject
         jsonUser["type"] = "search"
         jsonUser["login"] = "1"
-        println("user data：" + jsonUser.toJSONString())
+        doLog.addLog("user data：" + jsonUser.toJSONString())
         sendData = jsonUser.toJSONString()
         try {
             out!!.write("""
@@ -104,8 +104,10 @@ class ConnectThread(private val sc: Socket) : Thread() {
             out!!.flush()
         } catch (e: IOException) {
             e.printStackTrace()
+            doLog.addLog(e.toString())
+
         }
-        println("send user data successful!")
+        doLog.addLog("send user data successful!")
     }
 
     companion object {

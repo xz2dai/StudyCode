@@ -1,5 +1,3 @@
-package com.company
-
 import java.io.File
 import java.nio.file.Path
 import java.time.Month
@@ -12,12 +10,12 @@ import javax.xml.crypto.Data
 
 object doLog {
     var nowtime:Calendar = Calendar.getInstance()
-    private val Logpath:String = "/www/"
+    private val Logpath:String = "D:/"
     private var date:String = nowtime.get(Calendar.YEAR).toString()+"-"+nowtime.get(Calendar.MONTH+1).toString()+"-"+nowtime.get(Calendar.DATE).toString()
     private var time:String = nowtime.get(Calendar.HOUR_OF_DAY).toString()+"-"+nowtime.get(Calendar.MINUTE).toString()+"-"+nowtime.get(Calendar.SECOND).toString()
     private var file:File = File(Logpath+ date+".txt")
     //添加日志
-    fun addLog(msg:String,type:String="info"){
+    fun addLog(msg:String,type:String){
         correctTime()
         //日期-时间-类名-类型[Info]-问题
         file.appendText(date+"-"+time+"-"+type.toUpperCase()+":"+msg)
