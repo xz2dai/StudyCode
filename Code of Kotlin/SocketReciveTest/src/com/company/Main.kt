@@ -16,6 +16,7 @@ object Main {
         val port = 8080
         var sc: Socket? = null
 
+        doLog.newLog()
 
 
 

@@ -1,10 +1,13 @@
 package com.company
 
+import jdk.nashorn.internal.ir.RuntimeNode
+import sun.misc.Request
 import java.io.File
 import java.nio.file.Path
 import java.time.Month
 import java.util.*
 import javax.xml.crypto.Data
+import kotlin.reflect.jvm.internal.impl.load.java.JavaClassFinder
 
 /*
 一个用于写日志的类
@@ -12,10 +15,10 @@ import javax.xml.crypto.Data
 
 object doLog {
     var nowtime:Calendar = Calendar.getInstance()
-    private val Logpath:String = "/www/"
+    private val Logpath:String = "/www/server/tomcat/webapps/"
     private var date:String = nowtime.get(Calendar.YEAR).toString()+"-"+nowtime.get(Calendar.MONTH+1).toString()+"-"+nowtime.get(Calendar.DATE).toString()
     private var time:String = nowtime.get(Calendar.HOUR_OF_DAY).toString()+"-"+nowtime.get(Calendar.MINUTE).toString()+"-"+nowtime.get(Calendar.SECOND).toString()
-    private var file:File = File(Logpath+ date+".txt")
+    private var file:File = File(Logpath+ "TestServerLog.txt")
     //添加日志
     fun addLog(msg:String,type:String="info"){
         correctTime()

@@ -42,9 +42,9 @@ public constructor(socket: Socket) {
             sc!!.soTimeout = 10000
             if (sc != null && din != null && dout != null) {
                 isConnect = true
-                println("connect cilent successful")
+                doLog.addLog("connect cilent successful")
             } else {
-                println("connect cilent failed,now retry...")
+                doLog.addLog("connect cilent failed,now retry...")
                 InitConnect()
             }
         } catch (e: IOException) {
@@ -64,13 +64,13 @@ public constructor(socket: Socket) {
 //                        imageInputStream = ImageSocket.getInputStream();
 //                        if(imageInputStream!=null){
 //                            ImageConncet = true;
-//                            System.out.println("ImageIO Ready");
+//                            System.out.doLog.addLog("ImageIO Ready");
 //                        }
 //                    }else{
-//                        System.out.println("imageOutputStream is null");
+//                        System.out.doLog.addLog("imageOutputStream is null");
 //                    }
 //                }else{
-//                    System.out.println("image socket init failed");
+//                    System.out.doLog.addLog("image socket init failed");
 //                }
 //            } catch (IOException e) {
 //                e.printStackTrace();
@@ -91,7 +91,7 @@ public constructor(socket: Socket) {
 //            }
 //            if(ImageSocket.isClosed()){
 //                ImageConncet = false;
-//                System.out.println("ImageUpLoad Close");
+//                System.out.doLog.addLog("ImageUpLoad Close");
 //            }
 //        }
 //
@@ -104,20 +104,20 @@ public constructor(socket: Socket) {
 //            try {
 //                InitImageIO();      //收发图片接口用完即关
 //                if(ImageConncet){
-//                    System.out.println("start send image");
+//                    System.out.doLog.addLog("start send image");
 //                    image_toSend.compress(Bitmap.CompressFormat.PNG, 100, imageFileOutputSteam);        //把图片按参数压缩后压入输出流
 //                    imageFileOutputSteam.flush();
 //                    Thread.sleep(1000);             //休眠一下线程等待传输完成
-//                    System.out.println("send image successful");
+//                    System.out.doLog.addLog("send image successful");
 //                    CloseImageIO();
 //                    return true;
 //                }else{
-//                    System.out.println("Init imageIO failed");
+//                    System.out.doLog.addLog("Init imageIO failed");
 //                }
 //            }catch (Exception e){
 //                e.printStackTrace();
 //            }
-//            System.out.println("send image failed");
+//            System.out.doLog.addLog("send image failed");
 //            return false;
 //        }
 //
@@ -135,10 +135,10 @@ public constructor(socket: Socket) {
 //                    }catch (InterruptedException e){
 //                        e.printStackTrace();
 //                    }
-//                    System.out.println("start receive image message");
+//                    System.out.doLog.addLog("start receive image message");
 //                    image_receive = BitmapFactory.decodeStream(imageInputStream);       //从流中获取图片
 //                    if(image_receive!=null)
-//                        System.out.println("receive image successful");
+//                        System.out.doLog.addLog("receive image successful");
 //                }
 //            }catch (Exception e){
 //                e.printStackTrace();
@@ -164,14 +164,14 @@ public constructor(socket: Socket) {
                     dout!!.write(me)
                     dout!!.flush()
                 } else {
-                    println("The message to be sent is empty or have no connect")
+                    doLog.addLog("The message to be sent is empty or have no connect")
                 }
-                println("send message successful")
+                doLog.addLog("send message successful")
             } else {
-                println("no connect to send message")
+                doLog.addLog("no connect to send message")
             }
         } catch (e: IOException) {
-            println("send message to cilent failed")
+            doLog.addLog("send message to cilent failed")
             e.printStackTrace()
         }
     }
@@ -180,20 +180,20 @@ public constructor(socket: Socket) {
         var message: String? = ""
         try {
             if (isConnect) {
-                println("开始接收客户端信息")
+                doLog.addLog("开始接收客户端信息")
                 val inMessage = CharArray(1024)
                 val a = din!!.read(inMessage) //a存储返回消息的长度
                 if (a <= -1) {
                     return null
                 }
-                println("reply length:$a")
+                doLog.addLog("reply length:$a")
                 message = String(inMessage, 0, a) //必须要用new string来转换
-                println(message)
+                doLog.addLog(message)
             } else {
-                println("no connect to receive message")
+                doLog.addLog("no connect to receive message")
             }
         } catch (e: IOException) {
-            println("receive message failed")
+            doLog.addLog("receive message failed")
             e.printStackTrace()
         }
         return message
@@ -217,7 +217,7 @@ public constructor(socket: Socket) {
             e.printStackTrace()
         }
         isConnect = false
-        println("关闭连接")
+        doLog.addLog("关闭连接")
     }
 
     companion object {

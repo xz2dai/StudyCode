@@ -3,9 +3,9 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="f30cb4e7-f952-46b3-913b-c29204ba849a" name="CloudServer" url="">
-        <fileTransfer accessType="SFTP" host="101.133.235.230" port="22" sshConfigId="7851b0c0-23cf-4895-bf61-d8ac52b210fb" sshConfig="root@101.133.235.230:22 password">
+        <fileTransfer rootFolder="/root" accessType="SFTP" host="101.133.235.230" port="22" sshConfigId="7851b0c0-23cf-4895-bf61-d8ac52b210fb" sshConfig="root@101.133.235.230:22 password">
           <advancedOptions>
-            <advancedOptions controlEncoding="UTF-8" dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
         </fileTransfer>
       </webServer>
