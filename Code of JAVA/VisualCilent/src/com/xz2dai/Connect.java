@@ -23,8 +23,8 @@ public class Connect {
 //    private int imageUploadPort = 5423; //图片交互接口
 //    private int port = 5422;    //普通交互接口
 
-    private final static String ip = "127.0.0.1";
-    private final static int port = 2333;
+    private final static String ip = Main.ip;
+    private final static int port = Main.port;
 
     public static final String TAG = "Connect";     //网络连接调试TAG
     

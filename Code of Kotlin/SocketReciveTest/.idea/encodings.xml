@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/src/com/company/ConnectThread.kt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/company/Main.kt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/company/bean/UserOrdinary.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/doLog.kt" charset="UTF-8" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>

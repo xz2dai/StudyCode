@@ -12,8 +12,9 @@ import java.util.Arrays;
 
 public class Main {
 
-    private final static String ip = "101.133.235.230";
-    private final static int port = 8080;
+    //public final static String ip = "101.133.235.230";
+    public final static String ip = "127.0.0.1";
+    public final static int port = 8080;
 //    private static String ip = "120.79.87.21";
 //    private static int portUpload = 5423;
 //    private static int port = 5422;
