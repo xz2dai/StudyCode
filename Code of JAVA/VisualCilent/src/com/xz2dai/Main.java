@@ -67,8 +67,8 @@ public class Main {
 
          */
 
-//        String me = "{\"name\":\"123\",\"type\":\"search\",\"upHeadPortrait\":\"2\"}\n";
-        String me = "2333";
+        String me = "{\"name\":\"123\",\"type\":\"search\",\"upHeadPortrait\":\"2\"}\n";
+//        String me = "2333";
 
 
 //        Connect ct = Connect.getConncet();

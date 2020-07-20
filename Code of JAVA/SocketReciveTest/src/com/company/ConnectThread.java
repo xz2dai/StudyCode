@@ -30,7 +30,7 @@ public class ConnectThread extends Thread{
 			System.out.println("thread start");
 			input = new BufferedReader(new InputStreamReader(sc.getInputStream(), StandardCharsets.UTF_8));
 			out = new BufferedWriter(new OutputStreamWriter(sc.getOutputStream(), StandardCharsets.UTF_8));
-			message = input.readLine();
+			message = input.readLine();		//从连接中读入一行
 			if(message == null){
 				System.out.println("error:null cilent message ");
 			}
@@ -38,24 +38,32 @@ public class ConnectThread extends Thread{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		String type = getDisposeType(message);
+		String type = getDisposeType(message);		//解析操作类型
 		System.out.println("get message type:"+type);
-		disposeOperation(type);
+		disposeOperation(type);		//根据类型进行操作
 	}
 
 
+	/**
+	 * 获取客户端的操作类型
+	 * @param message 客户端发送的字符串消息
+	 * @return	操作类型
+	 */
 	public String getDisposeType(String message)  {
-
+			//在任何操作前都要记得判断对象非空
 			if(message == null || message.equals("")){
 				return null;
 			}
-			jsonData = JSONObject.parseObject(message);
+			jsonData = JSONObject.parseObject(message);		//将jsonstring转换为jsonobject
 			String type;
 			type = String.valueOf(jsonData.get("type"));
 			return type;
 	}
-	
 
+	/**
+	 * 根据操作类型进行操作
+	 * @param type	操作类型
+	 */
 	private void disposeOperation(String type) {
 		if(type != null) {
 			switch (type) {
@@ -67,6 +75,9 @@ public class ConnectThread extends Thread{
 				password = (String)jsonData.get("password");
 				System.out.println("get password:"+ password);
 				login(id,password);
+				}
+				if(jsonData.get("getBookInfo")!=null){
+					String bookId = (String)jsonData.get("bookNum");
 				}
 				break;
 			}
@@ -82,11 +93,18 @@ public class ConnectThread extends Thread{
 		}
 	}
 
-
+	/**
+	 * 登陆操作
+	 * @param id	用户id
+	 * @param password	用户密码
+	 */
 	private void login(String id,String password) {
 		String sendData = "";
 		System.out.println("login successful");
-		UserOrdinary testpack = new UserOrdinary();
+		UserOrdinary testpack = new UserOrdinary();	//要发回的用户消息
+		/*
+		这两个非空判断只是用于简单测试，实际使用中应该先是在数据库中查询有无对应用户，有的话就查询该用户信息，然后将用户信息打包发回客户端
+		 */
 		if(id != null){
 			testpack.setId(Integer.parseInt(id));
 		}
@@ -94,7 +112,7 @@ public class ConnectThread extends Thread{
 			testpack.setPassword(password);
 		}
 		testpack.setAccountNum("0000000");
-		JSONObject jsonUser = (JSONObject)JSONObject.toJSON(testpack);
+		JSONObject jsonUser = (JSONObject)JSONObject.toJSON(testpack);	//javabean转换为jsonstring
 		jsonUser.put("type","search");
 		jsonUser.put("login","1");
 		System.out.println("user data："+jsonUser.toJSONString());
