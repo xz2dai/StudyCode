@@ -1,7 +1,6 @@
 package com.xz2dai;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.*;
 import com.xz2dai.bean.NewMessage;
 import com.xz2dai.bean.UserOrdinary;
 
