@@ -29,48 +29,32 @@ int main(int argc, char const *argv[])
 {
     int n, i, j, k;
 	int cost = 0;
-    int app[100001];
+    int app[10002];
     cin >> n;
     for (i = 1; i <= n;i++)
         cin >> app[i];
     qsort(app,1,n);								//排序果堆,找出最小的两个堆
 	for (i=1;i<=n-1;i++)
 	{
-		cost+=app[i]+app[i+1];					//合并果堆
-		app[i+1]+=app[i];
+		app[i+1]+=app[i];		//合并果堆
+		cost += app[i + 1];	
+		app[i] = 0;
+		//插入排序
+		int a = app[i + 1];
+		for (j = i; j <= n;j++){
+			if(a>app[j]){
+				for (int b = i; b >= j;b++){
+					app[b] = app[b + 1];
+				}
+				app[j] = a;
+			}
+		}
+		//qsort(app, i + 1, n);
 		/*
-		for(j=i+2;j<=n;j++)						//刷新果堆排序
-		{
-			if(app[i+1]>app[j])
-			{
-				int c = app[i+1];
-				for(k=i+1;k<=j;k++)
-				{
-					app[k-1] = app[k];
-				}
-				app[j]=c;
-			}
-		}
-		*/
-		//用冒泡解决剩余数据试试
-		for (j = i + 1; j <= n;j++)
-		{
-			for (k = j+1; k <= n;k++)
-			{
-				if(app[j]>app[k])
-				{
-					int t;
-					t=app[i];
-					app[i]=app[j];
-					app[j]=t;
-				}
-			}
-		}
-		///*
 		for (k = i + 1; k <= n; k++)
 			cout << app[k] << " ";
 		cout << endl;
-		//*/
+		*/
 	}
 	cout<<cost;
     return 0;
