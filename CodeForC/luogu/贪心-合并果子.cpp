@@ -40,21 +40,21 @@ int main(int argc, char const *argv[])
 		cost += app[i + 1];	
 		app[i] = 0;
 		//插入排序
-		int a = app[i + 1];
-		for (j = i; j <= n;j++){
+		int a = app[i + 1];	
+		for (j = i+1; j <= n-1;j++){
 			if(a>app[j]){
-				for (int b = i; b >= j;b++){
+				for (int b = i+1; b >= j;b++){
 					app[b] = app[b + 1];
 				}
 				app[j] = a;
 			}
 		}
 		//qsort(app, i + 1, n);
-		/*
+		
 		for (k = i + 1; k <= n; k++)
 			cout << app[k] << " ";
 		cout << endl;
-		*/
+		
 	}
 	cout<<cost;
     return 0;

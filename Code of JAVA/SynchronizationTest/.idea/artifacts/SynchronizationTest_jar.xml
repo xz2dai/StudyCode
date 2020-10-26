@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SynchronizationTest:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SynchronizationTest_jar</output-path>
+    <root id="archive" name="SynchronizationTest.jar">
+      <element id="module-output" name="SynchronizationTest" />
+    </root>
+  </artifact>
+</component>

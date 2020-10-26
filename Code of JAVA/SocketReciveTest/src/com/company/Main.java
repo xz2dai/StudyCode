@@ -1,7 +1,5 @@
 package com.company;
 
-import com.alibaba.fastjson.JSON;
-import com.company.bean.TestPack;
 
 import java.io.*;
 import java.net.*;
@@ -12,7 +10,7 @@ public class Main {
 
         int count = 0;  //接入计数
         int port = 2333;    //端口
-        Socket sc = null;   //socket对象
+        Socket sc;   //socket对象
 
         /*
 
@@ -73,14 +71,15 @@ public class Main {
             try {
                 if (server != null) {
                     sc = server.accept();   //监听到连接就创建一个socket对象
+                    System.out.println("socket connect successful");
+                    ConnectThread ct = new ConnectThread(sc);   //开启一个连接线程
+                    System.out.println("creat connectthread successful");
+                    ct.start();   //启动线程
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            System.out.println("socket connect successful");
-                ConnectThread ct = new ConnectThread(sc);   //开启一个连接线程
-                System.out.println("creat connectthread successful");
-                ct.run();   //启动线程
+
             }
 
     }

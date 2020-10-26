@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script language="javascript">
+            //
+            要求文本框中只能输入字母
+            function checkValue(){
+            var str = document.getElementById("inputText");
+            //在 JavaScript 中，正则表达式只能使用 开头和结束，不能使用双引号
+            var Expression=/^[a-zA-Z]$/;
+            if(!Expression.test(str.value)) 通过正则表达式验证
+            alert(" 你输入的字符串只能是字母！")
+            }
+            </script>
+    </head>
+    <body>
+        只能输入字母：：<input type="text" id="inputText" value=""/>
+        <input type="button" id="confirm" onclick="checkValue()" value="确定"/>
+    </body>
+</html>

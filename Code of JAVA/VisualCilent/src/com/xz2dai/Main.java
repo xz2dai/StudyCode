@@ -2,7 +2,6 @@ package com.xz2dai;
 
 import com.xz2dai.bean.Login;
 import com.xz2dai.bean.UserOrdinary;
-import javafx.scene.image.Image;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -12,9 +11,9 @@ import java.util.Arrays;
 
 public class Main {
 
-    //public final static String ip = "101.133.235.230";
-    public final static String ip = "127.0.0.1";
-    public final static int port = 8080;
+    public final static String ip = "101.133.235.230";
+//    public final static String ip = "127.0.0.1";
+    public final static int port = 2333;
 //    private static String ip = "120.79.87.21";
 //    private static int portUpload = 5423;
 //    private static int port = 5422;
@@ -67,8 +66,8 @@ public class Main {
 
          */
 
-        String me = "{\"name\":\"123\",\"type\":\"search\",\"upHeadPortrait\":\"2\"}\n";
-//        String me = "2333";
+        //String me = "{\"name\":\"123\",\"type\":\"search\",\"upHeadPortrait\":\"2\"}\n";
+        String me = "2333";
 
 
 //        Connect ct = Connect.getConncet();
