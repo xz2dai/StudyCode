@@ -1,20 +1,21 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
 <html><head> <title>Book Insert</title>
 </head>
 <body>
-<h3>ÇëÊäÈëÍ¼ÊéÐÅÏ¢£º</h3>
+<h3>è¯·è¾“å…¥å›¾ä¹¦ä¿¡æ¯ï¼š</h3>
 <% if(request.getAttribute("result")!=null)
     out.print(request.getAttribute("result"));
 %>
 <form action = "BookInsertServlet" method = "post">
     <table>
-        <tr><td>ÊéºÅ</td> <td><input type="text" name="bookid" ></td></tr>
-        <tr><td>ÊéÃû</td><td><input type="text" name="title"></td></tr>
-        <tr><td>×÷Õß</td><td><input type="text" name="author" ></td></tr>
-        <tr><td>³ö°æÉç</td><td><input type="text" name="publisher" ></td></tr>
-        <tr><td>µ¥¼Û</td><td><input type="text" name="price" ></td></tr>
-        <tr><td><input type="submit" value="È·¶¨" ></td>
-            <td><input type="reset" value="ÖØÖÃ" ></td>
+        <tr><td>ä¹¦å·</td> <td><input type="text" name="bookid" ></td></tr>
+        <tr><td>ä¹¦å</td><td><input type="text" name="title"></td></tr>
+        <tr><td>ä½œè€…</td><td><input type="text" name="author" ></td></tr>
+        <tr><td>å‡ºç‰ˆç¤¾</td><td><input type="text" name="publisher" ></td></tr>
+        <tr><td>å•ä»·</td><td><input type="text" name="price" ></td></tr>
+        <tr><td><input type="submit" value="ç¡®å®š" ></td>
+            <td><input type="reset" value="é‡ç½®" ></td>
         </tr>
     </table>
 </form>

@@ -1,6 +1,7 @@
 package MyServlet;
 
 import MyServlet.Beans.BookBean;
+import MyServlet.DAO.DbcpDAO;
 
 import java.io.IOException;
 import javax.servlet.*;
@@ -17,28 +18,19 @@ public class BookQueryServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) {
         System.out.println("BookQueryServlet初始化中");
-        String driver = "com.mysql.cj.jdbc.Driver";
-        String dburl = "jdbc:mysql://localhost/postgres?useSSL=FALSE&serverTimezone=UTC";
-        String username = "root";
-        String password = "awcid2000";
-        try {
-            //加载数据库驱动程序
-            Class.forName(driver);
-            //创建数据库连接对象
-            dbconn = DriverManager.getConnection(
-                    dburl, username, password);
-        } catch (ClassNotFoundException | SQLException cfe) {
-            cfe.printStackTrace();
-        }
+        DbcpDAO dbcpDAO = new DbcpDAO();
+        //创建数据库连接对象
+        dbconn = dbcpDAO.getConnect();
         if (dbconn != null) System.out.println("数据库连接成功");
         else System.out.println("数据库连接失败");
-
-
     }
 
     public void doPost(HttpServletRequest request,
                        HttpServletResponse response)
             throws ServletException, IOException {
+
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
 
 //        if(dbconn == null){
 //            response.sendRedirect("/error.jsp");

@@ -3,7 +3,7 @@
 <html>
 <head><title>图书查询</title></head>
 <body>
-<form action="BookQueryServlet2" method="post">
+<form action="BookQueryServlet" method="post">
     请输入书号：
     <input type="text" name="bookid" size="15">
     <input type="submit" value="确定">

@@ -29,6 +29,8 @@ public class BookQueryServlet2 extends HttpServlet {
     public void doPost(HttpServletRequest request,
                        HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
         String bookid = request.getParameter("bookid");
         try {
             String sql = "SELECT * FROM books WHERE bookid=?";

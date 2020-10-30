@@ -1,35 +1,36 @@
 <%@ page import="MyServlet.Beans.BookBean" %>
-<%@ page contentType="text/html; charset=gb2312" %>
-<jsp:useBean id="book" class="MyServlet.Beans.BookBean"/>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+<jsp:useBean id="book" class="MyServlet.Beans.BookBean" scope="application" />
 <html>
 <body>
 <table>
     <tr>
-        <td> È∫≈:</td>
+        <td>‰π¶Âè∑:</td>
         <td>
             <jsp:getProperty name="book" property="bookid"/>
         </td>
     </tr>
     <tr>
-        <td> È√˚:</td>
+        <td>‰π¶Âêç:</td>
         <td>
             <jsp:getProperty name="book" property="title"/>
         </td>
     </tr>
     <tr>
-        <td>◊˜’ﬂ:</td>
+        <td>‰ΩúËÄÖ:</td>
         <td>
             <jsp:getProperty name="book" property="author"/>
         </td>
     </tr>
     <tr>
-        <td>≥ˆ∞Ê…Á:</td>
+        <td>Âá∫ÁâàÁ§æ:</td>
         <td>
             <jsp:getProperty name="book" property="publisher"/>
         </td>
     </tr>
     <tr>
-        <td>º€∏Ò:</td>
+        <td>‰ª∑Ê†º:</td>
         <td>
             <jsp:getProperty name="book" property="price"/>
         </td>
