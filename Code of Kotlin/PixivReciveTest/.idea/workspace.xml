@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c3e8a0fe-91a3-4be8-81fb-9f2d36c8a44e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1dfEjVX5XfUZLKSIWlOZbbMs7UV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Code of JAVA/SocketReciveTest" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration name="PixivDownloaderKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="PixivReciveTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="PixivDownloaderKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.PixivDownloaderKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c3e8a0fe-91a3-4be8-81fb-9f2d36c8a44e" name="Default Changelist" comment="" />
+      <created>1592807882441</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592807882441</updated>
+      <workItem from="1592807886611" duration="825000" />
+      <workItem from="1592808854378" duration="511000" />
+      <workItem from="1592809451260" duration="2365000" />
+      <workItem from="1592830106504" duration="2097000" />
+      <workItem from="1593614580337" duration="1154000" />
+      <workItem from="1594183994189" duration="42000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="721" y="171" key="#PixivDownloaderKt" timestamp="1592809986906">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="721" y="171" key="#PixivDownloaderKt/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592809986906" />
+    <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592810042518">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592810042518" />
+    <state x="754" y="345" width="606" height="421" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592809635459">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="754" y="345" width="606" height="421" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592809635459" />
+    <state x="805" y="311" key="FileChooserDialogImpl" timestamp="1594184032437">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="805" y="311" key="FileChooserDialogImpl/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1594184032437" />
+    <state width="1002" height="305" key="GridCell.Tab.0.bottom" timestamp="1592810016424">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1002" height="305" key="GridCell.Tab.0.bottom/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592810016424" />
+    <state width="1002" height="305" key="GridCell.Tab.0.center" timestamp="1592810016424">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1002" height="305" key="GridCell.Tab.0.center/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592810016424" />
+    <state width="1002" height="305" key="GridCell.Tab.0.left" timestamp="1592810016423">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1002" height="305" key="GridCell.Tab.0.left/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592810016423" />
+    <state width="1002" height="305" key="GridCell.Tab.0.right" timestamp="1592810016424">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1002" height="305" key="GridCell.Tab.0.right/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592810016424" />
+    <state x="434" y="239" key="new project wizard" timestamp="1592809863232">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="434" y="239" key="new project wizard/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592809863232" />
+  </component>
+</project>

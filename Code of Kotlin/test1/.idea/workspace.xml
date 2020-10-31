@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="808d78f8-37e3-4daa-94a8-340beca68162" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Connect.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Code of JAVA/VisualCilent/src/com/xz2dai/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Code of JAVA/VisualCilent/src/com/xz2dai/Connect.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1cLkyEHYV1OFN5cKObcNj1uEUBn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SocketReciveTest" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\Code\study\Code of Kotlin\test1\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Standard" type="JetRunConfigurationType">
+      <module name="test1" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="TestKt" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="808d78f8-37e3-4daa-94a8-340beca68162" name="Default Changelist" comment="" />
+      <created>1590315513489</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590315513489</updated>
+      <workItem from="1590315517613" duration="2377000" />
+      <workItem from="1590325763770" duration="3313000" />
+      <workItem from="1590396434923" duration="2834000" />
+      <workItem from="1590473293917" duration="5067000" />
+      <workItem from="1590651966034" duration="2245000" />
+      <workItem from="1590761198738" duration="2265000" />
+      <workItem from="1590810979031" duration="1797000" />
+      <workItem from="1590931643723" duration="447000" />
+      <workItem from="1591023964881" duration="32000" />
+      <workItem from="1591255937651" duration="415000" />
+      <workItem from="1591256411970" duration="3327000" />
+      <workItem from="1591528651958" duration="651000" />
+      <workItem from="1591529320459" duration="1410000" />
+      <workItem from="1591533373766" duration="624000" />
+      <workItem from="1591950309781" duration="22000" />
+      <workItem from="1592809677891" duration="473000" />
+      <workItem from="1597811011605" duration="2083000" />
+      <workItem from="1597814756528" duration="1098000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592809702855">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592809702855" />
+    <state x="804" y="261" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1590326241842">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="804" y="261" key="#com.intellij.ide.macro.MacrosDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1590326241842" />
+    <state x="809" y="272" key="#com.intellij.ide.util.MemberChooser" timestamp="1590658973134">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="809" y="272" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1590658973134" />
+    <state x="754" y="345" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1590326237570">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="754" y="345" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1590326237570" />
+    <state x="886" y="505" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1595149850415">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="886" y="505" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1595149850415" />
+    <state x="705" y="291" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1590322926083">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="705" y="291" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1590322926083" />
+    <state x="804" y="331" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1597813899583">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="804" y="331" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597813899583" />
+    <state x="882" y="302" width="495" height="508" key="EnvironmentVariablesDialog" timestamp="1590326254893">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="882" y="302" width="495" height="508" key="EnvironmentVariablesDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1590326254893" />
+    <state x="805" y="311" key="FileChooserDialogImpl" timestamp="1597814797059">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="805" y="311" key="FileChooserDialogImpl/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597814797059" />
+    <state width="2005" height="305" key="GridCell.Tab.0.bottom" timestamp="1590338199458">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="305" key="GridCell.Tab.0.bottom/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1590338199458" />
+    <state width="2005" height="305" key="GridCell.Tab.0.center" timestamp="1590338199458">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="305" key="GridCell.Tab.0.center/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1590338199458" />
+    <state width="2005" height="305" key="GridCell.Tab.0.left" timestamp="1590338199458">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="305" key="GridCell.Tab.0.left/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1590338199458" />
+    <state width="2005" height="305" key="GridCell.Tab.0.right" timestamp="1590338199458">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="2005" height="305" key="GridCell.Tab.0.right/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1590338199458" />
+    <state x="526" y="198" key="SettingsEditor" timestamp="1592534481271">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="526" y="198" key="SettingsEditor/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592534481271" />
+    <state x="705" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1595236092807">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="705" y="380" key="com.intellij.ide.util.TipDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1595236092807" />
+    <state x="434" y="166" width="1194" height="780" key="new project wizard" timestamp="1591529506481">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="434" y="166" width="1194" height="780" key="new project wizard/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1591529506481" />
+  </component>
+</project>

@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="LOCAL" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f12620b7-f482-4d16-8780-f6bbe4d5a29e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../test1/src/Connect.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Code of JAVA/VisualCilent/src/com/xz2dai/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Code of JAVA/VisualCilent/src/com/xz2dai/Connect.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1YqPiXlv8BcDDE1vdXRBERBIiWM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.company" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\Code\study\Code of JAVA\SocketReciveTest\lib" />
+      <recent name="C:\Users\Administrator\Documents\Code\study\Code of JAVA\SocketReciveTest\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.LocalServer">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="SocketReceiveTest" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="远程" type="Remote">
+      <module name="SocketReceiveTest" />
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="101.133.235.230" />
+      <option name="PORT" value="7777" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="7777" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Remote">
+      <module name="SocketReciveTest" />
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="101.133.235.230" />
+      <option name="PORT" value="8080" />
+      <option name="AUTO_RESTART" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="LocalServer" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.12" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="LOCAL">
+          <settings>
+            <option name="CONTEXT_PATH" value="/LOCAL" />
+          </settings>
+        </artifact>
+        <file path="%IDEA_RUN:TOMCAT_HOME%/webapps/ROOT">
+          <settings>
+            <option name="CONTEXT_PATH" value="/ROOT" />
+          </settings>
+        </file>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_8_5_12_SocketReciveTest" />
+        <option name="DEPLOY_TOMCAT_APPS" value="true" />
+        <option name="HTTP_PORT" value="8888" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="3429" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RemoteServer" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" APPLICATION_SERVER_NAME="Tomcat 8.5.12" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="HOST" value="101.133.235.230" />
+      <option name="PORT" value="2333" />
+      <option name="LOCAL" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://101.133.235.230:8080/" />
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
+      <deployment>
+        <artifact name="TestServer">
+          <settings>
+            <option name="CONTEXT_PATH" value="/TestServer" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <data>
+          <option name="jndiPort" value="1098" />
+          <option name="targets">
+            <list>
+              <WatchedTargetModelImpl>
+                <option name="name" value="CONTEXT_XML" />
+                <option name="transportStagingTarget">
+                  <TransportTarget>
+                    <option name="id" value="2d866247-ae4b-4e0e-ad15-46ce90f2fac7" />
+                    <id>2d866247-ae4b-4e0e-ad15-46ce90f2fac7</id>
+                  </TransportTarget>
+                </option>
+                <option name="watchedLocalPath" value="" />
+                <watched-path />
+                <name>CONTEXT_XML</name>
+                <transport-target>
+                  <TransportTarget>
+                    <option name="id" value="2d866247-ae4b-4e0e-ad15-46ce90f2fac7" />
+                    <id>2d866247-ae4b-4e0e-ad15-46ce90f2fac7</id>
+                  </TransportTarget>
+                </transport-target>
+              </WatchedTargetModelImpl>
+              <StagingTargetModelImpl>
+                <option name="name" value="STAGING" />
+                <option name="stagingRemotePath" value="/www/server/tomcat/webapps" />
+                <option name="transportStagingTarget">
+                  <TransportTarget>
+                    <option name="id" value="69d56c1b-116c-4d05-b54b-04432e46a813" />
+                    <id>69d56c1b-116c-4d05-b54b-04432e46a813</id>
+                  </TransportTarget>
+                </option>
+                <staging-path>/www/server/tomcat/webapps</staging-path>
+                <name>STAGING</name>
+                <transport-target>
+                  <TransportTarget>
+                    <option name="id" value="69d56c1b-116c-4d05-b54b-04432e46a813" />
+                    <id>69d56c1b-116c-4d05-b54b-04432e46a813</id>
+                  </TransportTarget>
+                </transport-target>
+              </StagingTargetModelImpl>
+            </list>
+          </option>
+          <option name="transportHostId" value="f30cb4e7-f952-46b3-913b-c29204ba849a" />
+          <jndi-port>1098</jndi-port>
+          <host-id>f30cb4e7-f952-46b3-913b-c29204ba849a</host-id>
+        </data>
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="TOMCAT_LOCALHOST_LOG_ID" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="7546" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="TestServer" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.12" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/ROOT/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="LOCAL">
+          <settings>
+            <option name="CONTEXT_PATH" value="/LOCAL" />
+          </settings>
+        </artifact>
+        <file path="%IDEA_RUN:TOMCAT_HOME%/webapps/ROOT">
+          <settings>
+            <option name="CONTEXT_PATH" value="/ROOT" />
+          </settings>
+        </file>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_SocketReciveTest" />
+        <option name="DEPLOY_TOMCAT_APPS" value="true" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="3429" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="LOCAL" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="targets">
+            <list>
+              <WatchedTargetModelImpl>
+                <option name="name" value="CONTEXT_XML" />
+                <name>CONTEXT_XML</name>
+              </WatchedTargetModelImpl>
+              <StagingTargetModelImpl>
+                <option name="name" value="STAGING" />
+                <name>STAGING</name>
+              </StagingTargetModelImpl>
+            </list>
+          </option>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="TOMCAT_LOCALHOST_LOG_ID" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="7546" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Remote.远程" />
+      <item itemvalue="Tomcat Server.LocalServer" />
+      <item itemvalue="Tomcat Server.RemoteServer" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f12620b7-f482-4d16-8780-f6bbe4d5a29e" name="Default Changelist" comment="" />
+      <created>1583667278568</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583667278568</updated>
+      <workItem from="1583667281768" duration="4662000" />
+      <workItem from="1583731521755" duration="6051000" />
+      <workItem from="1583821094685" duration="3653000" />
+      <workItem from="1583938936933" duration="615000" />
+      <workItem from="1583982647384" duration="2239000" />
+      <workItem from="1584332388962" duration="2083000" />
+      <workItem from="1584502538386" duration="759000" />
+      <workItem from="1584942034447" duration="4724000" />
+      <workItem from="1585040646857" duration="7461000" />
+      <workItem from="1585102710926" duration="1000" />
+      <workItem from="1585102739577" duration="3945000" />
+      <workItem from="1585237870610" duration="1375000" />
+      <workItem from="1585240441739" duration="1706000" />
+      <workItem from="1585290749523" duration="7851000" />
+      <workItem from="1585373414607" duration="4853000" />
+      <workItem from="1585397285689" duration="6762000" />
+      <workItem from="1585474107027" duration="3160000" />
+      <workItem from="1585747229503" duration="1063000" />
+      <workItem from="1585753748304" duration="353000" />
+      <workItem from="1586140289509" duration="765000" />
+      <workItem from="1591950333642" duration="1317000" />
+      <workItem from="1591957368849" duration="1715000" />
+      <workItem from="1591960130425" duration="7981000" />
+      <workItem from="1592100745358" duration="11213000" />
+      <workItem from="1592140101594" duration="2138000" />
+      <workItem from="1592189313137" duration="2866000" />
+      <workItem from="1592206698178" duration="6981000" />
+      <workItem from="1592380828651" duration="3526000" />
+      <workItem from="1595430108728" duration="1357000" />
+      <workItem from="1596987867238" duration="10000" />
+      <workItem from="1597300699708" duration="2084000" />
+      <workItem from="1597809426930" duration="4311000" />
+      <workItem from="1597814799697" duration="617000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="841" y="364" key="#BuildArtifactsBeforeRunChooser" timestamp="1592212383312">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="841" y="364" key="#BuildArtifactsBeforeRunChooser/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592212383312" />
+    <state x="617" y="214" key="#Deployment" timestamp="1592210765220">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="617" y="214" key="#Deployment/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592210765220" />
+    <state x="333" y="263" key="#SSH_Configurations" timestamp="1592208994763">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="333" y="263" key="#SSH_Configurations/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592208994763" />
+    <state x="800" y="449" key="#TomEE_Server" timestamp="1592114984700">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="800" y="449" key="#TomEE_Server/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592114984700" />
+    <state x="728" y="389" key="#Tomcat_Server" timestamp="1597301024226">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="728" y="389" key="#Tomcat_Server/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597301024226" />
+    <state x="670" y="280" width="1089" height="633" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597301381305">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="670" y="280" width="1089" height="633" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597301381305" />
+    <state x="809" y="272" key="#com.intellij.ide.util.MemberChooser" timestamp="1592190967513">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="809" y="272" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592190967513" />
+    <state x="785" y="189" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1592115231031">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="785" y="189" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592115231031" />
+    <state x="645" y="364" key="FileChooserDialogImpl" timestamp="1597301235140">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="645" y="364" key="FileChooserDialogImpl/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597301235140" />
+    <state width="1322" height="305" key="GridCell.Tab.0.bottom" timestamp="1597302408307">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1322" height="305" key="GridCell.Tab.0.bottom/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597302408307" />
+    <state width="1322" height="305" key="GridCell.Tab.0.center" timestamp="1597302408307">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1322" height="305" key="GridCell.Tab.0.center/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597302408307" />
+    <state width="1322" height="305" key="GridCell.Tab.0.left" timestamp="1597302408307">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1322" height="305" key="GridCell.Tab.0.left/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597302408307" />
+    <state width="1322" height="305" key="GridCell.Tab.0.right" timestamp="1597302408307">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1322" height="305" key="GridCell.Tab.0.right/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597302408307" />
+    <state width="1323" height="305" key="GridCell.Tab.1.bottom" timestamp="1597302408110">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1323" height="305" key="GridCell.Tab.1.bottom/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597302408110" />
+    <state width="1323" height="305" key="GridCell.Tab.1.center" timestamp="1597302408110">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1323" height="305" key="GridCell.Tab.1.center/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597302408110" />
+    <state width="1323" height="305" key="GridCell.Tab.1.left" timestamp="1597302408110">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1323" height="305" key="GridCell.Tab.1.left/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597302408110" />
+    <state width="1323" height="305" key="GridCell.Tab.1.right" timestamp="1597302408110">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1323" height="305" key="GridCell.Tab.1.right/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597302408110" />
+    <state width="1323" height="305" key="GridCell.Tab.2.bottom" timestamp="1597302408110">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1323" height="305" key="GridCell.Tab.2.bottom/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597302408110" />
+    <state width="1323" height="305" key="GridCell.Tab.2.center" timestamp="1597302408110">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1323" height="305" key="GridCell.Tab.2.center/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597302408110" />
+    <state width="1323" height="305" key="GridCell.Tab.2.left" timestamp="1597302408110">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1323" height="305" key="GridCell.Tab.2.left/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597302408110" />
+    <state width="1323" height="305" key="GridCell.Tab.2.right" timestamp="1597302408110">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1323" height="305" key="GridCell.Tab.2.right/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597302408110" />
+    <state x="404" y="185" key="SettingsEditor" timestamp="1597301104149">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="404" y="185" key="SettingsEditor/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1597301104149" />
+    <state x="595" y="201" key="com.intellij.javaee.view.ServerArtifactsDialog" timestamp="1592206964646">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="595" y="201" key="com.intellij.javaee.view.ServerArtifactsDialog/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592206964646" />
+    <state x="903" y="286" key="ftp.server.browser" timestamp="1592112359909">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="903" y="286" key="ftp.server.browser/0.0.2048.1112/376.-1080.1536.824@0.0.2048.1112" timestamp="1592112359909" />
+  </component>
+</project>
