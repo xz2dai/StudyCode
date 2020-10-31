@@ -14,8 +14,7 @@ public class JDBCUtils {
 	// 初始化C3P0数据源
 	static {
 		// 使用c3p0-config.xml配置文件中的named-config节点中name属性的值
-		ComboPooledDataSource cpds = new ComboPooledDataSource("goodmanage");
-		ds = cpds;
+		ds = new ComboPooledDataSource("goodmanage");
 	}
 	// 加载驱动，并建立数据库连接
 	public static Connection getConnection() throws SQLException,
