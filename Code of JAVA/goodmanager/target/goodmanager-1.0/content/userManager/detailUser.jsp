@@ -1,5 +1,15 @@
 <%@ page language="java" import="java.util.*,net.hunau.goodsmanager.bean.User" pageEncoding="utf-8" %>
-
+<%@ page import="net.hunau.goodsmanager.dao.UserDAO" %>
+<%@ page import="net.hunau.goodsmanager.biz.UserBiz" %>
+<%
+  String username = request.getParameter("userName");
+  int flag = 0;
+  UserDAO ud = new UserDAO();
+  User user = ud.getUser(username);
+  if(user != null){
+    flag = user.getValidateFlag();
+  }
+%>
 <HTML>
 <HEAD>
 <TITLE>Untitled Page</TITLE>
@@ -32,9 +42,9 @@
                 </TR>
                 <TR>
                   <TD class=gridViewItem>用户名 </TD>
-                  <TD class=gridViewItem>####</TD>
+                  <TD class=gridViewItem><%=username%>></TD>
                   <TD class=gridViewItem>有效标识</TD>
-                  <TD class=gridViewItem>####</TD>
+                  <TD class=gridViewItem><%=flag%>></TD>
                 </TR>
                 <TR>
                  

@@ -8,7 +8,7 @@ public class UserAuthException extends Exception{
 	private static final long serialVersionUID = 1L;
 
 	public UserAuthException() {
-		System.out.println("用户名或者密码错误！");
+		System.out.println("鐢ㄦ埛鍚嶆垨鑰呭瘑鐮侀敊璇紒");
 	}
 
 	public UserAuthException(String message) {

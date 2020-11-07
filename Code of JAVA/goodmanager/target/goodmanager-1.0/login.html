@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<TABLE id=login style="width: 800px;height: 100%;">
+  <TBODY>
+  <TR id=main>
+    <TD>
+      <form action="LoginServlet" method='post'>
+        <TABLE style="height: 100%;width: 100%">
+          <TBODY>
+          <TR>
+            <TD colSpan=4>&nbsp;</TD>
+          </TR>
+          <TR style="height: 30px">
+            <TD style="width: 380px">&nbsp;</TD>
+            <TD>&nbsp;</TD>
+            <TD>&nbsp;</TD>
+            <TD>&nbsp;</TD>
+          </TR>
+          <TR height=40>
+            <TD rowSpan=4></TD>
+            <TD>用户名：</TD>
+            <TD>
+              <label for="userName"></label><INPUT class=textbox id="userName" name="userName">
+            </TD>
+            <TD style="width: 120px">&nbsp;</TD>
+          </TR>
+          <TR height=40>
+            <TD>密　码：</TD>
+            <TD>
+              <label for="password"></label><INPUT class=textbox id="password" type=password
+                                                   name="password">
+            </TD>
+            <TD style="width: 120px;">&nbsp;</TD>
+          </TR>
+          <TR height=40>
+            <TD><!-- 验证码：--></TD>
+            <TD colSpan=2>
+              <!-- <INPUT id=txtSN size=4 name=txtSN> &nbsp; <IMG src="images/default.gif" border=0> <A id=LinkButton1 href="#">不清楚，再来一张</A>-->
+              <p id="errormessage">
+              <span id="errormessagecontainer" style="color: red; ">
+              </span>
+              </p>
+            </TD>
+          </TR>
+          <TR height=40>
+            <TD></TD>
+            <TD align=right>
+              <INPUT id=btnLogin type=submit value=" 登 录 " >
+            </TD>
+            <TD style="width: 120px">&nbsp;</TD>
+          </TR>
+          <TR height=110>
+            <TD colSpan=4>&nbsp;</TD>
+          </TR>
+          </TBODY>
+        </TABLE>
+      </form>
+    </TD>
+  </TR>
+  <TR id=root height=104>
+    <TD>&nbsp;</TD>
+  </TR>
+  </TBODY>
+</TABLE>
+</body>
+</html>

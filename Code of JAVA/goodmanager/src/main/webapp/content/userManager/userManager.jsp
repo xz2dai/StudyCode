@@ -1,5 +1,8 @@
 <%@page language="java" import="java.util.*,net.hunau.goodsmanager.bean.User"
 	pageEncoding="utf-8" contentType="text/html; charset=utf-8"%>
+<%@ page import="net.hunau.goodsmanager.dao.UserDAO" %>
+<%@ page import="java.io.Writer" %>
+<%@ page import="java.io.PrintWriter" %>
 
 <%
 	
@@ -58,27 +61,38 @@ String path = request.getContextPath();
 										<TH class=gridviewHeader scope=col>更新</TH>
 										<TH class=gridviewHeader scope=col>注销</TH>
 									</TR>
-									
-									<!--  在Java代码中嵌入网页代码，需使用%>  < %来将网页代码放入其中   -->
+										<%-- 从数据库获取所有用户信息并填入表 --%>
+										<%
+											UserDAO userDAO = new UserDAO();
+											List<User> userList = userDAO.getAllUsers();
+											for(User user:userList){
+										%>
 									<TR>
 										<TD class=gridViewItem style="WIDTH: 50px"><IMG
-											src="../../images/bg_users.gif"></TD>
-										<TD class=gridViewItem>####</TD>
-										<TD class=gridViewItem>####</TD>
+												src="../../images/bg_users.gif"></TD>
+										<TD class=gridViewItem><%=user.getUsername()%></TD>
+										<%
+											String DismissState;
+											if(user.getValidateFlag()==1){
+												DismissState = "否";
+											}else{
+												DismissState = "是";
+											}
+										%>
+										<TD class=gridViewItem><%=DismissState%></TD>
 										<TD class=gridViewItem><A class=cmdField
-											href="detailUser.jsp?userName=####">查看详情</A></TD>
+																  href="detailUser.jsp?userName=<%=user.getUsername()%>">查看详情</A></TD>
 										<TD class=gridViewItem><A class=cmdField
-											href="updataUser.jsp?userName=####">编辑</A></TD>
+																  href="updataUser.jsp?userName=<%=user.getUsername()%>">编辑</A></TD>
 										<TD class=gridViewItem>
-											
-										<a class=cmdField
-											href="javascript:Goto();"
-											onclick='{if(confirm("确定要启用吗?")) {validateUser("1","####"); }else {}}'>启用</a>
+											<a class=cmdField
+											   href="javascript:Goto();"
+											   onclick='{if(confirm("确定要启用吗?")) {validateUser("1","<%=user.getUsername()%>"); }else {}}'>启用</a>
 										</TD>
-										
-										
-										
 									</TR>
+									<%
+										}
+									%>
 
 						</TBODY>
 							</TABLE>

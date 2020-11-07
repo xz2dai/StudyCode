@@ -1,27 +1,36 @@
 package net.hunau.goodsmanager.utils;
+import org.apache.commons.dbcp2.BasicDataSourceFactory;
+
+import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 import javax.sql.DataSource;
 
-import com.mchange.v2.c3p0.ComboPooledDataSource;
 public class JDBCUtils {
 	
 	public static DataSource ds = null;
-	// ³õÊ¼»¯C3P0Êı¾İÔ´
+	// åˆå§‹åŒ–C3P0æ•°æ®æº
 	static {
-		// Ê¹ÓÃc3p0-config.xmlÅäÖÃÎÄ¼şÖĞµÄnamed-config½ÚµãÖĞnameÊôĞÔµÄÖµ
-		ds = new ComboPooledDataSource("goodmanage");
+		try {
+			Properties prop = new Properties();
+			InputStream in = JDBCUtils.class.getClassLoader()
+					.getResourceAsStream("dbcpconfig.properties");
+			prop.load(in);
+			ds = BasicDataSourceFactory.createDataSource(prop);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-	// ¼ÓÔØÇı¶¯£¬²¢½¨Á¢Êı¾İ¿âÁ¬½Ó
+	// åŠ è½½é©±åŠ¨ï¼Œå¹¶å»ºç«‹æ•°æ®åº“è¿æ¥
 	public static Connection getConnection() throws SQLException,
 			ClassNotFoundException {
 		return ds.getConnection();
 	}
-	// ¹Ø±ÕÊı¾İ¿âÁ¬½Ó£¬ÊÍ·Å×ÊÔ´
+	// å…³é—­æ•°æ®åº“è¿æ¥ï¼Œé‡Šæ”¾èµ„æº
 	public static void release(Statement stmt, Connection conn) {
 		if (stmt != null) {
 			try {
