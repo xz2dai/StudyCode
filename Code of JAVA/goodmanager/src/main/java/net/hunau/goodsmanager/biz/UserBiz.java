@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletResponse;
  * 实现用户的登录验证业务逻辑
  */
 public class UserBiz {
+    private UserDAO userDAO = null;
+    public UserBiz(){
+        userDAO = new UserDAO();
+    }
     /**
      * 登陆验证方法
      *
@@ -20,7 +24,6 @@ public class UserBiz {
      */
     public User login(String username, String password) {
         boolean result = false;
-        UserDAO userDAO = new UserDAO();
         User userbean = null;
         userbean = userDAO.getUser(username);
         if (password.equals(userbean.getPassword()))
@@ -36,7 +39,6 @@ public class UserBiz {
      * @return 修改是否成功
      */
     public boolean iscancelUser(String userName,int flag){
-        UserDAO userDAO = new UserDAO();
         User user = userDAO.getUser(userName);
         if(user!=null){
             user.setValidateFlag(flag);

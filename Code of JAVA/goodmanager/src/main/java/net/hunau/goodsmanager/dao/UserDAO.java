@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class UserDAO extends baseDAO {
     /**
-     * 用户登录
+     * 获取用户信息
      *
      * @param username 用户名
      * @return 返回登录是否成功
@@ -62,6 +62,26 @@ public class UserDAO extends baseDAO {
             pstm.setString(2, password);
             pstm.setInt(3, validateFlag);
             pstm.setInt(4, roles);
+            int result = pstm.executeUpdate();
+            if(result > 0){
+                return true;
+            }else {
+                return false;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public boolean AddUser(User user){
+        String sql = "insert into users(userName, pwd,validateFlag,roles) values (?,?,?,?)";
+        try {
+            PreparedStatement pstm = connection.prepareStatement(sql);
+            pstm.setString(1,user.getUsername());
+            pstm.setString(2, user.getPassword());
+            pstm.setInt(3,user.getValidateFlag());
+            pstm.setInt(4,user.getRoles());
+
             int result = pstm.executeUpdate();
             if(result > 0){
                 return true;

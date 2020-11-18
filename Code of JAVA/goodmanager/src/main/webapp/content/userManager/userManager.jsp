@@ -85,9 +85,21 @@ String path = request.getContextPath();
 										<TD class=gridViewItem><A class=cmdField
 																  href="updataUser.jsp?userName=<%=user.getUsername()%>">编辑</A></TD>
 										<TD class=gridViewItem>
-											<a class=cmdField
+											<%
+												if(user.getValidateFlag()==1){
+											%>
+											<a class=cmdField id="changeFlagbtn"
+											   href="javascript:Goto();"
+											   onclick='{if(confirm("确定要禁用吗?")) {validateUser("0","<%=user.getUsername()%>"); }else {}}'>禁用</a>
+											<%
+												}else{
+											%>
+											<a class=cmdField id="changeFlagbtn"
 											   href="javascript:Goto();"
 											   onclick='{if(confirm("确定要启用吗?")) {validateUser("1","<%=user.getUsername()%>"); }else {}}'>启用</a>
+											<%
+												}
+											%>
 										</TD>
 									</TR>
 									<%

@@ -1,12 +1,21 @@
 <%@ page language="java" import="java.util.*,net.hunau.goodsmanager.bean.Goods,net.hunau.goodsmanager.bean.GoodsType" pageEncoding="utf-8" %>
+<%@ page import="net.hunau.goodsmanager.dao.GoodsDAO" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="net.hunau.goodsmanager.dao.TypeDAO" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 String path = request.getContextPath();
 
-int goodstype = ((Goods)session.getAttribute("goods")).getGoodtype();
 
-
-
+    int goodsid = Integer.parseInt(request.getParameter("goodsid"));
+    GoodsDAO goodsDAO = new GoodsDAO();
+    Goods goods = goodsDAO.getGoods(goodsid);
+    if(goods == null){
+        PrintWriter pw = response.getWriter();
+        pw.print("<script>alert(\""+"没有获取到商品!"+"\")</script>");
+        RequestDispatcher rd = request.getRequestDispatcher("/content/goodsManager/searchGoods.jsp");
+        rd.forward(request,response);
+    }
  %>
 <HTML>
 <HEAD>
@@ -62,7 +71,6 @@ function check(){
         <TD class="main_nu" vAlign=top align=middle>
            <DIV>
           <form action="UpdateGoodsServlet"  method='post' onsubmit="return check()">
-          <input type='hidden' name='productID' value="####">
             <TABLE class=gridView style="WIDTH: 80%; BORDER-COLLAPSE: collapse"  cellSpacing=0 rules=all  border=1>
               <TBODY>
                 <TR>
@@ -70,27 +78,40 @@ function check(){
                 </TR>
                 <TR>
                   <TD class=gridViewItem>商品ID </TD>
-                  <TD class=gridViewItem><input class=gridViewItem value="####" type="text" id='productId' name="productId"></TD>
+                  <TD class=gridViewItem><input class=gridViewItem value="<%=goods.getId()%>" type="text" id='productId' name="productId" ></TD>
                    
                   <TD class=gridViewItem>商品名称 </TD>
-                  <TD class=gridViewItem><input class=gridViewItem value="####" type="text" id='productName' name="productName"></TD>
+                  <TD class=gridViewItem><input class=gridViewItem value="<%=goods.getGoodname()%>" type="text" id='productName' name="productName"></TD>
                     </TR>
                <TR>
                   <TD class=gridViewItem>商品价格</TD>
-                  <TD class=gridViewItem><input  class=gridViewItem type="text" id='productPrice' value="####" name="productPrice"></TD>
+                  <TD class=gridViewItem><input  class=gridViewItem type="text" id='productPrice' value="<%=goods.getGoodprice()%>" name="productPrice"></TD>
              
                   <TD class=gridViewItem> 商品数量</TD>
-                  <TD class=gridViewItem><input class=gridViewItem id='productCount' value='####' name="productCount"></TD>
+                  <TD class=gridViewItem><input class=gridViewItem id='productCount' value='<%=goods.getGoodcount()%>' name="productCount"></TD>
                     </TR>
                  <TR>
 				  <TD class=gridViewItem >商品类型 </TD>
                   <TD class=gridViewItem>
-						<select name="productType" style="WIDTH:45% ;color:#566984" >			
-						   <option value="####" >####</option>  	
+						<select name="productType" style="WIDTH:45% ;color:#566984" >
+                            <%
+                                TypeDAO typeDAO = new TypeDAO();
+                                List<GoodsType> goodsTypeList = typeDAO.scanAllGoodsType();
+                                for(GoodsType goodsType:goodsTypeList){
+                                    if(goodsType.getId() == goods.getGoodtype()){
+                            %>
+                            <option value="<%=goodsType.getId()%>" selected ><%=goodsType.getTypeName()%></option>
+                            <%
+                                }else{
+                                        %>
+                            <option value="<%=goodsType.getId()%>"><%=goodsType.getTypeName()%></option>
+                            <%
+                                }}
+                            %>
 						</select>  
 				  </TD>
                   <TD class=gridViewItem>商品描述</TD>
-                  <TD class=gridViewItem><input   class=gridViewItem type="text" value='####' id='productDep' name="productDep"></TD>
+                  <TD class=gridViewItem><input   class=gridViewItem type="text" value='<%=goods.getGoodDep()%>' id='productDep' name="productDep"></TD>
               
                 </TR>
                 <TR>

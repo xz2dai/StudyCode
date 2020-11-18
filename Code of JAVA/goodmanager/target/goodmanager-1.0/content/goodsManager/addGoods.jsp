@@ -1,7 +1,8 @@
-<%@ page language="java" import="java.util.*,net.hunau.goodsmanager.bean.GoodsType" pageEncoding="utf-8" %>
+<%@ page language="java" import="java.util.*,net.hunau.goodsmanager.bean.GoodsType,net.hunau.goodsmanager.dao.TypeDAO" pageEncoding="utf-8" %>
 <%
 
 String path = request.getContextPath();
+TypeDAO typeDAO = new TypeDAO();
  %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
@@ -15,6 +16,7 @@ String path = request.getContextPath();
 function check(){
     var productName = document.getElementById("productName").value;
     var productPrice = document.getElementById("productPrice").value;
+    var productType = document.getElementById("productType").value;
     var productNumber = document.getElementById("productNumber").value;
     var description = document.getElementById("description").value;
     
@@ -31,6 +33,10 @@ function check(){
         alert("商品数量不能为空");
         return false;
    }
+    if(productType == null||productType===-1){
+    	alert("商品类型不能为空");
+    	return false;
+	}
     if(description ==  null || description == ''){
         alert("商品描述不能为空");
         return false;
@@ -65,7 +71,7 @@ function check(){
 											
 											<TD class=gridViewItem>商品名称&nbsp;<font color="red">*</font></TD>
 											<TD class=gridViewItem><input class=gridViewItem
-												type="text" name="ProductName" id="productName">
+												type="text" name="productName" id="productName">
 											</TD>
 										</TR>
 										<TR>
@@ -85,10 +91,18 @@ function check(){
 											</TD>
 
 											<TD class=gridViewItem>商品类型</TD>
-											<TD class=gridViewItem><select name="goodsType"
+											<TD class=gridViewItem><select name="productType" id="productType"
 												style="WIDTH:45% ;color:#566984">
-													<option value="-1">请选择</option>	
-													<option value="###">####</option>			
+												<option value="-1">请选择</option>
+												<%
+													List<GoodsType> goodsTypeList = typeDAO.scanAllGoodsType();
+													for(GoodsType goodsType:goodsTypeList){
+												%>
+
+													<option value="<%=goodsType.getId()%>"><%=goodsType.getTypeName()%>></option>
+												<%
+													}
+												%>
 											</select></TD>
 
 

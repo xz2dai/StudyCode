@@ -1,8 +1,18 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8" %>
+<%@ page import="net.hunau.goodsmanager.bean.Goods" %>
+<%@ page import="net.hunau.goodsmanager.dao.TypeDAO" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.util.stream.Collectors" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 
 String path = request.getContextPath();
+
+List<Goods> goodsList = (List<Goods>) request.getAttribute("goodsList");
+if(goodsList!=null){
+    goodsList  = goodsList.stream().distinct().collect(Collectors.toList());
+}
+
 
  %>
 <HTML>
@@ -43,7 +53,7 @@ tbody.removeChild(tr);
                 <TR>
                   <TH class=gridViewHeader  >商品查询</TH>
                 </TR>
-                <TR><form action="<%=path %>/servlet/ScanGoodServlet" method="post">
+                <TR><form action="<%=path%>/servlet/ScanGoodServlet" method="post">
                   <TD> &nbsp;&nbsp;&nbsp;商品Id &nbsp;&nbsp;&nbsp;  <input class=gridViewItem type="text" name="productID">
 						 &nbsp;&nbsp;&nbsp;商品名称 &nbsp;&nbsp;&nbsp;  <input class=gridViewItem type="text" name="productName">
 						 &nbsp;&nbsp;&nbsp;<input class="button" type="submit"  value="查询" />
@@ -63,19 +73,40 @@ tbody.removeChild(tr);
 								  <TH class=gridviewHeader >更新</TH>
 								  <TH class=gridviewHeader >删除</TH>
 								</TR>
-								
+
+                                <% if(goodsList != null){
+                                    for(Goods goods:goodsList){
+                                        if(goods!=null){
+								%>
 								 <TR>
-								  <TD class=gridViewItem>####</TD>
-								  <TD class=gridViewItem>####</TD>
-								  <TD class=gridViewItem>####元</TD>
-								  <TD class=gridViewItem>####</TD>
-								  <TD class=gridViewItem>####</TD>
-								  <TD class=gridViewItem>####</TD>
-								  
-								  <TD class=gridViewItem><A class=cmdField   href="EditDelGoodsServlet?goodsid=${goodss.id}">编辑</A></TD>
-								  <TD class=gridViewItem><a class=cmdField  href="EditDelGoodsServlet?goodsid=${goodss.id}&op=del">删除 </a></TD>
+								  <TD class=gridViewItem><%=goods.getId()%></TD>
+								  <TD class=gridViewItem><%=goods.getGoodname()%></TD>
+								  <TD class=gridViewItem><%=goods.getGoodprice()%>元</TD>
+								  <TD class=gridViewItem><%=goods.getGoodcount()%></TD>
+								  <TD class=gridViewItem><%=goods.getGoodDep()%></TD>
+								  <TD class=gridViewItem>
+                                      <%
+                                          int typeid = goods.getGoodtype();
+                                          if(typeid > 0){
+                                          TypeDAO typeDAO = new TypeDAO();
+                                          String desc = typeDAO.getTypeDesc(typeid);
+                                      %>
+                                      <%=desc%>
+                                      <%
+                                          }
+                                      %>
+                                  </TD>
+
+								  <TD class=gridViewItem><A class=cmdField   href="<%=path %>/servlet/EditDelGoodsServlet?goodsid=<%=goods.getId()%>">编辑</A></TD>
+								  <TD class=gridViewItem><a class=cmdField  href="<%=path %>/servlet/EditDelGoodsServlet?goodsid=<%=goods.getId()%>&op=del">删除 </a></TD>
 								</TR>
-                                   
+                                 <%
+                                     }else{
+                                         PrintWriter pw = response.getWriter();
+                                         pw.print("<script>alert(\""+"没有获取到商品!"+"\")</script>");
+                                     }
+                                    }}
+                                     %>
 							</table>
 						</div>
 				  </td>

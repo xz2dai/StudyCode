@@ -3,7 +3,6 @@
 <%@ page import="net.hunau.goodsmanager.dao.UserDAO,net.hunau.goodsmanager.dao.rolesDAO" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
-
     String path = request.getContextPath();
     String username = request.getParameter("userName");
     int flag = 0;
@@ -27,7 +26,6 @@
         } else if (flag === 0) {
             var radio0 = document.getElementById("flag_0").setAttribute("checked", "checked")
         }
-
     }
 </script>
 <HTML>

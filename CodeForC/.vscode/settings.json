@@ -35,6 +35,9 @@
         "iostream": "cpp",
         "array": "c",
         "string": "c",
-        "string_view": "c"
+        "string_view": "c",
+        "*.tcc": "cpp",
+        "random": "cpp",
+        "regex": "cpp"
     } // 效果效果比cpptools要好
 }

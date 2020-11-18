@@ -1,3 +1,4 @@
+/*P39ÀıÌâ3.1 ÊäÈë´®:for(i=1,sum=9.8;i<=100;i++) sum+=i*3.14;#*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
