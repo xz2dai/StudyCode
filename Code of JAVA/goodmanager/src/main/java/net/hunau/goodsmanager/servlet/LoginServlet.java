@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
+/**
+ * 登陆servlet
+ * 判断输入用户是否存在且密码是否正确，并返回登陆结果
+ */
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
     @Override
@@ -21,6 +26,7 @@ public class LoginServlet extends HttpServlet {
         User userbean=null;
         userbean = userBiz.login(username,password);
         if(userbean!=null){
+            //返回用户信息
             SaveInfoUtils.saveSession(req,"UserInfo",userbean);
             RequestDispatcher view = req.getRequestDispatcher("/main.html");
             view.forward(req, resp);

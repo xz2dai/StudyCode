@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 实现用户的登录验证业务逻辑
+ * author：yq
+ * date：11-3
  */
 public class UserBiz {
     private UserDAO userDAO = null;

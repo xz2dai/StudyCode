@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 /**
  * 用户相关操作DAO
+ * author：yq
+ * date：11-3
  */
 public class UserDAO extends baseDAO {
     /**

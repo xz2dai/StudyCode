@@ -1,0 +1,53 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+<title>考勤管理</title>
+</head>
+<body>
+<div class="container" style="width: 100%;padding: 25px 15px;">
+	<div class="row clearfix">
+		<div class="col-md-12 column" style="padding: 20px;">
+			<div style="float: left;">
+				<c:if test="${isSignIn == 0 }">
+					<input type="button" class="btn btn-primary btn" value="签到" onclick="attendSignIn()"/>
+				</c:if>
+				<input type="button" class="btn btn-primary btn" value="签退" onclick="attendSignIn()"/>
+			</div>
+			<form action="#" method="post" id="attendForm" role="form" class="form-inline" style="float: right;margin-bottom: 10px;">
+				<div class="form-group" style="margin-right: 20px;">
+					 <label for="exampleInputEmail1" style="margin-right: 10px;">签到时间</label><input type="text" class="form-control" id="signInStr" name="signInStr" placeholder="签到时间，如：2017-01-01" />
+				</div>
+				<div class="form-group">
+					 <label for="exampleInputPassword1" style="margin-right: 10px;">签退时间</label><input type="text" class="form-control" id="signOutStr" name="signOutStr" placeholder="签退时间，如：2017-01-02" />
+				</div>
+				<button type="button" class="btn btn-primary btn" onclick="findAttend()">查询</button>
+			</form>
+			<table class="table table-bordered" style="margin-top: 20px;">
+				<thead>
+					<tr>
+						<th style="width: 150px;">姓名</th>
+						<th>签到时间</th>
+						<th>签退时间</th>
+						<th>IP</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="success">
+						<td>小泉</td>
+						<td>2017-06-16 08:54:05</td>
+						<td>2017-06-16 18:01:09</td>
+						<td>192.168.1.18</td>
+					</tr>
+				</tbody>
+			</table>
+			<span>共1条记录 共1页 当前第1页</span>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/attendance.js"></script>
+</html>

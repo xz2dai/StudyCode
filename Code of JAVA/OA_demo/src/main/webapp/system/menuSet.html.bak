@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+		<title>角色列表</title>
+
+		<script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+	</head>
+
+	<body>
+		<div class="container" style="width: 100%;padding: 25px 15px;">
+			<div class="row clearfix">
+				<div class="col-md-12 column" style="padding: 20px;">
+					<div style="float: left;padding-bottom: 10px;" id="condition">
+						<select class="form-control" onchange="menuShow('/OA',$(this).val())" id="roleSel" style="display: inline-block;width: 200px;">
+							<option value="2" selected="selected">总经理</option>
+							<option value="3">项目经理</option>
+							<option value="4">普通职员</option>
+						</select>
+					</div>
+					<div style="float: right;padding-bottom: 10px;padding-right: 30px;">
+						<input type="button" class="btn btn-primary btn" value="更新" onclick="menuSet('/OA')">
+					</div>
+					<table class="table table-bordered" style="margin-top: 20px;">
+						<thead>
+							<tr id="authTr">
+								<th style="width: 280px;">菜单名称</th>
+								<th>显示菜单</th>
+								<th>增加</th>
+								<th>删除</th>
+								<th>修改</th>
+								<th>查询</th>
+								<th>批量导入</th>
+								<th>批量删除</th>
+							</tr>
+						</thead>
+						<tbody id="menuAuthTr">
+							<tr>
+								<td>考勤管理</td>
+								<td><input type="checkbox" name="menuAuth" value="01-1">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="01-2" disabled="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="01-3" disabled="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="01-4" disabled="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="01-5" disabled="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="01-6" disabled="">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="01-7" disabled="">批量删除</td>
+							</tr>
+							<tr>
+								<td>考勤管理</td>
+								<td><input type="checkbox" name="menuAuth" value="0101-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0101-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0101-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0101-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0101-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0101-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0101-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>加班管理</td>
+								<td><input type="checkbox" name="menuAuth" value="0102-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0102-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0102-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0102-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0102-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0102-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0102-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>考勤设置</td>
+								<td><input type="checkbox" name="menuAuth" value="0103-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0103-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0103-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0103-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0103-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0103-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0103-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>考勤统计</td>
+								<td><input type="checkbox" name="menuAuth" value="0104-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0104-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0104-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0104-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0104-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0104-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0104-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>请假管理</td>
+								<td><input type="checkbox" name="menuAuth" value="02-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="02-2" disabled="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="02-3" disabled="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="02-4" disabled="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="02-5" disabled="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="02-6" disabled="">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="02-7" disabled="">批量删除</td>
+							</tr>
+							<tr>
+								<td>请假管理</td>
+								<td><input type="checkbox" name="menuAuth" value="0201-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0201-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0201-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0201-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0201-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0201-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0201-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>审批管理</td>
+								<td><input type="checkbox" name="menuAuth" value="03-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="03-2" disabled="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="03-3" disabled="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="03-4" disabled="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="03-5" disabled="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="03-6" disabled="">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="03-7" disabled="">批量删除</td>
+							</tr>
+							<tr>
+								<td>审批管理</td>
+								<td><input type="checkbox" name="menuAuth" value="0301-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0301-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0301-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0301-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0301-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0301-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0301-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>报销管理</td>
+								<td><input type="checkbox" name="menuAuth" value="04-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="04-2" disabled="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="04-3" disabled="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="04-4" disabled="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="04-5" disabled="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="04-6" disabled="">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="04-7" disabled="">批量删除</td>
+							</tr>
+							<tr>
+								<td>报销管理</td>
+								<td><input type="checkbox" name="menuAuth" value="0401-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0401-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0401-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0401-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0401-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0401-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0401-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>工作计划</td>
+								<td><input type="checkbox" name="menuAuth" value="05-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="05-2" disabled="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="05-3" disabled="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="05-4" disabled="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="05-5" disabled="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="05-6" disabled="">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="05-7" disabled="">批量删除</td>
+							</tr>
+							<tr>
+								<td>工作计划</td>
+								<td><input type="checkbox" name="menuAuth" value="0501-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0501-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0501-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0501-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0501-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0501-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0501-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>日程安排</td>
+								<td><input type="checkbox" name="menuAuth" value="06-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="06-2" disabled="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="06-3" disabled="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="06-4" disabled="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="06-5" disabled="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="06-6" disabled="">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="06-7" disabled="">批量删除</td>
+							</tr>
+							<tr>
+								<td>日程安排</td>
+								<td><input type="checkbox" name="menuAuth" value="0601-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0601-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0601-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0601-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0601-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0601-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0601-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>办公用品</td>
+								<td><input type="checkbox" name="menuAuth" value="07-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="07-2" disabled="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="07-3" disabled="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="07-4" disabled="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="07-5" disabled="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="07-6" disabled="">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="07-7" disabled="">批量删除</td>
+							</tr>
+							<tr>
+								<td>申领管理</td>
+								<td><input type="checkbox" name="menuAuth" value="0701-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0701-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0701-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0701-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0701-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0701-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0701-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>申购管理</td>
+								<td><input type="checkbox" name="menuAuth" value="0702-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0702-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0702-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0702-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0702-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0702-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0702-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>通知公告</td>
+								<td><input type="checkbox" name="menuAuth" value="08-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="08-2" disabled="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="08-3" disabled="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="08-4" disabled="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="08-5" disabled="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="08-6" disabled="">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="08-7" disabled="">批量删除</td>
+							</tr>
+							<tr>
+								<td>发布公告</td>
+								<td><input type="checkbox" name="menuAuth" value="0801-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0801-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0801-3">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0801-4">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0801-5">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0801-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0801-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>公告审批</td>
+								<td><input type="checkbox" name="menuAuth" value="0802-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0802-2">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0802-3">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0802-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0802-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0802-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0802-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>我的公告</td>
+								<td><input type="checkbox" name="menuAuth" value="0803-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0803-2">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0803-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0803-4">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0803-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0803-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0803-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>通讯录</td>
+								<td><input type="checkbox" name="menuAuth" value="09-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="09-2" disabled="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="09-3" disabled="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="09-4" disabled="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="09-5" disabled="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="09-6" disabled="">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="09-7" disabled="">批量删除</td>
+							</tr>
+							<tr>
+								<td>通讯录</td>
+								<td><input type="checkbox" name="menuAuth" value="0901-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="0901-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="0901-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="0901-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="0901-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="0901-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="0901-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>系统管理</td>
+								<td><input type="checkbox" name="menuAuth" value="10-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="10-2" disabled="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="10-3" disabled="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="10-4" disabled="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="10-5" disabled="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="10-6" disabled="">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="10-7" disabled="">批量删除</td>
+							</tr>
+							<tr>
+								<td>用户管理</td>
+								<td><input type="checkbox" name="menuAuth" value="1001-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="1001-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="1001-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="1001-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="1001-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="1001-6" checked="">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="1001-7" checked="">批量删除</td>
+							</tr>
+							<tr>
+								<td>菜单设置</td>
+								<td><input type="checkbox" name="menuAuth" value="1002-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="1002-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="1002-3" checked="">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="1002-4" checked="">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="1002-5" checked="">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="1002-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="1002-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>角色管理</td>
+								<td><input type="checkbox" name="menuAuth" value="1003-1" checked="">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="1003-2" checked="">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="1003-3">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="1003-4">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="1003-5">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="1003-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="1003-7">批量删除</td>
+							</tr>
+							<tr>
+								<td>工作流程</td>
+								<td><input type="checkbox" name="menuAuth" value="1004-1">显示菜单</td>
+								<td><input type="checkbox" name="menuAuth" value="1004-2">增加</td>
+								<td><input type="checkbox" name="menuAuth" value="1004-3">删除</td>
+								<td><input type="checkbox" name="menuAuth" value="1004-4">修改</td>
+								<td><input type="checkbox" name="menuAuth" value="1004-5">查询</td>
+								<td><input type="checkbox" name="menuAuth" value="1004-6">批量导入</td>
+								<td><input type="checkbox" name="menuAuth" value="1004-7">批量删除</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+</html>

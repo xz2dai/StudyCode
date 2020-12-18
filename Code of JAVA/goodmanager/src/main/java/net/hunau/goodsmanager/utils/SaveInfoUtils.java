@@ -5,6 +5,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * 保存网页信息工具类
+ * 可以保存cookies和session信息
+ */
 public class SaveInfoUtils {
     public static void saveCookies(HttpServletResponse response,String cookieName,String cookieValue){
         Cookie cookie = new Cookie(cookieName, cookieValue);

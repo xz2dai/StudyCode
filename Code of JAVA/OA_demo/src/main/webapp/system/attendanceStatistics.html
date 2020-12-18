@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+<title>考勤统计</title>
+<script type="text/javascript">
+    // 分页查询
+    function userPage(page) {
+        $("#pageNo").val(page);
+    }
+</script>
+</head>
+<body>
+<div class="container" style="width: 100%;padding: 25px 15px;">
+    <div class="row clearfix">
+        <div class="col-md-12 column" style="padding: 20px;">
+            <div style="float: left;">
+                <label>月份：</label>
+                <input type="text" name="date" placeholder="yyyy-MM" value="2017-06">
+            </div>
+            <form action="#" method="post" id="attendanceForm" role="form" class="form-inline" style="float: right;margin-bottom: 10px;">
+                 <input type="submit" id="exportExcel" class="btn btn-primary btn" name="exportExcel" value="批量导出"/>
+            </form>
+            <table class="table table-bordered" style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th style="width: 150px;">用户名</th>
+                        <th>迟到时间</th>
+                        <th>早退时间</th>
+                        <th>应上班时间</th>
+                        <th>实上班时间</th>
+                        <th>加班时间</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="success">
+                        <td>小琪</td>
+                        <td>10小时</td>
+                        <td>6小时</td>
+                        <td>176小时</td>
+                        <td>160小时</td>
+                        <td>8小时</td>
+                    </tr>
+                </tbody>
+            </table>
+            <span>共1条记录 共1页 当前第1页</span>
+            <!-- 分页 -->
+            <ul class="pagination" style="float: right;margin: 0;">
+                <li><a href="javascript:void(0)" onclick="userPage(1)">首页</a></li>
+                <li><a href="javascript:void(0)" onclick="userPage()">上一页</a></li>
+                <li class="disabled"><a href="javascript:void(0)">下一页</a></li>
+                <li><a href="javascript:void(0)" onclick="userPage()">尾页</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+</html>

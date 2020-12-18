@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="OA_demo:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>OA_demo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="OA_demo-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="OA_demo:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="c3p0-0.9.5.5" />
+          <element id="library" level="project" name="commons-dbutils-1.4" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

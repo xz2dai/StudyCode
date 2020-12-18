@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * 搜索商品servlet
+ */
 public class ScanGoodServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
@@ -29,20 +32,23 @@ public class ScanGoodServlet extends HttpServlet {
         GoodsDAO goodsDAO = new GoodsDAO();
         GoodsBiz goodsBiz = new GoodsBiz();
         Goods goods = new Goods();
+        //id与name不为空/同时存在
         if((goodsId != null && !goodsId.equals(""))&&(goodsName != null && !goodsName.equals(""))){
             goods.setGoodname(goodsName);
             goods.setId(Integer.parseInt(goodsId));
             goodsList = goodsBiz.findGoods(goods);
         }else{
+            //仅id不为空/存在
             if(goodsId != null && !goodsId.equals("")){
                 goods = goodsDAO.getGoods(Integer.parseInt(goodsId));
                 if(goods!=null) goodsList.add(goods);
-            }else if(goodsName != null && !goodsName.equals("")){
+            }else if(goodsName != null && !goodsName.equals("")){   //name不为空/存在
                 goodsList.addAll(goodsDAO.getGoods(goodsName));
             }
         }
-        //去除重复项
+        //用stream(JDK8)去除重复项
         goodsList = goodsList.stream().distinct().collect(Collectors.toList());
+        //返回商品列表
         request.setAttribute("goodsList",goodsList);
 
         RequestDispatcher rd = request.getRequestDispatcher("/content/goodsManager/searchGoods.jsp");

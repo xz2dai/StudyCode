@@ -96,7 +96,7 @@ function check(){
 												<option value="-1">请选择</option>
 												<%
 													List<GoodsType> goodsTypeList = typeDAO.scanAllGoodsType();
-													for(GoodsType goodsType:goodsTypeList){
+													for(GoodsType goodsType:goodsTypeList){		//遍历商品类型列表
 												%>
 
 													<option value="<%=goodsType.getId()%>"><%=goodsType.getTypeName()%>></option>

@@ -1,5 +1,4 @@
-/*递归下降分析技术
- P87例题4.15 测试串:i*i+i$#*/
+/*递归下降分析技术 P87例题4.15 测试串:i*i+i$#*/
 #include <stdio.h>
 #include<iostream>
 using namespace std;

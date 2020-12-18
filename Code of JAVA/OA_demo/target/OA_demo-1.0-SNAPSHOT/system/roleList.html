@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+		<title>角色列表</title>
+		<script type="text/javascript">
+			function operation() {
+				alert("亲,该功能正在开发中");
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="container" style="width: 100%;padding: 25px 15px;">
+			<div class="row clearfix">
+				<div class="col-md-12 column" style="padding: 20px;">
+					<div style="float: left;">
+						<input type="button" class="btn btn-primary btn" value="添加" onclick="roleHTML('<%=path%>', 'add');" />
+					</div>
+					<table class="table table-bordered" style="margin-top: 20px;">
+						<thead>
+							<tr>
+								<th>角色名称</th>
+								<th>描述</th>
+								<th style="width: 180px;">操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="success">
+								<td>管理员</td>
+								<td>拥有系统的所有权利</td>
+								<td>
+									<a href="#" class="btn btn-primary btn" onclick="operation()">修改</a>
+									<a href="#" class="btn btn-primary btn" onclick="operation()">删除</a>
+								</td>
+							</tr>
+							<tr>
+								<td>总经理</td>
+								<td>拥有系统的所有权利</td>
+								<td>
+									<a href="#" class="btn btn-primary btn" onclick="operation()">修改</a>
+									<a href="#" class="btn btn-primary btn" onclick="operation()">删除</a>
+								</td>
+							</tr>
+							<tr class="success">
+								<td>项目经理</td>
+								<td>拥有系统的大部分权限</td>
+								<td>
+									<a href="#" class="btn btn-primary btn" onclick="operation()">修改</a>
+									<a href="#" class="btn btn-primary btn" onclick="operation()">删除</a>
+								</td>
+							</tr>
+							<tr>
+								<td>普通职员</td>
+								<td>只拥有系统的 小部分权限</td>
+								<td>
+									<a href="#" class="btn btn-primary btn" onclick="operation()">修改</a>
+                           			<a href="#" class="btn btn-primary btn" onclick="operation()">删除</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/role.js"></script>
+
+</html>

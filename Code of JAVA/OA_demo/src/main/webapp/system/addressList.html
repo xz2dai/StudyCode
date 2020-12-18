@@ -1,0 +1,79 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+<title>通讯录</title>
+<script type="text/javascript">
+    function operation(){
+    	alert("亲,该功能正在开发中");
+    }
+</script>
+</head>
+<body>
+<div class="container" style="width: 100%;padding: 25px 15px;">
+    <div class="row clearfix">
+        <div class="col-md-12 column" style="padding: 20px;">
+            <div style="float: left;">
+                 <input type="button" class="btn btn-primary btn" onclick="operation()" value="添加" /> 
+            </div>
+            <form action="#" method="post" id="userForm" role="form" class="form-inline" style="float: right;margin-bottom: 10px;">
+                <div class="form-group" style="margin-right: 20px;">
+                     <label for="exampleInputEmail1" style="margin-right: 10px;">姓名</label><input type="text" class="form-control" id="realName" name="realName" placeholder="姓名"/>
+                </div>
+                <button type="button" class="btn btn-primary btn" onclick="operation()">查询</button>
+            </form>
+            <table class="table table-bordered" style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th style="width: 150px;">姓名</th>
+                        <th>家庭住址</th>
+                        <th>移动电话</th>
+                        <th>固定电话</th>
+                        <th>紧急联系人</th>
+                        <th style="width: 150px;">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="success">
+                        <td>猎鹰</td>
+                        <td>狼牙山12号</td>
+                        <td>13000000000</td>
+                        <td>010-88888888</td>
+                        <td>龙头</td>
+                        <td>
+                           <a href="#" class="btn btn-primary btn" onclick="operation()">修改</a>
+                           <a href="#" class="btn btn-primary btn" onclick="operation()">删除</a>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>飞虎</td>
+                        <td>钓鱼岛海域00区18号</td>
+                        <td>13888888888</td>
+                        <td>010-66666666</td>
+                        <td>黑豹</td>
+                        <td>
+                           <a href="#" class="btn btn-primary btn" onclick="operation()">修改</a>
+                           <a href="#" class="btn btn-primary btn" onclick="operation()">删除</a>
+                        </td>
+                    </tr>
+                    <tr class="success">
+                        <td>雄狮</td>
+                        <td>八角大楼2001室</td>
+                        <td>13666666666</td>
+                        <td>010-77777777</td>
+                        <td>黑虎</td>
+                        <td>
+                           <a href="#" class="btn btn-primary btn" onclick="operation()">修改</a>
+                           <a href="#" class="btn btn-primary btn" onclick="operation()">删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+</html>

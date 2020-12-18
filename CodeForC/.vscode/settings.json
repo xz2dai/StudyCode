@@ -38,6 +38,7 @@
         "string_view": "c",
         "*.tcc": "cpp",
         "random": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "future": "c"
     } // 效果效果比cpptools要好
 }

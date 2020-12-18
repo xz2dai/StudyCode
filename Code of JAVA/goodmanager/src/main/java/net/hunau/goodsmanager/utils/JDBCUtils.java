@@ -10,6 +10,9 @@ import java.util.Properties;
 
 import javax.sql.DataSource;
 
+/**
+ * 数据库操作工具类
+ */
 public class JDBCUtils {
 	
 	public static DataSource ds = null;

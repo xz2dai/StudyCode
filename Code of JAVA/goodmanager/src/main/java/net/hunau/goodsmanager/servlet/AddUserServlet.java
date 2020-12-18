@@ -11,6 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+
+/**
+ * 添加用户servlet
+ * author：yq
+ * date：11-3
+ */
 public class AddUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
@@ -19,11 +25,13 @@ public class AddUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserDAO userDAO = new UserDAO();
+        //获取参数
         String username = req.getParameter("userName");
         String password = req.getParameter("passWord");
-        int validateFlag = 1;
+        int validateFlag = 1;   //默认用户为启用
         int roleType = Integer.parseInt(req.getParameter("roleType"));
 
+        //填入数据
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);

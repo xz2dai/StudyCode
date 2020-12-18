@@ -11,10 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * 添加商品类型servlet
+ * author：yq
+ * date：11-13
+ */
 public class AddGoodsTypeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         TypeDAO typeDAO = new TypeDAO();
         GoodsType goodsType = new GoodsType();
+        //获取参数并填入bean中
         goodsType.setId(Integer.parseInt(request.getParameter("typeID")));
         goodsType.setTypeName(request.getParameter("typeName"));
         goodsType.setTypeDec(request.getParameter("typeDec"));

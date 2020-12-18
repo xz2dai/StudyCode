@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>修改考勤设置</title>
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+<style type="text/css">
+.myDiv {
+    width: 400px;
+    height: 350px;
+    border: 1px solid #5e5e5e;
+    top: 20%;
+    left: 20%;
+    margin-top: -100px;
+    margin-left: -150px;
+    position: absolute;
+    border-radius: 5px;
+}
+</style>
+</head>
+<body>
+     <div class="myDiv">
+        <div class="row-fluid">
+            <form class="form-horizontal" method="post"  action="#" style="padding: 15px;">
+                <input type="hidden" name="id" value="" /> <h3>修改考勤设置：</h3>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="officeHours">上班时间:</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" name="officeHours" value="09:00:00">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-sm-4 control-label" for="startTime">午休开始时间:</label> 
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" name="startTime" value="12:00:00">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label" for="overTime">午休结束时间:</label> 
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" name="overTime" value="13:00:00">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-sm-4 control-label" for="closingTime">下班时间:</label> 
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" name="closingTime" value="18:00:00" >
+                    </div>
+                </div>
+              <div class="row" style="float:right;">
+                    <div class="col-sm-12">
+                       	<input type="button" class="btn btn-primary btn" value="提交" onclick="javascript:location.href='attendanceSetting.html'"/>
+                    </div>
+                </div> 
+            </form>
+            <p style="color: red;text-align: center;"></p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

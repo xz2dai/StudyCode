@@ -73,6 +73,7 @@ String path = request.getContextPath();
 										<TD class=gridViewItem><%=user.getUsername()%></TD>
 										<%
 											String DismissState;
+											//获取用户状态
 											if(user.getValidateFlag()==1){
 												DismissState = "否";
 											}else{
