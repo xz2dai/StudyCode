@@ -36,7 +36,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="brand" style="padding: 1px">
-            <a href="http://localhost:8080/classProject/index.jsp"><img src="${pageContext.request.contextPath}/content/assets/img/logo-main.png" class="logo" style="height: 60px;padding-top: 15px" alt="Logo"></a>
+            <a href="http://localhost:8080/classProject/index.jsp"><img src="${pageContext.request.contextPath}/assets/img/logo-dark.png" class="logo" style="height: 60px;padding-top: 15px" alt="Logo"></a>
         </div>
         <div class="container-fluid">
             <div class="navbar-btn">
@@ -53,7 +53,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                             <i class="lnr lnr-alarm"></i>
-                            <span class="badge bg-danger">5</span>
+                            <span class="badge bgger">5</span>
                         </a>
                         <ul class="dropdown-menu notifications">
                             <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>仓库剩余空间不足</a>
@@ -102,11 +102,11 @@
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
-                    <li><a href="${pageContext.request.contextPath}/content/MakeOrder.jsp" class=""><i class="lnr lnr-home"></i> <span>点单</span></a></li>
-                    <li><a href="elements.html" class=""><i class="lnr lnr-code"></i> <span>查看订单</span></a></li>
-                    <li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>收支统计</span></a></li>
-                    <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>客户管理</span></a></li>
-                    <li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i><span>员工管理</span></a></li>
+                    <li><a href="${pageContext.request.contextPath}/content/makeorder.jsp" class=""><i class="lnr lnr-home"></i> <span>点单</span></a></li>
+                    <li><a href="${pageContext.request.contextPath}/content/orders.jsp" class=""><i class="lnr lnr-code"></i> <span>查看订单</span></a></li>
+                    <li><a href="${pageContext.request.contextPath}/content/income.jsp" class=""><i class="lnr lnr-chart-bars"></i> <span>收支统计</span></a></li>
+                    <li><a href="${pageContext.request.contextPath}/content/user.jsp" class=""><i class="lnr lnr-cog"></i> <span>客户管理</span></a></li>
+                    <li><a href="${pageContext.request.contextPath}/content/employee.jsp" class=""><i class="lnr lnr-alarm"></i><span>员工管理</span></a></li>
                 </ul>
             </nav>
         </div>
