@@ -1,4 +1,6 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.c611.classProject.bean.Goods" %>
+<%@ page import="java.util.ArrayList" %><%--
   下单界面
   Author: yq
   Date: 2020/12/16
@@ -8,6 +10,43 @@
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+
+    int goodListIndex = 1;
+    int selectListIndex = 1;
+
+
+
+    List<Goods> goodsList = new ArrayList<>();
+    //测试数据
+    goodsList.add(new Goods("糖醋排骨",24d));
+    goodsList.add(new Goods("红烧肉",17d));
+    goodsList.add(new Goods("黄焖鸡",22d));
+    goodsList.add(new Goods("米饭",3d));
+    goodsList.add(new Goods("小炒时蔬",7d));
+    goodsList.add(new Goods("紫菜蛋汤",6d));
+
+    List<Goods> selectList = (List<Goods>) request.getSession().getAttribute("selectList");
+    if(selectList == null){ selectList = new ArrayList<>();
+    selectList.add(new Goods("米饭",3d));
+    selectList.add(new Goods("小炒时蔬",7d));}
+
+    String index = request.getParameter("index");
+    if(index != null && !index.equals("")){
+        selectList.add(goodsList.get(Integer.parseInt(index)-1));
+        request.getSession().setAttribute("selectList",selectList);
+    }
+
+    String delete = request.getParameter("delete");
+    if(delete != null && !delete.equals("")){
+        selectList.remove(Integer.parseInt(delete)-1);
+        request.getSession().setAttribute("selectList",selectList);
+    }
+
+    double count = 0d;
+    for(Goods goods:selectList){
+        count+=goods.getGoodPrice();
+    }
+
 %>
 <html>
 <head>
@@ -36,7 +75,9 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="brand" style="padding: 1px">
-            <a href="http://localhost:8080/classProject/index.jsp"><img src="${pageContext.request.contextPath}/content/assets/img/logo-main.png" class="logo" style="height: 60px;padding-top: 15px" alt="Logo"></a>
+            <a href="http://localhost:8080/classProject/index.jsp"><img
+                    src="${pageContext.request.contextPath}/content/assets/img/logo-main.png" class="logo"
+                    style="height: 60px;padding-top: 15px" alt="Logo"></a>
         </div>
         <div class="container-fluid">
             <div class="navbar-btn">
@@ -44,7 +85,7 @@
             </div>
             <form class="navbar-form navbar-left">
                 <div class="input-group">
-                    <input type="text" value="" class="form-control" placeholder="Search dashboard...">
+                    <input type="text" value="" class="form-control" placeholder="Search Orders...">
                     <span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
                 </div>
             </form>
@@ -53,7 +94,6 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                             <i class="lnr lnr-alarm"></i>
-                            <span class="badge bg-danger">5</span>
                         </a>
                         <ul class="dropdown-menu notifications">
                             <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>仓库剩余空间不足</a>
@@ -102,7 +142,8 @@
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
-                    <li><a href="${pageContext.request.contextPath}/content/MakeOrder.jsp" class=""><i class="lnr lnr-home"></i> <span>点单</span></a></li>
+                    <li><a href="${pageContext.request.contextPath}/content/MakeOrder.jsp" class=""><i
+                            class="lnr lnr-home"></i> <span>点单</span></a></li>
                     <li><a href="elements.html" class=""><i class="lnr lnr-code"></i> <span>查看订单</span></a></li>
                     <li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>收支统计</span></a></li>
                     <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>客户管理</span></a></li>
@@ -116,197 +157,174 @@
     <div class="main">
         <!-- MAIN CONTENT -->
         <div class="main-content">
-            <div class="container-fluid">
-                <div class="row" style="padding-bottom: 20px">
-                    <p class="demo-button">
-                        <%--        添加订单按钮行            --%>
-                    <div class="col-md-6">
-                        <button type="button" class="btn btn-default">查看所有订单</button>
-                    </div>
+            <form target="MakeOrderServlet" method="post">
+                <div class="container-fluid">
+                    <div class="row" style="padding-bottom: 20px">
+                        <p class="demo-button">
+                            <%--        添加订单按钮行            --%>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-default">查看所有订单</button>
+                        </div>
 
-                    <div class="col-md-6">
-                        <button type="button" class="btn btn-primary btn-block text-right">创建订单</button>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-primary btn-block text-right" style="visibility: hidden">创建订单</button>
+                        </div>
+                        </p>
                     </div>
-                    </p>
-                </div>
-                <div class="row">
-                    <%--        商品选择行            --%>
-                    <div class="col-md-6" id="WaitSelectTable">
-                        <!-- BORDERED TABLE -->
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <div class="row" style="overflow: hidden">
-                                    <span class="lnr lnr-inbox"></span>
-                                    <h3 class="panel-title">菜单</h3>
+                    <div class="row">
+                        <%--        商品选择行            --%>
+                        <div class="col-md-6" id="WaitSelectTable">
+                            <!-- BORDERED TABLE -->
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <div class="row" style="overflow: hidden">
+                                        <span class="lnr lnr-inbox"></span>
+                                        <h3 class="panel-title">菜单</h3>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>名称</th>
+                                            <th>价格</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <%
+                                            for(Goods goods:goodsList){
+                                        %>
+                                        <tr>
+                                            <td><%=goodListIndex%></td>
+                                            <td><%=goods.getGoodName()%></td>
+                                            <td><%=goods.getGoodPrice()%></td>
+                                            <td style="text-align: center">
+                                                <a href="MakeOrder.jsp?index=<%=goodListIndex%>">
+                                                <button  class="btn btn-default" type="button">
+                                                    <i class="fa fa-plus-square"></i>
+                                                </button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <%
+                                                goodListIndex++;
+                                            }
+                                        %>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <div class="panel-body">
-                                <table class="table table-bordered">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>名称</th>
-                                        <th>价格</th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>糖醋排骨</td>
-                                        <td>24</td>
-                                        <td style="text-align: center">
-                                            <button type="button" class="btn btn-default"><i
-                                                    class="fa fa-plus-square"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>红烧肉</td>
-                                        <td>17</td>
-                                        <td style="text-align: center">
-                                            <button type="button" class="btn btn-default"><i
-                                                    class="fa fa-plus-square"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>黄焖鸡</td>
-                                        <td>22</td>
-                                        <td style="text-align: center">
-                                            <button type="button" class="btn btn-default"><i
-                                                    class="fa fa-plus-square"></i></button>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <!-- END BORDERED TABLE -->
                         </div>
-                        <!-- END BORDERED TABLE -->
-                    </div>
-                    <div class="col-md-6" id="SelectedTable">
-                        <!-- BORDERED TABLE -->
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <div class="row" style="overflow: hidden">
-                                    <span class="lnr lnr-cart"></span>
-                                    <h3 class="panel-title">购物车</h3>
+                        <div class="col-md-6" id="SelectedTable">
+                            <!-- BORDERED TABLE -->
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <div class="row" style="overflow: hidden">
+                                        <span class="lnr lnr-cart"></span>
+                                        <h3 class="panel-title">购物车</h3>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>名称</th>
+                                            <th>价格</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <%
+                                            for(Goods goods:selectList){
+                                        %>
+                                        <tr>
+                                            <td><%=selectListIndex%></td>
+                                            <td><%=goods.getGoodName()%></td>
+                                            <td><%=goods.getGoodPrice()%></td>
+                                            <td style="text-align: center">
+                                                <a href="MakeOrder.jsp?delete=<%=selectListIndex%>">
+                                                <button type="button" class="btn btn-danger" >
+                                                    <i class="fa fa-trash-o"></i>
+                                                </button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <%
+                                                selectListIndex++;
+                                            }
+                                        %>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
+                            <!-- END BORDERED TABLE -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <%--        订单信息填入行            --%>
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">输入订单信息</h3>
+                            </div>
                             <div class="panel-body">
-                                <table class="table table-bordered">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>名称</th>
-                                        <th>价格</th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>米饭</td>
-                                        <td>3</td>
-                                        <td style="text-align: center">
-                                            <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>小炒时蔬</td>
-                                        <td>7</td>
-                                        <td style="text-align: center">
-                                            <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>紫菜蛋汤</td>
-                                        <td>6</td>
-                                        <td style="text-align: center">
-                                            <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                                <input type="text" class="form-control" placeholder="用户名">
+                                <br>
+                                <input type="password" class="form-control" placeholder="用户地址">
+                                <br>
+                                <textarea class="form-control" placeholder="备注" rows="1"></textarea>
+                                <br>
+                                <label class="fancy-checkbox">
+                                    <input type="checkbox">
+                                    <span>支付宝</span>
+                                </label>
+                                <label class="fancy-checkbox">
+                                    <input type="checkbox">
+                                    <span>微信</span>
+                                </label>
+                                <label class="fancy-checkbox">
+                                    <input type="checkbox">
+                                    <span>到付</span>
+                                </label>
+                                <br>
+                                <label class="fancy-radio">
+                                    <input name="buytype" value="1" type="radio">
+                                    <span><i></i>外卖</span>
+                                </label>
+                                <label class="fancy-radio">
+                                    <input name="buytype" value="2" type="radio">
+                                    <span><i></i>到店</span>
+                                </label>
+                                <h3 class="panel-title" style="padding-top: 30px">订单总额：<%=count%></h3>
                             </div>
                         </div>
-                        <!-- END BORDERED TABLE -->
                     </div>
-                </div>
-                <div class="row">
-                    <%--        订单信息填入行            --%>
-                    <div class="panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">输入订单信息</h3>
+                    <div class="row">
+                        <%--        订单结束行            --%>
+                        <p class="demo-button ">
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-danger">取消</button>
                         </div>
-                        <div class="panel-body">
-                            <input type="text" class="form-control" placeholder="text field">
-                            <br>
-                            <input type="password" class="form-control" value="asecret">
-                            <br>
-                            <textarea class="form-control" placeholder="textarea" rows="4"></textarea>
-                            <br>
-                            <select class="form-control">
-                                <option value="cheese">Cheese</option>
-                                <option value="tomatoes">Tomatoes</option>
-                                <option value="mozarella">Mozzarella</option>
-                                <option value="mushrooms">Mushrooms</option>
-                                <option value="pepperoni">Pepperoni</option>
-                                <option value="onions">Onions</option>
-                            </select>
-                            <br>
-                            <label class="fancy-checkbox">
-                                <input type="checkbox">
-                                <span>Fancy Checkbox 1</span>
-                            </label>
-                            <label class="fancy-checkbox">
-                                <input type="checkbox">
-                                <span>Fancy Checkbox 2</span>
-                            </label>
-                            <label class="fancy-checkbox">
-                                <input type="checkbox">
-                                <span>Fancy Checkbox 3</span>
-                            </label>
-                            <br>
-                            <label class="fancy-radio">
-                                <input name="gender" value="male" type="radio">
-                                <span><i></i>Male</span>
-                            </label>
-                            <label class="fancy-radio">
-                                <input name="gender" value="female" type="radio">
-                                <span><i></i>Female</span>
-                            </label>
+                        <div class="col-md-6 text-right">
+                            <button type="button" class="btn btn-success btn-block">提交订单</button>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <%--        订单结束行            --%>
-                    <p class="demo-button ">
-                    <div class="col-md-6">
-                        <button type="button" class="btn btn-danger">取消</button>
-                    </div>
-                    <div class="col-md-6 text-right">
-                        <button type="button" class="btn btn-success btn-block">提交订单</button>
-                    </div>
-
-                    </p>
-                </div>
-            </div>
+            </form>
+            </p>
         </div>
-        <!-- END MAIN CONTENT -->
     </div>
-    <!-- END MAIN -->
-    <div class="clearfix"></div>
-    <footer>
-        <div class="container-fluid">
-            <p class="copyright">Copyright &copy; 2017.Company name All rights reserved.</p>
-        </div>
-    </footer>
+</div>
+<!-- END MAIN CONTENT -->
+</div>
+<!-- END MAIN -->
+<div class="clearfix"></div>
+<footer>
+    <div class="container-fluid">
+        <p class="copyright">Copyright &copy; 2017.Company name All rights reserved.</p>
+    </div>
+</footer>
 </div>
 <div style="width:66px;position:fixed;bottom:180px;right:25px;font-size:0;line-height:0;z-index:100;">
     <%--    右下角浮动按钮--%>

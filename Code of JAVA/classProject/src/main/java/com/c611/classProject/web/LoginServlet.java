@@ -1,4 +1,4 @@
-package com.c611.classProject.servlet;
+package com.c611.classProject.web;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
