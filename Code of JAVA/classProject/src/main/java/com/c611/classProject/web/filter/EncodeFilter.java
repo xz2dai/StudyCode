@@ -23,6 +23,7 @@ public class EncodeFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest)servletRequest;
         HttpServletResponse resp = (HttpServletResponse)servletResponse;
         String uri = req.getRequestURI();
+        req.setCharacterEncoding("utf-8");
         resp.setCharacterEncoding("utf-8");
         if(uri.contains(".css") || uri.contains(".js") || uri.contains(".png"))
         {

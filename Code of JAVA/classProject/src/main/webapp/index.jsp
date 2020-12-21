@@ -1,9 +1,8 @@
-<!doctype html>
-<html lang="en" class="fullscreen-bg">
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
 	<title>Login</title>
-	<meta charset="UTF-8-8">
+	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- VENDOR CSS -->
@@ -36,11 +35,11 @@
 							<form class="form-auth-small" action="index.php">
 								<div class="form-group">
 									<label for="signin-email" class="control-label sr-only">账户</label>
-									<input type="email" class="form-control" id="signin-email" value="samuel.gold@domain.com" placeholder="Email">
+									<input type="email" class="form-control" id="signin-email" value="" placeholder="Email">
 								</div>
 								<div class="form-group">
 									<label for="signin-password" class="control-label sr-only">密码</label>
-									<input type="password" class="form-control" id="signin-password" value="thisisthepassword" placeholder="Password">
+									<input type="password" class="form-control" id="signin-password" value="" placeholder="Password">
 								</div>
 								<div class="form-group clearfix">
 									<label class="fancy-checkbox element-left">

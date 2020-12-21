@@ -5,7 +5,6 @@
 		<property name="jdbcUrl">jdbc:mysql://101.133.235.230:3306/classprojectdb?useSSL=false&amp;serverTimezone=Hongkong&amp;characterEncoding=utf-8&amp;autoReconnect=true</property>
 		<property name="user">test</property>
 		<property name="password">123456</property>
-		<property name="automaticTestTable">users_test</property>
 		<property name="checkoutTimeout">30000</property>
 		<property name="idleConnectionTestPeriod">30</property>
 		<property name="initialPoolSize">10</property>

@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 public class C3P0Utils {
 	
 	// 构建一个C3P0数据源对象
-	private static DataSource dataSource = new ComboPooledDataSource();
+	private static final DataSource dataSource = new ComboPooledDataSource();
 	
 	private C3P0Utils() {}
 
