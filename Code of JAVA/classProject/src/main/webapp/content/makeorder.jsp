@@ -1,6 +1,9 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.c611.classProject.bean.Goods" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.c611.classProject.dao.impl.GoodsDaoImpl" %>
+<%@ page import="com.c611.classProject.service.impl.GoodsServiceImpl" %>
+<%@ page import="java.sql.SQLException" %><%--
   下单界面
   Author: yq
   Date: 2020/12/16
@@ -16,7 +19,8 @@
 
 
 
-    List<Goods> goodsList = new ArrayList<>();
+    List<Goods> goodsList = (List<Goods>) request.getSession().getAttribute("goodsList");
+    if(goodsList==null) goodsList = new ArrayList<>();
     //测试数据
     goodsList.add(new Goods("糖醋排骨",24d));
     goodsList.add(new Goods("红烧肉",17d));
@@ -24,6 +28,15 @@
     goodsList.add(new Goods("米饭",3d));
     goodsList.add(new Goods("小炒时蔬",7d));
     goodsList.add(new Goods("紫菜蛋汤",6d));
+
+    List<Goods> m_goodsList= null;
+    try {
+        m_goodsList = new GoodsServiceImpl().findGoodsList();
+    } catch (SQLException throwables) {
+        throwables.printStackTrace();
+    }
+    if(m_goodsList != null) goodsList = m_goodsList;
+
 
     List<Goods> selectList = (List<Goods>) request.getSession().getAttribute("selectList");
     if(selectList == null){ selectList = new ArrayList<>();
@@ -48,6 +61,16 @@
     }
 
 %>
+<script type="text/javascript">
+    function success_alert(){
+        var success_btn = document.getElementById("success_btn")
+        btn.onclick();
+    }
+    function error_alert(){
+        var error_btn = document.getElementById("error_btn")
+        error_btn.onclick();
+    }
+</script>
 <html>
 <head>
     <title>Tables</title>
@@ -129,9 +152,6 @@
                             <li><a href="#"><i class="lnr lnr-exit"></i> <span>登出</span></a></li>
                         </ul>
                     </li>
-                    <!-- <li>
-                        <a class="update-pro" href="#downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
-                    </li> -->
                 </ul>
             </div>
         </div>
@@ -327,8 +347,10 @@
 </div>
 <div style="width:66px;position:fixed;bottom:180px;right:25px;font-size:0;line-height:0;z-index:100;">
     <%--    右下角浮动按钮--%>
-    <li class="col-md-2 col-sm-4 col-xs-6">
+    <li class="col-md-2 col-sm-4 col-xs-6" style="visibility: hidden">
         <span class="lnr lnr-rocket"></span>
+        <button type="button" id="success_btn" class="btn btn-success btn-toastr" data-context="success" data-message="提交订单成功！" data-position="top-right">Success!</button>
+        <button type="button" id="error_btn" class="btn btn-danger btn-toastr" data-context="error" data-message="提交订单错误！" data-position="top-right">error!</button>
     </li>
     <button class="btn btn-primary"><a href="#last" style="color: #F8F8F8">我选好了</a></button>
 </div>

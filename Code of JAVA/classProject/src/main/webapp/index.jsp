@@ -3,7 +3,7 @@
 
 <head>
 	<title>Login</title>
-	<meta charset="utf-8">
+	<meta charset="UTF-8-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- VENDOR CSS -->
@@ -58,7 +58,7 @@
 					<div class="right">
 						<div class="content text">
 							<h1 class="heading">干净、实惠的食物</h1>
-							<p>by 昆昆餐厅</p>
+							<p>by 删库跑路</p>
 						</div>
 					</div>
 					<div class="clearfix"></div>
