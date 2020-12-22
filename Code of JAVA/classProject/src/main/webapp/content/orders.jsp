@@ -1,4 +1,12 @@
+<%@ page import="com.c611.classProject.bean.Orders" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%
+	List<Orders> list = (List<Orders>) request.getAttribute("list");
+	int ListIndex=0;
+%>
+
 <html lang="en">
 
 <head>
@@ -7,18 +15,18 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- VENDOR CSS -->
-	<link rel="stylesheet" href="././assets/vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="././assets/vendor/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="././assets/vendor/linearicons/style.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/content/assets/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/content/assets/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/content/assets/vendor/linearicons/style.css">
 	<!-- MAIN CSS -->
-	<link rel="stylesheet" href="././assets/css/main.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/content/assets/css/main.css">
 	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
-	<link rel="stylesheet" href="././assets/css/demo.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/content/assets/css/demo.css">
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="././assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="././assets/img/favicon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="${pageContext.request.contextPath }/content/assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="${pageContext.request.contextPath }/content/assets/img/favicon.png">
 </head>
 
 <body>
@@ -26,8 +34,10 @@
 	<div id="wrapper">
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="brand">
-				<a href="../index.html"><img src="././assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+			<div class="brand" style="padding: 1px">
+				<a href="${pageContext.request.contextPath}/index.jsp"><img
+						src="${pageContext.request.contextPath}/content/assets/img/logo-main.png" class="logo"
+						style="height: 60px;padding-top: 15px" alt="Logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -35,31 +45,32 @@
 				</div>
 				<form class="navbar-form navbar-left">
 					<div class="input-group">
-						<input type="text" value="" class="form-control" placeholder="Search dashboard...">
+						<input type="text" value="" class="form-control" placeholder="Search Orders...">
 						<span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
 					</div>
 				</form>
-				<div class="navbar-btn navbar-btn-right">
-					<a class="btn btn-success update-pro" href="#downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
-				</div>
 				<div id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
 								<i class="lnr lnr-alarm"></i>
-								<span class="badge bg-danger">5</span>
 							</a>
 							<ul class="dropdown-menu notifications">
-								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space is almost full</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have 9 unfinished tasks</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
-								<li><a href="#" class="more">See all notifications</a></li>
+								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>仓库剩余空间不足</a>
+								</li>
+								<li><a href="#" class="notification-item"><span class="dot bg-danger"></span>9个订单未处理</a>
+								</li>
+								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>月度总结可用</a>
+								</li>
+								<li><a href="#" class="notification-item"><span
+										class="dot bg-warning"></span>每周总结将在1小时内开始</a></li>
+								<li><a href="#" class="more">查看所有信息</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+									class="lnr lnr-question-circle"></i> <span>Help</span> <i
+									class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Basic Use</a></li>
 								<li><a href="#">Working With Data</a></li>
@@ -68,17 +79,16 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="././assets/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="${pageContext.request.contextPath}/content/assets/img/user.png"
+																							class="img-circle" alt="Avatar">
+								<span>管理员</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
-								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
-								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
-								<li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+								<li><a href="#"><i class="lnr lnr-user"></i> <span>个人主页</span></a></li>
+								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>消息</span></a></li>
+								<li><a href="#"><i class="lnr lnr-cog"></i> <span>设置</span></a></li>
+								<li><a href="#"><i class="lnr lnr-exit"></i> <span>登出</span></a></li>
 							</ul>
 						</li>
-						<!-- <li>
-							<a class="update-pro" href="#downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
-						</li> -->
 					</ul>
 				</div>
 			</div>
@@ -89,24 +99,16 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="../index.html" class=""><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="elements.html" class=""><i class="lnr lnr-code"></i> <span>Elements</span></a></li>
-						<li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
-						<li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
-						<li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>Notifications</span></a></li>
-						<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-							<div id="subPages" class="collapse ">
-								<ul class="nav">
-									<li><a href="page-profile.html" class="">Profile</a></li>
-									<li><a href="page-login.html" class="">Login</a></li>
-									<li><a href="page-lockscreen.html" class="">Lockscreen</a></li>
-								</ul>
-							</div>
-						</li>
-						<li><a href="orders.jsp" class="active"><i class="lnr lnr-dice"></i> <span>Order</span></a></li>
-						<li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>Typography</span></a></li>
-						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li>
+						<li><a href="${pageContext.request.contextPath}/content/makeorder.jsp" class=""><i
+								class="lnr lnr-home"></i> <span>点单</span></a></li>
+						<li><a href="<c:url value="/SerchByID"/>" class=""><i
+								class="lnr lnr-code"></i> <span>查看订单</span></a></li>
+						<li><a href="${pageContext.request.contextPath}/content/income.jsp" class=""><i
+								class="lnr lnr-chart-bars"></i> <span>收支统计</span></a></li>
+						<li><a href="<c:url value="/clientListServlet"/>" class=""><i
+								class="lnr lnr-cog"></i> <span>客户管理</span></a></li>
+						<li><a href="${pageContext.request.contextPath}/content/employee.jsp" class=""><i
+								class="lnr lnr-alarm"></i><span>员工管理</span></a></li>
 					</ul>
 				</nav>
 			</div>
@@ -125,10 +127,10 @@
 								<div class="panel-heading">
 									<h3 class="panel-title">订单列表</h3>
 								</div>
-								<form class="navbar-form navbar-left">
+								<form action="/SerchByID" method="post" class="navbar-form navbar-left">
 									<div class="input-group">
-										<input type="text" value="" class="form-control" placeholder="输入订单号...">
-										<span class="input-group-btn"><button type="button" class="btn btn-primary">搜索</button></span>
+										<input type="text" name="input" value="" class="form-control" placeholder="输入订单号...">
+										<span class="input-group-btn"><button type="submit" class="btn btn-primary">搜索</button></span>
 									</div>
 								</form>
 								<div class="panel-body">
@@ -140,33 +142,63 @@
 												<th>订单用户ID</th>
 												<th>订单商品ID</th>
 												<th>订单描述</th>
-												<th></th>
-												<th></th>
+												<th>订单状态</th>
+
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>1</td>
-												<td>Steve</td>
-												<td>Jobs</td>
-												<td>1231</td>
-												<td>@steve</td>
-												<th><button type="button" class="btn btn-primary">完成订单</button>   <button type="button" class="btn btn-primary">删除订单</button></th>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td>Simon</td>
-												<td>Philips</td>
-												<td>1231</td>
-												<td>@simon</td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td>Jane</td>
-												<td>Doe</td>
-												<td>1231</td>
-												<td>@jane</td>
-											</tr>
+
+										<%
+											if(list!=null){
+												for (Orders orders : list) {
+										%>
+										<tr>
+											<td><%=ListIndex%>
+											</td>
+											<td><%=orders.getOrderID()%>
+											</td>
+											<td><%=orders.getOrderUserID()%>
+											</td>
+											<td><%=orders.getOrdergoodID()%>
+											</td>
+											<td><%=orders.getOrderDescribe()%>
+											</td>
+											<td><%=orders.getOrderStatus()%>
+											</td>
+											<th><button href="/logout" class="btn btn-primary">完成订单</button>
+												<button href="/logout" class="btn btn-primary">删除订单</button>
+											</th>
+										</tr>
+										<%
+												ListIndex++;
+											}}
+										%>
+
+
+
+<%--												<%--%>
+<%--													if(true){--%>
+<%--												%>--%>
+
+<%--												<% }--%>
+
+<%--												else {--%>
+<%--												%>--%>
+
+<%--												<tr>--%>
+<%--													<td><%= request.getAttribute("OrderID")%></td>--%>
+<%--													<td><%= request.getAttribute("OrderID")%></td>--%>
+<%--													<td><%= request.getAttribute("OrderID")%>}</td>--%>
+<%--													<td><%= request.getAttribute("OrderID")%></td>--%>
+<%--													<td><%= request.getAttribute("OrderID")%></td>--%>
+<%--													<th><button href="/logout" class="btn btn-primary">完成订单</button>--%>
+<%--														<button href="/logout" class="btn btn-primary">删除订单</button>--%>
+<%--														</th>--%>
+<%--												</tr>--%>
+
+<%--												<%} %>--%>
+
+
 										</tbody>
 									</table>
 								</div>
@@ -188,10 +220,10 @@
 	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
-	<script src="././assets/vendor/jquery/jquery.min.js"></script>
-	<script src="././assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="././assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="././assets/scripts/klorofil-common.js"></script>
+	<script src="${pageContext.request.contextPath }/content/assets/vendor/jquery/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath }/content/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath }/content/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="${pageContext.request.contextPath }/content/assets/scripts/klorofil-common.js"></script>
 </body>
 
 </html>

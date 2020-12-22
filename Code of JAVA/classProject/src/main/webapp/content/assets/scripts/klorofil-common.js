@@ -144,10 +144,6 @@ $(document).ready(function() {
 	/*----------------------------------*/
 
 	if($('#toastr-demo').length > 0) {
-		toastr.options.timeOut = "false";
-		toastr.options.closeButton = true;
-		toastr['info']('Hi there, this is notification demo with HTML support. So, you can add HTML elements like <a href="#">this link</a>');
-
 		$('.btn-toastr').on('click', function() {
 			$context = $(this).data('context');
 			$message = $(this).data('message');

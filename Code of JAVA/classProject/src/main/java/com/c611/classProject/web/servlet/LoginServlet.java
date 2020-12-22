@@ -1,11 +1,16 @@
 package com.c611.classProject.web.servlet;
 
+import com.c611.classProject.bean.UserInfo;
+import com.c611.classProject.exception.UserInfoException;
+import com.c611.classProject.service.impl.UserServiceImpl;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.concurrent.LinkedTransferQueue;
 
 
 /**
@@ -17,7 +22,6 @@ import java.io.IOException;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
-	private static final long serialVersionUID = -4987278776322117098L;
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -50,6 +54,14 @@ public class LoginServlet extends HttpServlet {
 		// 通过用户名和密码进行登录
 		// 3.分发转向
 		*/
+		UserInfo userInfo = null;
+		try {
+			userInfo= new UserServiceImpl().getUserInfoById("3");
+		} catch (UserInfoException e) {
+			e.printStackTrace();
+		}
+		request.getSession().setAttribute("user_info",userInfo);
+		response.sendRedirect(request.getContextPath()+"/content/makeorder.jsp");
 	}
 
 	@Override

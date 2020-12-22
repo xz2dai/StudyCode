@@ -32,7 +32,7 @@
 								<div class="logo text-center"><img src="content/assets/img/logo-dark.png" alt="Klorofil Logo"></div>
 								<p class="lead">登陆到账户</p>
 							</div>
-							<form class="form-auth-small" action="index.php">
+							<form class="form-auth-small" action="LoginServlet">
 								<div class="form-group">
 									<label for="signin-email" class="control-label sr-only">账户</label>
 									<input type="email" class="form-control" id="signin-email" value="" placeholder="Email">

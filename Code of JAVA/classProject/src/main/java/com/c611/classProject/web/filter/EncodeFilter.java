@@ -11,7 +11,7 @@ import java.io.IOException;
  * 最上层过滤器
  * 过滤输入输出格式过滤器，强制所有页面使用utf-8编码
  */
-@WebFilter(filterName = "EncodeFilter",value = "/content/*")
+@WebFilter(filterName = "EncodeFilter",value = "/*")
 public class EncodeFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
