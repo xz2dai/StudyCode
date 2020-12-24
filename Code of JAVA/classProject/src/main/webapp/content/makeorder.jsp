@@ -112,15 +112,8 @@
     onload = function () {
         var info =
         <%=info%>
-        var infoMsg = '<%=infoMsg%>'
-        infoMsg =infoMsg.trim()
-        if (infoMsg === "" || infoMsg===''){
-            if (info === 1) {
-                success_alert('下单成功!')
-            } else if (info === 2) {
-                error_alert('下单失败！')
-            }
-        }
+        var infoMsg =
+        <%=infoMsg%>
         if (info === 1) {
             success_alert(infoMsg)
         } else if (info === 2) {
@@ -134,19 +127,9 @@
         success_btn.click()
     }
 
-    function success_alert() {
-        var success_btn = document.getElementById("success_btn")
-        success_btn.click()
-    }
-
     function error_alert(Msg) {
         var error_btn = document.getElementById("error_btn")
         if (Msg != null) error_btn.setAttribute("data-message", Msg)
-        error_btn.click()
-    }
-
-    function error_alert() {
-        var error_btn = document.getElementById("error_btn")
         error_btn.click()
     }
 
@@ -161,12 +144,6 @@
             error_alert("用户地址不能为空！")
             return false
         }
-
-        var OrderInfo = document.getElementById("Orderinfo")
-        if(OrderInfo.value === "" || OrderInfo.value===null){
-            OrderInfo.value=" "
-        }
-
         <%request.getSession().setAttribute("selectList", selectList); %>
         return true
     }
@@ -459,11 +436,11 @@
                                 <h3 class="panel-title">输入订单信息</h3>
                             </div>
                             <div class="panel-body">
-                                <input type="text" id="UserID" class="form-control" placeholder="用户名/用户ID" name="UserName">
+                                <input type="number" id="UserID" class="form-control" placeholder="用户ID" name="UserName">
                                 <br>
                                 <input type="text" id="UserAdress" class="form-control" placeholder="用户地址" name="Adress">
                                 <br>
-                                <input class="form-control" id="Orderinfo" placeholder="备注"  name="Info" value=" ">
+                                <input class="form-control" placeholder="备注" rows="1" name="Info" value=" ">
                                 <br>
                                 <label class="fancy-checkbox">
                                     <input type="radio" name="PayWay" value="1" checked>
@@ -496,6 +473,9 @@
                         <p class="demo-button ">
                         <div class="col-md-6">
                             <button type="button" class="btn btn-danger">取消</button>
+                        </div>
+                        <div class="col-md-6" hidden>
+                            <button type="button" class="btn btn-primary" onclick="success_alert('wuhu')">测试</button>
                         </div>
                         <div class="col-md-6 text-right">
                             <input type="submit" class="btn btn-success btn-block" value="提交订单">
