@@ -26,12 +26,14 @@ import java.util.Map;
 public class MakeOrderServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //获取持久层对象
         IOrdersService ordersService = new OrdersServiceImpl();
         boolean done = false;
-        //获取订单参数
+        //获取订单参数表
         Map<String,String[]> parammap =  req.getParameterMap();
         String userid = parammap.get("UserName")[0];
         String adress = parammap.get("Adress")[0];
+        //如果有空参数则返回错误
         parammap.forEach((key, value) -> {
             if(value == null) {
                 try {
@@ -40,9 +42,9 @@ public class MakeOrderServlet extends HttpServlet {
                     e.printStackTrace();
                 }
             }
-            System.out.println(key + ":" + Arrays.toString(value));
+            //System.out.println(key + ":" + Arrays.toString(value));
         });
-        //获取订单表
+        //从会话获取订单表
         HttpSession session = req.getSession();
         List<Goods> selectList = (List<Goods>) session.getAttribute("selectList");
         if(selectList!=null && selectList.size()>0) {

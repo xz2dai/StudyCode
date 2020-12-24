@@ -318,7 +318,7 @@
                                         <td><%=goods.getGoodPrice()%>
                                         </td>
                                         <td style="text-align: center">
-                                            <a href="makeorder.jsp?index=<%=goodListIndex%>">
+                                            <a href="${pageContext.request.contextPath}/content/makeorder.jsp?index=<%=goodListIndex%>">
                                                 <button class="btn btn-default" type="button">
                                                     <i class="fa fa-plus-square"></i>
                                                 </button>
@@ -339,7 +339,7 @@
                                         if(NowGoodsListPage > 1){
                                     %>
                                     <div class="col-md-6 text-left">
-                                        <a href="makeorder.jsp?page=<%=NowGoodsListPage-1%>"><button type="button" class="btn btn-primary text-left">
+                                        <a href="${pageContext.request.contextPath}/content/makeorder.jsp?page=<%=NowGoodsListPage-1%>"><button type="button" class="btn btn-primary text-left">
                                             <
                                         </button></a>
                                     </div>
@@ -356,7 +356,7 @@
                                         if(NowGoodsListPage<goodsPageBean.getTotalPageCount()){
                                     %>
                                     <div class="col-md-6 text-right">
-                                        <a href="makeorder.jsp?page=<%=NowGoodsListPage+1%>"><button type="button" class="btn btn-primary text-right">
+                                        <a href="${pageContext.request.contextPath}/content/makeorder.jsp?page=<%=NowGoodsListPage+1%>"><button type="button" class="btn btn-primary text-right">
                                             >
                                         </button></a>
                                     </div>
@@ -408,7 +408,7 @@
                                         <td><%=goods.getGoodPrice()%>
                                         </td>
                                         <td style="text-align: center">
-                                            <a href="makeorder.jsp?delete=<%=selectListIndex%>">
+                                            <a href="${pageContext.request.contextPath}/content/makeorder.jsp?delete=<%=selectListIndex%>">
                                                 <button type="button" class="btn btn-danger">
                                                     <i class="fa fa-trash-o"></i>
                                                 </button>
