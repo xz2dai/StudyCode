@@ -1,9 +1,9 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="user_info" scope="session" class="com.c611.classProject.bean.UserInfo"/>
 <html lang="en">
 
 <head>
-	<title>Home</title>
+	<title>收支统计</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -29,18 +29,18 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand" style="padding: 1px">
-				<a href="${pageContext.request.contextPath}/index.jsp"><img
+				<a href="${pageContext.request.contextPath}/Logout"><img
 						src="${pageContext.request.contextPath}/content/assets/img/logo-main.png" class="logo"
-						style="height: 60px;padding-top: 15px" alt="Logo"></a>
+						style="height: 60px;padding-top: 15px" alt="主页"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
 					<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
 				</div>
-				<form class="navbar-form navbar-left">
+				<form action="<c:url value="/OrdersSearch"/>" method="post" class="navbar-form navbar-left">
 					<div class="input-group">
-						<input type="text" value="" class="form-control" placeholder="Search Orders...">
-						<span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
+						<input type="text" name="input" required="" class="form-control" placeholder="搜索订单号...">
+						<span class="input-group-btn"><input type="submit" class="btn btn-primary" value="go"></span>
 					</div>
 				</form>
 				<div id="navbar-menu">
@@ -66,21 +66,23 @@
 									class="lnr lnr-question-circle"></i> <span>Help</span> <i
 									class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Basic Use</a></li>
-								<li><a href="#">Working With Data</a></li>
-								<li><a href="#">Security</a></li>
-								<li><a href="#">Troubleshooting</a></li>
+								<li><a href="#">基本使用</a></li>
+								<li><a href="#">店铺相关</a></li>
+								<li><a href="#">店铺证书</a></li>
+								<li><a href="#">我有意见</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="${pageContext.request.contextPath}/content/assets/img/user.png"
-																							class="img-circle" alt="Avatar">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
+									src="${pageContext.request.contextPath}/content/assets/img/user.png"
+									class="img-circle" alt="Avatar">
 								<span>${user_info.userName}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="SerchByID?id=${user_info.userID}"><i class="lnr lnr-user"></i> <span>个人主页</span></a></li>
+								<li><a href="${pageContext.request.contextPath}/userProfileServlet?userID=${user_info.userID}"><i class="lnr lnr-user"></i>
+									<span>个人主页</span></a></li>
 								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>消息</span></a></li>
 								<li><a href="#"><i class="lnr lnr-cog"></i> <span>设置</span></a></li>
-								<li><a href="#"><i class="lnr lnr-exit"></i> <span>登出</span></a></li>
+								<li><a href="${pageContext.request.contextPath}/Logout"><i class="lnr lnr-exit"></i> <span>登出</span></a></li>
 							</ul>
 						</li>
 					</ul>
@@ -95,13 +97,15 @@
 					<ul class="nav">
 						<li><a href="${pageContext.request.contextPath}/content/makeorder.jsp" class=""><i
 								class="lnr lnr-home"></i> <span>点单</span></a></li>
-						<li><a href="<c:url value="/SerchByID?id=0"/>" class=""><i
+						<li><a href="<c:url value="/OrdersList"/>" class=""><i
 								class="lnr lnr-code"></i> <span>查看订单</span></a></li>
 						<li><a href="${pageContext.request.contextPath}/content/income.jsp" class=""><i
 								class="lnr lnr-chart-bars"></i> <span>收支统计</span></a></li>
 						<li><a href="<c:url value="/clientListServlet"/>" class=""><i
 								class="lnr lnr-cog"></i> <span>客户管理</span></a></li>
-						<li><a href="${pageContext.request.contextPath}/content/employee.jsp" class=""><i
+						<li><a href="<c:url value="/GoodList"/>" class=""><i
+								class="lnr lnr-database"></i> <span>查看商品</span></a></li>
+						<li><a href="${pageContext.request.contextPath}/employeeListServlet" class=""><i
 								class="lnr lnr-alarm"></i><span>员工管理</span></a></li>
 					</ul>
 				</nav>
@@ -244,7 +248,7 @@
 								<div class="panel-footer">
 									<div class="row">
 										<div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i> 过去24小时</span></div>
-										<div class="col-md-6 text-right"><a href="#" class="btn btn-primary">查看所有购买</a></div>
+										<div class="col-md-6 text-right"><a href="/OrdersList" class="btn btn-primary">查看所有购买</a></div>
 									</div>
 								</div>
 							</div>

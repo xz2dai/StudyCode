@@ -6,6 +6,7 @@ import com.c611.classProject.dao.IGoodsDao;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -33,6 +34,13 @@ public class GoodsDaoImpl implements IGoodsDao {
     public List<Goods> findGoodsList()throws SQLException {
         String sql = "select * from goods";
         return  queryRunner.query(sql, new BeanListHandler<Goods>(Goods.class));
+    }
+
+    @Override
+    public List<Goods> findGoodsList(int page, int size) throws SQLException {
+        String sql = "select * from goods order by GoodID limit ?,?";
+        Object[] params={page,size};
+        return  queryRunner.query(sql, new BeanListHandler<Goods>(Goods.class),params);
     }
 
     @Override
@@ -77,5 +85,12 @@ public class GoodsDaoImpl implements IGoodsDao {
         String sql = "delete from goods where GoodName =?";
         int count = queryRunner.update(sql,name);
         return count==1;
+    }
+
+    @Override
+    public int GetGoodsCount() throws SQLException {
+        String sql = "select count(GoodID) from goods";
+        Long count = (Long) queryRunner.query(sql,new ScalarHandler());
+        return count.intValue();
     }
 }

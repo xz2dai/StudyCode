@@ -1,8 +1,10 @@
 package com.c611.classProject.service;
 
 import com.c611.classProject.bean.UserInfo;
+import com.c611.classProject.bean.UserInfoPage;
 import com.c611.classProject.exception.UserInfoException;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -48,4 +50,37 @@ public interface IUserService {
      * @throws UserInfoException
      */
     boolean editUserInfo(UserInfo userInfo) throws UserInfoException;
+
+    /**
+     * 用户注册
+     * @param userInfo
+     * @return
+     * @throws UserInfoException
+     */
+    boolean regisUserInfo(UserInfo userInfo) throws UserInfoException;
+
+    /**
+     * 用户登录
+     * @param name
+     * @return
+     * @throws UserInfoException
+     */
+    UserInfo loginUserInfo(String name)throws UserInfoException;
+
+    /**
+     *分页
+     * @param page  数据表的行号
+     * @param size 每页显示的条数
+     * @return
+     * @throws SQLException
+     */
+    UserInfoPage findAll(int page, int size) throws SQLException;
+
+    /**
+     * 分页查询
+     * @param id
+     * @return
+     * @throws SQLException
+     */
+    UserInfoPage searchByID(String id) throws SQLException;
 }

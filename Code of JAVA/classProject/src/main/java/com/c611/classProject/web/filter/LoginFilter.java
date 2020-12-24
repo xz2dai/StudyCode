@@ -16,12 +16,17 @@ import java.io.IOException;
  * 访问content内内容的必须先登陆账号
  * @date ：2020/12/16 16:22
  */
-@WebFilter(filterName = "LoginFilter",value = "/content/*")
+//@WebFilter(filterName = "LoginFilter",value = "/content/*")
 public class LoginFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest req= (HttpServletRequest) servletRequest;
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
+        String uri = req.getRequestURI();
+        if(uri.contains(".css") || uri.contains(".js") || uri.contains(".png"))
+        {
+            filterChain.doFilter(req,resp);
+        }
 
         HttpSession session = req.getSession();
 

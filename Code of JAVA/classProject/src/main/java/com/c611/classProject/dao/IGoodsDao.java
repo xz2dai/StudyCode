@@ -17,6 +17,8 @@ public interface IGoodsDao {
 
     List<Goods> findGoodsList() throws SQLException;
 
+    List<Goods> findGoodsList(int page,int size) throws SQLException;
+
     boolean AddGood(Goods goods) throws SQLException;
 
     boolean UpdataGood(Goods goods) throws SQLException;
@@ -24,4 +26,6 @@ public interface IGoodsDao {
     boolean DeleteGoodByID(int id) throws SQLException;
 
     boolean DeleteGoodByName(String name) throws SQLException;
+
+    int GetGoodsCount() throws SQLException;
 }

@@ -1,44 +1,45 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!--<!doctype html>-->
 <html lang="en">
+	<head>
+		<title>员工管理</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<!-- VENDOR CSS -->
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/content/assets/vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/content/assets/vendor/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/content/assets/vendor/linearicons/style.css">
+		<!-- MAIN CSS -->
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/content/assets/css/main.css">
+		<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/content/assets/css/demo.css">
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+		<!-- ICONS -->
+		<link rel="apple-touch-icon" sizes="76x76" href="${pageContext.request.contextPath}/content/assets/img/apple-icon.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="${pageContext.request.contextPath}/content/assets/img/favicon.png">
+	</head>
 
-<head>
-	<title>Tables</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<!-- VENDOR CSS -->
-	<link rel="stylesheet" href="././assets/vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="././assets/vendor/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="././assets/vendor/linearicons/style.css">
-	<!-- MAIN CSS -->
-	<link rel="stylesheet" href="././assets/css/main.css">
-	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
-	<link rel="stylesheet" href="././assets/css/demo.css">
-	<!-- GOOGLE FONTS -->
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="././assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="././assets/img/favicon.png">
-</head>
-
-<body>
+	<body>
 	<!-- WRAPPER -->
 	<div id="wrapper">
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand" style="padding: 1px">
-				<a href="${pageContext.request.contextPath}/index.jsp"><img
+				<a href="${pageContext.request.contextPath}/Logout"><img
 						src="${pageContext.request.contextPath}/content/assets/img/logo-main.png" class="logo"
-						style="height: 60px;padding-top: 15px" alt="Logo"></a>
+						style="height: 60px;padding-top: 15px" alt="主页"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
 					<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
 				</div>
-				<form class="navbar-form navbar-left">
+				<form action="<c:url value="/OrdersSearch"/>" method="post" class="navbar-form navbar-left">
 					<div class="input-group">
-						<input type="text" value="" class="form-control" placeholder="Search Orders...">
-						<span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
+						<input type="text" name="input" required="" class="form-control" placeholder="搜索订单号...">
+						<span class="input-group-btn"><input type="submit" class="btn btn-primary" value="go"></span>
 					</div>
 				</form>
 				<div id="navbar-menu">
@@ -64,21 +65,23 @@
 									class="lnr lnr-question-circle"></i> <span>Help</span> <i
 									class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Basic Use</a></li>
-								<li><a href="#">Working With Data</a></li>
-								<li><a href="#">Security</a></li>
-								<li><a href="#">Troubleshooting</a></li>
+								<li><a href="#">基本使用</a></li>
+								<li><a href="#">店铺相关</a></li>
+								<li><a href="#">店铺证书</a></li>
+								<li><a href="#">我有意见</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="${pageContext.request.contextPath}/content/assets/img/user.png"
-																							class="img-circle" alt="Avatar">
-								<span>管理员</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
+									src="${pageContext.request.contextPath}/content/assets/img/user.png"
+									class="img-circle" alt="Avatar">
+								<span>${user_info.userName}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="lnr lnr-user"></i> <span>个人主页</span></a></li>
+								<li><a href="${pageContext.request.contextPath}/userProfileServlet?userID=${user_info.userID}"><i class="lnr lnr-user"></i>
+									<span>个人主页</span></a></li>
 								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>消息</span></a></li>
 								<li><a href="#"><i class="lnr lnr-cog"></i> <span>设置</span></a></li>
-								<li><a href="#"><i class="lnr lnr-exit"></i> <span>登出</span></a></li>
+								<li><a href="${pageContext.request.contextPath}/Logout"><i class="lnr lnr-exit"></i> <span>登出</span></a></li>
 							</ul>
 						</li>
 					</ul>
@@ -93,13 +96,15 @@
 					<ul class="nav">
 						<li><a href="${pageContext.request.contextPath}/content/makeorder.jsp" class=""><i
 								class="lnr lnr-home"></i> <span>点单</span></a></li>
-						<li><a href="<c:url value="/SerchByID"/>" class=""><i
+						<li><a href="<c:url value="/OrdersList"/>" class=""><i
 								class="lnr lnr-code"></i> <span>查看订单</span></a></li>
 						<li><a href="${pageContext.request.contextPath}/content/income.jsp" class=""><i
 								class="lnr lnr-chart-bars"></i> <span>收支统计</span></a></li>
 						<li><a href="<c:url value="/clientListServlet"/>" class=""><i
 								class="lnr lnr-cog"></i> <span>客户管理</span></a></li>
-						<li><a href="${pageContext.request.contextPath}/content/employee.jsp" class=""><i
+						<li><a href="<c:url value="/GoodList"/>" class=""><i
+								class="lnr lnr-database"></i> <span>查看商品</span></a></li>
+						<li><a href="${pageContext.request.contextPath}/employeeListServlet" class=""><i
 								class="lnr lnr-alarm"></i><span>员工管理</span></a></li>
 					</ul>
 				</nav>
@@ -107,21 +112,22 @@
 		</div>
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
-		<div class="main">
+		<div class="main" style="min-height: 481px;">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<h3 class="page-title">员工列表</h3>
-					<div  style="height:50px;width:100px">
-						<a href="" class="btn btn-primary" >添加</a>
-					</div>
+					<h3 class="page-title">员工信息管理</h3>
 					</div>
 					<div class="row">
 						<div class="">
 							<!-- TABLE STRIPED -->
 							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Striped Row</h3>
+								<div class="panel-heading" style="height:100px;">
+									<h3 class="panel-title" style="height:30px;">员工列表</h3>
+									<br>
+									<div >
+										<a href="#" class="btn btn-primary">添加</a>
+									</div>
 								</div>
 								<div class="panel-body">
 									<table class="table table-striped">
@@ -134,37 +140,25 @@
 												<th>年龄</th>
 												<th>电话</th>
 												<th>邮箱</th>
-												<th>用户状态</th>
 												<th>个人信息</th>
 												<th>注销</th>
 											</tr>
 										</thead>
 										<tbody>
+										<c:forEach items="${employeeInfoList}" var="employeeInfo">
 											<tr>
-												<td>1</td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td><a href="page-profile.html" class="btn btn-primary">详情</a></td>>
-												<td><a href="" class="btn btn-primary">删除</a></td>
+												<td>${employeeInfo.employeeID}</td>
+												<td>${employeeInfo.employeeName}</td>
+												<td>${employeeInfo.employeeGender}</td>
+												<td>${employeeInfo.employeeType}</td>
+												<td>${employeeInfo.employeeAge}</td>
+												<td>${employeeInfo.employeeMobile}</td>
+												<td>${employeeInfo.employeeEmail}</td>
+												<td><a href="${pageContext.request.contextPath}/employeeProfileServlet?employeeID=${employeeInfo.employeeID}" class="btn btn-primary">详情</a></td>
+												<td><a href="${pageContext.request.contextPath}/employeeDelServlet?employeeID=${employeeInfo.employeeID}" class="btn btn-primary">删除</a></td>
 
 											</tr>
-											<tr>
-												<td>2</td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td><a href="page-profile.html" class="btn btn-primary">详情</a></td>
-												<td><a href="" class="btn btn-primary">删除</a></td>
-											</tr>
+										</c:forEach>
 										</tbody>
 									</table>
 								</div>
@@ -180,16 +174,16 @@
 		<div class="clearfix"></div>
 		<footer>
 			<div class="container-fluid">
-				<p class="copyright">Copyright &copy; 2017.Company name All rights reserved.</p>
+				<p class="copyright">Copyright © 2017.Company name All rights reserved.</p>
 			</div>
 		</footer>
-	</div>
+	
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
-	<script src="././assets/vendor/jquery/jquery.min.js"></script>
-	<script src="././assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="././assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="././assets/scripts/klorofil-common.js"></script>
-</body>
+	<script src="${pageContext.request.contextPath}/content/assets/vendor/jquery/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/content/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/content/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="${pageContext.request.contextPath}/content/assets/scripts/klorofil-common.js"></script>
 
+	</body>
 </html>

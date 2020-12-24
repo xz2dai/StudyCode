@@ -28,47 +28,38 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-//		// 1.获取表单数据
-//		// 获取用户名和密码
-//		String account = request.getParameter("account");
-//		String password = request.getParameter("password");
-//		// 2.处理业务逻辑
-//		IUserService userInfoService = new UserServiceImpl();
-//		try {
-//			UserInfo userInfo = userInfoService.f(account, password);
-//			// userInfo == null：用户名和密码错误
-//			if (userInfo == null) {
-//				request.setAttribute("login_error", "用户名或者密码错误...");
-//				// 请求转发到登录页面
-//				request.getRequestDispatcher("/index.jsp").forward(request, response);
-//			} else {
-//				// 登录成功，重定向到首页
-//				response.sendRedirect(request.getContextPath() + "/system/index/index.html");
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			// 出现异常
-//			request.setAttribute("login_error", e.getMessage());
-//			// 请求转发到登录页面
-//			request.getRequestDispatcher("/index.jsp").forward(request, response);
-//		}
-//		// 通过用户名和密码进行登录
-//		// 3.分发转向
-
+		// 1.获取表单数据
+		// 获取用户名和密码
+		String account = request.getParameter("account");
+		String password = request.getParameter("password");
 		UserInfo userInfo = null;
+		// 2.处理业务逻辑
+		IUserService userInfoService = new UserServiceImpl();
 		try {
-			userInfo= new UserServiceImpl().getUserInfoById("3");
-		} catch (UserInfoException e) {
+			userInfo = userInfoService.loginUserInfo(account);
+			// userInfo == null：用户名和密码错误
+			if (userInfo == null) {
+				request.setAttribute("error_info", "用户不存在");
+				// 请求转发到登录页面
+				request.getRequestDispatcher("/index.jsp").forward(request, response);
+			} else if(!password.equals(userInfo.getPassword())){
+				request.setAttribute("error_info", "密码错误！");
+				// 请求转发到登录页面
+				request.getRequestDispatcher("/index.jsp").forward(request, response);
+			}else {
+				// 登录成功，重定向到首页
+				request.getSession().setAttribute("user_info",userInfo);
+				request.getRequestDispatcher("./content/makeorder.jsp").forward(request,response);
+			}
+		} catch (Exception e) {
 			e.printStackTrace();
+			// 出现异常
+			request.setAttribute("error_info", "查询用户信息出现错误，请检查您的网络连接");
+			// 请求转发到登录页面
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		}
-		if(userInfo == null){
-			request.setAttribute("error_info","未查找到此用户！");
-			request.getRequestDispatcher("/index.jsp").forward(request,response);
-		}else{
-			request.getSession().setAttribute("user_info",userInfo);
-			response.sendRedirect(request.getContextPath()+"/content/makeorder.jsp");
-		}
-
+		// 通过用户名和密码进行登录
+		// 3.分发转向
 	}
 
 	@Override

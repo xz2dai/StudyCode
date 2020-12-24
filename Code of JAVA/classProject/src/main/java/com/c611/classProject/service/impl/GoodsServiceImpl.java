@@ -1,6 +1,7 @@
 package com.c611.classProject.service.impl;
 
 import com.c611.classProject.bean.Goods;
+import com.c611.classProject.bean.GoodsPageBean;
 import com.c611.classProject.dao.IGoodsDao;
 import com.c611.classProject.dao.impl.GoodsDaoImpl;
 import com.c611.classProject.service.IGoodsService;
@@ -48,5 +49,27 @@ public class GoodsServiceImpl implements IGoodsService {
     @Override
     public boolean DeleteGoodByName(String name) throws SQLException{
         return goodsDao.DeleteGoodByName(name);
+    }
+
+    @Override
+    public GoodsPageBean getGoodsPageBean(int page, int size) throws SQLException {
+        GoodsPageBean goodsPageBean = new GoodsPageBean();
+        page = Math.max(page, 1);
+        size = Math.max(size,1);
+
+        List<Goods> goodsList = goodsDao.findGoodsList((page-1)*size,size);
+
+        int count = goodsDao.GetGoodsCount();
+        int totalPage = count/size;
+        if(count%size !=0) totalPage++;
+
+
+        goodsPageBean.setGoodsList(goodsList);
+        goodsPageBean.setTotalPageCount(totalPage);
+        goodsPageBean.setCurrentPage(page);
+        goodsPageBean.setSize(size);
+        goodsPageBean.setTotalCount(count);
+
+        return goodsPageBean;
     }
 }
