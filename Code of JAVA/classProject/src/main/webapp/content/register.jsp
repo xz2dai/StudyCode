@@ -7,12 +7,11 @@
 <meta name="keywords" content="" />
 <link href="${pageContext.request.contextPath}/content/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
 <link href="${pageContext.request.contextPath}/content/assets/css/style.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/content/assets/css/front.css" rel="stylesheet">
 </head>
 <body style="background-image: url(${pageContext.request.contextPath}/content/assets/img/2.jpg)">
 <div class="signupform">
 	<div class="container">
-		
 		<div class="agile_info">
 			<div class="w3l_form">
 				<div class="left_grid_info">

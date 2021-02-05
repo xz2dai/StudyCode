@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.c611.classProject.bean.Goods" %>
+<%@ page import="com.c611.classProject.Utils.StringUtils" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
@@ -159,9 +160,11 @@
                                         <td><%=goods.getGoodID()%>
                                         </td>
                                         <td><%=goods.getGoodPrice()%>
-                                        </td>
-                                        <td><%=goods.getGoodDescribe()%>
-                                        </td>
+                                        <% if(StringUtils.isEmpty(goods.getGoodDescribe())){%>
+                                            <td> </td>
+                                        <%}else{%>
+                                            <td><%=goods.getGoodDescribe()%></td>
+                                        <%}%>
                                         <% if (goods.getGoodStatus()==1){%>
                                         <td><span class="label label-success">在售</span>
 

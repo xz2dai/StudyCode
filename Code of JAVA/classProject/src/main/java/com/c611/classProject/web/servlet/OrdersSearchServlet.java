@@ -48,7 +48,7 @@ public class OrdersSearchServlet extends HttpServlet {
             }
 
             if (list == null) {//查询无结果
-                resp.sendRedirect("/OrdersList");
+                resp.sendRedirect(req.getContextPath()+"/OrdersList");
 
             } else {//查询成功
                 req.setAttribute("list", list);

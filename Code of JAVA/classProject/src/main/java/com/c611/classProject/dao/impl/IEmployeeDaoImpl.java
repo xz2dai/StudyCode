@@ -16,7 +16,7 @@ public class IEmployeeDaoImpl implements IEmployeeDao {
     @Override
     public List<EmployeeInfo> getEmployeeListALL() throws SQLException {
         String sql = "select EmployeeName employeeName, EmployeeID employeeID," +
-                " EmployeeGender employeeGender," +
+                " EmployeeGender employeeGender,EmployeeAge employeeAge,EmployeeEmail employeeEmail," +
                 "EmployeeType employeeType,EmployeeMobile employeeMobile from staffs";
         return run.query(sql,new BeanListHandler<EmployeeInfo>(EmployeeInfo.class));
 
@@ -25,8 +25,8 @@ public class IEmployeeDaoImpl implements IEmployeeDao {
     @Override
     public EmployeeInfo getEmployeeInfoById(String id) throws SQLException {
         String sql = "select  EmployeeName employeeName, EmployeeID employeeID," +
-                " EmployeeGender employeeGender,EmployeeType employeeType,EmployeeMobile" +
-                " employeeMobile,EmployeeEmail employeeEmail,EmployeeAge employeeAge from staffs where EmployeeID=?";
+                " EmployeeGender employeeGender,EmployeeType employeeType,EmployeeMobile employeeMobile," +
+                " EmployeeEmail employeeEmail,EmployeeAge employeeAge,EmployeeDescribe employeeDescribe from staffs where EmployeeID=?";
         return run.query(sql, new BeanHandler<EmployeeInfo>(EmployeeInfo.class),id);
 
     }
@@ -42,9 +42,7 @@ public class IEmployeeDaoImpl implements IEmployeeDao {
     @Override
     public boolean editEmployeeInfo(EmployeeInfo employeeInfo) throws SQLException{
         //定义SQL语句
-        String sql="update staffs set EmployeeName=?,EmployeeGender=?," +
-                "EmployeeMobile=?,EmployeeEmail=?,EmployeeAge=?," +
-                "EmployeeDescribe=? where EmployeeID=?";
+        String sql = "update staffs set EmployeeName=?,EmployeeGender=?,EmployeeMobile=?,EmployeeEmail=?,EmployeeAge=?,EmployeeDescribe=? where EmployeeID=?";
         Object[] params={employeeInfo.getEmployeeName(),
                 employeeInfo.getEmployeeGender(),employeeInfo.getEmployeeMobile(),
                 employeeInfo.getEmployeeEmail(),employeeInfo.getEmployeeAge(),

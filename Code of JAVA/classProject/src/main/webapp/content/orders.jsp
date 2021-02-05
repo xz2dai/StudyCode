@@ -150,7 +150,7 @@
 												<th>订单描述</th>
 												<th>订单状态</th>
 												<th><a href="content/makeorder.jsp" class="btn btn-warning">创建新订单</a></th>
-												<th><a href="/OrdersList" class="btn btn-primary">所有订单</a></th>
+												<th><a href="${pageContext.request.contextPath}/OrdersList" class="btn btn-primary">所有订单</a></th>
 											</tr>
 										</thead>
 

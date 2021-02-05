@@ -23,9 +23,6 @@ public class EmployeeDelServlet extends HttpServlet {
             //调用删除employeeInfo对象方法
             boolean employeeInfo= IEmployeeService.delEmployeeInfoById(id);
 
-            //将数据保存到requset的作用域中
-            req.setAttribute("employeeInfo", employeeInfo);
-
             //分发转向
             req.getRequestDispatcher("/employeeListServlet").forward(req,resp);
 

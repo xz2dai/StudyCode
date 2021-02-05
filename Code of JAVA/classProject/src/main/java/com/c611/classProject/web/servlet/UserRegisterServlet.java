@@ -22,6 +22,12 @@ import java.util.Map;
 public class UserRegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 解决POST方式中文乱码问题
         req.setCharacterEncoding("UTF-8");
 
@@ -45,7 +51,6 @@ public class UserRegisterServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }
 

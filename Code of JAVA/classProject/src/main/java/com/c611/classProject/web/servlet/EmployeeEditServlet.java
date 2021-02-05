@@ -38,7 +38,7 @@ public class EmployeeEditServlet extends HttpServlet {
             IEmployeeService.editEmployeeInfo(employeeInfo);
 
             //分发转向
-            resp.sendRedirect(req.getContextPath() + "/employeeProfileServlet");
+            resp.sendRedirect(req.getContextPath() + "/employeeProfileServlet?employeeID=" + employeeInfo.getEmployeeID());
         } catch (Exception e) {
             e.printStackTrace();
         }

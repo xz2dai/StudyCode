@@ -128,9 +128,9 @@
                 <div class="panel panel-profile">
                     <div class="clearfix">
                         <!-- LEFT COLUMN -->
-                        <div class="profile-left">
+                        <div class="profile-left ">
                             <!-- PROFILE HEADER -->
-                            <div class="profile-header">
+                            <div class="profile-header ">
                                 <div class="overlay"></div>
                                 <div class="profile-main">
                                     <img src="${pageContext.request.contextPath}/content/assets/img/user-medium.png"
@@ -156,6 +156,7 @@
                             </div>
                             <!-- END PROFILE HEADER -->
                             <!-- PROFILE DETAIL -->
+
                             <div class="profile-detail">
                                 <div class="profile-info">
                                     <h4 class="heading">基本信息</h4>
@@ -244,29 +245,24 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade in active" id="tab-bottom-left1">
                                     <ul class="list-unstyled activity-timeline">
+                                            <c:forEach items="${list}" var="orders" varStatus="loop">
                                         <li>
-                                            <i class="fa fa-comment activity-icon"></i>
-                                            <p>Commented on post <a href="#">Prototyping</a> <span class="timestamp">2 minutes ago</span>
+
+                                            <c:if test="${orders.orderStatus==0}"><i  class="fa fa-comment activity-icon"></i></c:if>
+                                            <c:if test="${orders.orderStatus==1}"><i  class="fa fa-check activity-icon"></i></c:if>
+                                            <p><a>订单号:${orders.orderID}号,购买套餐为[${lists[loop.count-1].goodName}]</a> <span class="timestamp">
+                                                <c:if test="${orders.orderStatus==0}">正在火速派送中.....</c:if>
+                                                <c:if test="${orders.orderStatus==1}">订单已完成！！！</c:if>
+                                            </span>
                                             </p>
                                         </li>
-                                        <li>
-                                            <i class="fa fa-cloud-upload activity-icon"></i>
-                                            <p>Uploaded new file <a href="#">Proposal.docx</a> to project <a href="#">New
-                                                Year Campaign</a> <span class="timestamp">7 hours ago</span></p>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-plus activity-icon"></i>
-                                            <p>Added <a href="#">Martin</a> and <a href="#">3 others colleagues</a> to
-                                                project repository <span class="timestamp">Yesterday</span></p>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-check activity-icon"></i>
-                                            <p>Finished 80% of all <a href="#">assigned tasks</a> <span
-                                                    class="timestamp">1 day ago</span></p>
-                                        </li>
+                                            </c:forEach>
+                                        <body>
+                                        <br /><br /><br /><br /><br /><br />
+                                        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                                        </body>
                                     </ul>
-                                    <div class="margin-top-30 text-center"><a href="#"
-                                                                              class="btn btn-default">查看所有订单</a></div>
+
                                 </div>
                                 <div class="tab-pane fade" id="tab-bottom-left2">
                                     <div class="table-responsive">
@@ -282,7 +278,7 @@
                                             </thead>
                                             <tbody>
                                             <tr>
-                                                <td><a href="#">Spot Media</a></td>
+                                                <td><a href="#">小炒时蔬</a></td>
                                                 <td>
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar" aria-valuenow="60"
@@ -291,12 +287,11 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td><img src="${pageContext.request.contextPath}/content/assets/img/user2.png" alt="Avatar"
-                                                         class="avatar img-circle"> <a href="#">Michael</a></td>
+                                                <td> <a href="#">2018-08-09</a></td>
                                                 <td><span class="label label-success">ACTIVE</span></td>
                                             </tr>
                                             <tr>
-                                                <td><a href="#">E-Commerce Site</a></td>
+                                                <td><a href="#">紫菜蛋汤</a></td>
                                                 <td>
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar" aria-valuenow="33"
@@ -309,7 +304,7 @@
                                                 <td><span class="label label-warning">PENDING</span></td>
                                             </tr>
                                             <tr>
-                                                <td><a href="#">Project 123GO</a></td>
+                                                <td><a href="#">黄焖鸡</a></td>
                                                 <td>
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar" aria-valuenow="68"
@@ -318,12 +313,11 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td><img src="${pageContext.request.contextPath}/content/assets/img/user1.png" alt="Avatar"
-                                                         class="avatar img-circle"> <a href="#">Antonius</a></td>
+                                                <td> <a href="#">2018-08-09</a></td>
                                                 <td><span class="label label-success">ACTIVE</span></td>
                                             </tr>
                                             <tr>
-                                                <td><a href="#">Wordpress Theme</a></td>
+                                                <td><a href="#">巴西烤肉</a></td>
                                                 <td>
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar" aria-valuenow="75"
@@ -332,12 +326,11 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td><img src="${pageContext.request.contextPath}/content/assets/img/user2.png" alt="Avatar"
-                                                         class="avatar img-circle"> <a href="#">Michael</a></td>
+                                                <td> <a href="#">2018-08-09</a></td>
                                                 <td><span class="label label-success">ACTIVE</span></td>
                                             </tr>
                                             <tr>
-                                                <td><a href="#">Project 123GO</a></td>
+                                                <td><a href="#">红烧肉</a></td>
                                                 <td>
                                                     <div class="progress">
                                                         <div class="progress-bar progress-bar-success"
@@ -347,12 +340,11 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td><img src="./assets/img/user1.png" alt="Avatar"
-                                                         class="avatar img-circle"/> <a href="#">Antonius</a></td>
+                                                <td> <a href="#">2018-08-09</a></td>
                                                 <td><span class="label label-default">CLOSED</span></td>
                                             </tr>
                                             <tr>
-                                                <td><a href="#">Redesign Landing Page</a></td>
+                                                <td><a href="#">米饭</a></td>
                                                 <td>
                                                     <div class="progress">
                                                         <div class="progress-bar progress-bar-success"
@@ -362,8 +354,7 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td><img src="./assets/img/user5.png" alt="Avatar"
-                                                         class="avatar img-circle"/> <a href="#">Jason</a></td>
+                                                <td> <a href="#">2018-08-09</a></td>
                                                 <td><span class="label label-default">CLOSED</span></td>
                                             </tr>
                                             </tbody>

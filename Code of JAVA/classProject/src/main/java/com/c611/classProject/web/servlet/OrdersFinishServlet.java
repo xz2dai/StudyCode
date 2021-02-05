@@ -34,6 +34,6 @@ public class OrdersFinishServlet extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        resp.sendRedirect("/OrdersList");
+        resp.sendRedirect(req.getContextPath()+"/OrdersList");
     }
 }

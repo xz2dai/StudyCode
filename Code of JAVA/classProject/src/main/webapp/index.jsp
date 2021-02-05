@@ -54,7 +54,7 @@
 								<button type="submit" class="btn btn-primary btn-lg btn-block">登陆</button>
 								<div class="bottom">
 									<p style="color: red;">${error_info}</p>
-									<span class="helper-text"><i class="fa fa-lock"></i> <a href="#">忘记密码?</a></span>
+									<span class="helper-text"><i class="fa fa-lock"></i> <a href="${pageContext.request.contextPath}/content/register.jsp">注册用户</a></span>
 								</div>
 							</form>
 						</div>

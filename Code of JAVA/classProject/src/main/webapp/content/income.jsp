@@ -248,7 +248,7 @@
 								<div class="panel-footer">
 									<div class="row">
 										<div class="col-md-6"><span class="panel-note"><i class="fa fa-clock-o"></i> 过去24小时</span></div>
-										<div class="col-md-6 text-right"><a href="/OrdersList" class="btn btn-primary">查看所有购买</a></div>
+										<div class="col-md-6 text-right"><a href="${pageContext.request.contextPath}/OrdersList" class="btn btn-primary">查看所有购买</a></div>
 									</div>
 								</div>
 							</div>
