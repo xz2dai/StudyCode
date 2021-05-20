@@ -1,0 +1,10 @@
+C:\Users\book\Documents\study\C#Code\GUI绘图测试\GUI绘图测试\bin\Debug\GUI绘图测试.exe.config
+C:\Users\book\Documents\study\C#Code\GUI绘图测试\GUI绘图测试\bin\Debug\GUI绘图测试.exe
+C:\Users\book\Documents\study\C#Code\GUI绘图测试\GUI绘图测试\bin\Debug\GUI绘图测试.pdb
+C:\Users\book\Documents\study\C#Code\GUI绘图测试\GUI绘图测试\obj\Debug\GUI绘图测试.csprojAssemblyReference.cache
+C:\Users\book\Documents\study\C#Code\GUI绘图测试\GUI绘图测试\obj\Debug\GUI绘图测试.Form1.resources
+C:\Users\book\Documents\study\C#Code\GUI绘图测试\GUI绘图测试\obj\Debug\GUI绘图测试.Properties.Resources.resources
+C:\Users\book\Documents\study\C#Code\GUI绘图测试\GUI绘图测试\obj\Debug\GUI绘图测试.csproj.GenerateResource.cache
+C:\Users\book\Documents\study\C#Code\GUI绘图测试\GUI绘图测试\obj\Debug\GUI绘图测试.csproj.CoreCompileInputs.cache
+C:\Users\book\Documents\study\C#Code\GUI绘图测试\GUI绘图测试\obj\Debug\GUI绘图测试.exe
+C:\Users\book\Documents\study\C#Code\GUI绘图测试\GUI绘图测试\obj\Debug\GUI绘图测试.pdb

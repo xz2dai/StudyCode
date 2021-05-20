@@ -1,0 +1,10 @@
+C:\Users\book\Documents\study\C#Code\植物大战僵尸\植物大战僵尸\obj\Debug\植物大战僵尸.Form1.resources
+C:\Users\book\Documents\study\C#Code\植物大战僵尸\植物大战僵尸\obj\Debug\植物大战僵尸.Properties.Resources.resources
+C:\Users\book\Documents\study\C#Code\植物大战僵尸\植物大战僵尸\obj\Debug\植物大战僵尸.csproj.GenerateResource.cache
+C:\Users\book\Documents\study\C#Code\植物大战僵尸\植物大战僵尸\obj\Debug\植物大战僵尸.csproj.CoreCompileInputs.cache
+C:\Users\book\Documents\study\C#Code\植物大战僵尸\植物大战僵尸\bin\Debug\植物大战僵尸.exe.config
+C:\Users\book\Documents\study\C#Code\植物大战僵尸\植物大战僵尸\bin\Debug\植物大战僵尸.exe
+C:\Users\book\Documents\study\C#Code\植物大战僵尸\植物大战僵尸\bin\Debug\植物大战僵尸.pdb
+C:\Users\book\Documents\study\C#Code\植物大战僵尸\植物大战僵尸\obj\Debug\植物大战僵尸.exe
+C:\Users\book\Documents\study\C#Code\植物大战僵尸\植物大战僵尸\obj\Debug\植物大战僵尸.pdb
+C:\Users\book\Documents\study\C#Code\植物大战僵尸\植物大战僵尸\obj\Debug\植物大战僵尸.csprojAssemblyReference.cache
