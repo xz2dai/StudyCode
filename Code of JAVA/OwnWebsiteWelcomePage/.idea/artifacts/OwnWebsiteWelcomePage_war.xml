@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="OwnWebsiteWelcomePage:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>OwnWebsiteWelcomePage</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="WelcomePage-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="OwnWebsiteWelcomePage:war exploded" />
+    </root>
+  </artifact>
+</component>
